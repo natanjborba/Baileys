@@ -113,7 +113,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        ADVDeviceIdentity.fromObject = function fromObject(d) {
+        ADVDeviceIdentity.create = function fromObject(d) {
             if (d instanceof $root.proto.ADVDeviceIdentity)
                 return d;
             var m = new $root.proto.ADVDeviceIdentity();
@@ -334,7 +334,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        ADVKeyIndexList.fromObject = function fromObject(d) {
+        ADVKeyIndexList.create = function fromObject(d) {
             if (d instanceof $root.proto.ADVKeyIndexList)
                 return d;
             var m = new $root.proto.ADVKeyIndexList();
@@ -525,7 +525,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        ADVSignedDeviceIdentity.fromObject = function fromObject(d) {
+        ADVSignedDeviceIdentity.create = function fromObject(d) {
             if (d instanceof $root.proto.ADVSignedDeviceIdentity)
                 return d;
             var m = new $root.proto.ADVSignedDeviceIdentity();
@@ -675,7 +675,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        ADVSignedDeviceIdentityHMAC.fromObject = function fromObject(d) {
+        ADVSignedDeviceIdentityHMAC.create = function fromObject(d) {
             if (d instanceof $root.proto.ADVSignedDeviceIdentityHMAC)
                 return d;
             var m = new $root.proto.ADVSignedDeviceIdentityHMAC();
@@ -824,7 +824,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        ADVSignedKeyIndexList.fromObject = function fromObject(d) {
+        ADVSignedKeyIndexList.create = function fromObject(d) {
             if (d instanceof $root.proto.ADVSignedKeyIndexList)
                 return d;
             var m = new $root.proto.ADVSignedKeyIndexList();
@@ -963,19 +963,19 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        AIQueryFanout.fromObject = function fromObject(d) {
+        AIQueryFanout.create = function fromObject(d) {
             if (d instanceof $root.proto.AIQueryFanout)
                 return d;
             var m = new $root.proto.AIQueryFanout();
             if (d.messageKey != null) {
                 if (typeof d.messageKey !== "object")
                     throw TypeError(".proto.AIQueryFanout.messageKey: object expected");
-                m.messageKey = $root.proto.MessageKey.fromObject(d.messageKey);
+                m.messageKey = $root.proto.MessageKey.create(d.messageKey);
             }
             if (d.message != null) {
                 if (typeof d.message !== "object")
                     throw TypeError(".proto.AIQueryFanout.message: object expected");
-                m.message = $root.proto.Message.fromObject(d.message);
+                m.message = $root.proto.Message.create(d.message);
             }
             if (d.timestamp != null) {
                 if ($util.Long)
@@ -1106,7 +1106,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        AIRichResponseMessage.fromObject = function fromObject(d) {
+        AIRichResponseMessage.create = function fromObject(d) {
             if (d instanceof $root.proto.AIRichResponseMessage)
                 return d;
             var m = new $root.proto.AIRichResponseMessage();
@@ -1133,13 +1133,13 @@ export const proto = $root.proto = (() => {
                 for (var i = 0; i < d.submessages.length; ++i) {
                     if (typeof d.submessages[i] !== "object")
                         throw TypeError(".proto.AIRichResponseMessage.submessages: object expected");
-                    m.submessages[i] = $root.proto.AIRichResponseMessage.AIRichResponseSubMessage.fromObject(d.submessages[i]);
+                    m.submessages[i] = $root.proto.AIRichResponseMessage.AIRichResponseSubMessage.create(d.submessages[i]);
                 }
             }
             if (d.unifiedResponse != null) {
                 if (typeof d.unifiedResponse !== "object")
                     throw TypeError(".proto.AIRichResponseMessage.unifiedResponse: object expected");
-                m.unifiedResponse = $root.proto.AIRichResponseMessage.AIRichResponseUnifiedResponse.fromObject(d.unifiedResponse);
+                m.unifiedResponse = $root.proto.AIRichResponseMessage.AIRichResponseUnifiedResponse.create(d.unifiedResponse);
             }
             return m;
         };
@@ -1245,7 +1245,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            AIRichResponseCodeMetadata.fromObject = function fromObject(d) {
+            AIRichResponseCodeMetadata.create = function fromObject(d) {
                 if (d instanceof $root.proto.AIRichResponseMessage.AIRichResponseCodeMetadata)
                     return d;
                 var m = new $root.proto.AIRichResponseMessage.AIRichResponseCodeMetadata();
@@ -1259,7 +1259,7 @@ export const proto = $root.proto = (() => {
                     for (var i = 0; i < d.codeBlocks.length; ++i) {
                         if (typeof d.codeBlocks[i] !== "object")
                             throw TypeError(".proto.AIRichResponseMessage.AIRichResponseCodeMetadata.codeBlocks: object expected");
-                        m.codeBlocks[i] = $root.proto.AIRichResponseMessage.AIRichResponseCodeMetadata.AIRichResponseCodeBlock.fromObject(d.codeBlocks[i]);
+                        m.codeBlocks[i] = $root.proto.AIRichResponseMessage.AIRichResponseCodeMetadata.AIRichResponseCodeBlock.create(d.codeBlocks[i]);
                     }
                 }
                 return m;
@@ -1362,7 +1362,7 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                AIRichResponseCodeBlock.fromObject = function fromObject(d) {
+                AIRichResponseCodeBlock.create = function fromObject(d) {
                     if (d instanceof $root.proto.AIRichResponseMessage.AIRichResponseCodeMetadata.AIRichResponseCodeBlock)
                         return d;
                     var m = new $root.proto.AIRichResponseMessage.AIRichResponseCodeMetadata.AIRichResponseCodeBlock();
@@ -1513,7 +1513,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            AIRichResponseContentItemsMetadata.fromObject = function fromObject(d) {
+            AIRichResponseContentItemsMetadata.create = function fromObject(d) {
                 if (d instanceof $root.proto.AIRichResponseMessage.AIRichResponseContentItemsMetadata)
                     return d;
                 var m = new $root.proto.AIRichResponseMessage.AIRichResponseContentItemsMetadata();
@@ -1524,7 +1524,7 @@ export const proto = $root.proto = (() => {
                     for (var i = 0; i < d.itemsMetadata.length; ++i) {
                         if (typeof d.itemsMetadata[i] !== "object")
                             throw TypeError(".proto.AIRichResponseMessage.AIRichResponseContentItemsMetadata.itemsMetadata: object expected");
-                        m.itemsMetadata[i] = $root.proto.AIRichResponseMessage.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata.fromObject(d.itemsMetadata[i]);
+                        m.itemsMetadata[i] = $root.proto.AIRichResponseMessage.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata.create(d.itemsMetadata[i]);
                     }
                 }
                 switch (d.contentType) {
@@ -1629,14 +1629,14 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                AIRichResponseContentItemMetadata.fromObject = function fromObject(d) {
+                AIRichResponseContentItemMetadata.create = function fromObject(d) {
                     if (d instanceof $root.proto.AIRichResponseMessage.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata)
                         return d;
                     var m = new $root.proto.AIRichResponseMessage.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata();
                     if (d.reelItem != null) {
                         if (typeof d.reelItem !== "object")
                             throw TypeError(".proto.AIRichResponseMessage.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata.reelItem: object expected");
-                        m.reelItem = $root.proto.AIRichResponseMessage.AIRichResponseContentItemsMetadata.AIRichResponseReelItem.fromObject(d.reelItem);
+                        m.reelItem = $root.proto.AIRichResponseMessage.AIRichResponseContentItemsMetadata.AIRichResponseReelItem.create(d.reelItem);
                     }
                     return m;
                 };
@@ -1758,7 +1758,7 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                AIRichResponseReelItem.fromObject = function fromObject(d) {
+                AIRichResponseReelItem.create = function fromObject(d) {
                     if (d instanceof $root.proto.AIRichResponseMessage.AIRichResponseContentItemsMetadata.AIRichResponseReelItem)
                         return d;
                     var m = new $root.proto.AIRichResponseMessage.AIRichResponseContentItemsMetadata.AIRichResponseReelItem();
@@ -1919,7 +1919,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            AIRichResponseDynamicMetadata.fromObject = function fromObject(d) {
+            AIRichResponseDynamicMetadata.create = function fromObject(d) {
                 if (d instanceof $root.proto.AIRichResponseMessage.AIRichResponseDynamicMetadata)
                     return d;
                 var m = new $root.proto.AIRichResponseMessage.AIRichResponseDynamicMetadata();
@@ -2078,14 +2078,14 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            AIRichResponseGridImageMetadata.fromObject = function fromObject(d) {
+            AIRichResponseGridImageMetadata.create = function fromObject(d) {
                 if (d instanceof $root.proto.AIRichResponseMessage.AIRichResponseGridImageMetadata)
                     return d;
                 var m = new $root.proto.AIRichResponseMessage.AIRichResponseGridImageMetadata();
                 if (d.gridImageUrl != null) {
                     if (typeof d.gridImageUrl !== "object")
                         throw TypeError(".proto.AIRichResponseMessage.AIRichResponseGridImageMetadata.gridImageUrl: object expected");
-                    m.gridImageUrl = $root.proto.AIRichResponseMessage.AIRichResponseImageURL.fromObject(d.gridImageUrl);
+                    m.gridImageUrl = $root.proto.AIRichResponseMessage.AIRichResponseImageURL.create(d.gridImageUrl);
                 }
                 if (d.imageUrls) {
                     if (!Array.isArray(d.imageUrls))
@@ -2094,7 +2094,7 @@ export const proto = $root.proto = (() => {
                     for (var i = 0; i < d.imageUrls.length; ++i) {
                         if (typeof d.imageUrls[i] !== "object")
                             throw TypeError(".proto.AIRichResponseMessage.AIRichResponseGridImageMetadata.imageUrls: object expected");
-                        m.imageUrls[i] = $root.proto.AIRichResponseMessage.AIRichResponseImageURL.fromObject(d.imageUrls[i]);
+                        m.imageUrls[i] = $root.proto.AIRichResponseMessage.AIRichResponseImageURL.create(d.imageUrls[i]);
                     }
                 }
                 return m;
@@ -2213,7 +2213,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            AIRichResponseImageURL.fromObject = function fromObject(d) {
+            AIRichResponseImageURL.create = function fromObject(d) {
                 if (d instanceof $root.proto.AIRichResponseMessage.AIRichResponseImageURL)
                     return d;
                 var m = new $root.proto.AIRichResponseMessage.AIRichResponseImageURL();
@@ -2356,14 +2356,14 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            AIRichResponseInlineImageMetadata.fromObject = function fromObject(d) {
+            AIRichResponseInlineImageMetadata.create = function fromObject(d) {
                 if (d instanceof $root.proto.AIRichResponseMessage.AIRichResponseInlineImageMetadata)
                     return d;
                 var m = new $root.proto.AIRichResponseMessage.AIRichResponseInlineImageMetadata();
                 if (d.imageUrl != null) {
                     if (typeof d.imageUrl !== "object")
                         throw TypeError(".proto.AIRichResponseMessage.AIRichResponseInlineImageMetadata.imageUrl: object expected");
-                    m.imageUrl = $root.proto.AIRichResponseMessage.AIRichResponseImageURL.fromObject(d.imageUrl);
+                    m.imageUrl = $root.proto.AIRichResponseMessage.AIRichResponseImageURL.create(d.imageUrl);
                 }
                 if (d.imageText != null) {
                     m.imageText = String(d.imageText);
@@ -2507,7 +2507,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            AIRichResponseLatexMetadata.fromObject = function fromObject(d) {
+            AIRichResponseLatexMetadata.create = function fromObject(d) {
                 if (d instanceof $root.proto.AIRichResponseMessage.AIRichResponseLatexMetadata)
                     return d;
                 var m = new $root.proto.AIRichResponseMessage.AIRichResponseLatexMetadata();
@@ -2521,7 +2521,7 @@ export const proto = $root.proto = (() => {
                     for (var i = 0; i < d.expressions.length; ++i) {
                         if (typeof d.expressions[i] !== "object")
                             throw TypeError(".proto.AIRichResponseMessage.AIRichResponseLatexMetadata.expressions: object expected");
-                        m.expressions[i] = $root.proto.AIRichResponseMessage.AIRichResponseLatexMetadata.AIRichResponseLatexExpression.fromObject(d.expressions[i]);
+                        m.expressions[i] = $root.proto.AIRichResponseMessage.AIRichResponseLatexMetadata.AIRichResponseLatexExpression.create(d.expressions[i]);
                     }
                 }
                 return m;
@@ -2715,7 +2715,7 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                AIRichResponseLatexExpression.fromObject = function fromObject(d) {
+                AIRichResponseLatexExpression.create = function fromObject(d) {
                     if (d instanceof $root.proto.AIRichResponseMessage.AIRichResponseLatexMetadata.AIRichResponseLatexExpression)
                         return d;
                     var m = new $root.proto.AIRichResponseMessage.AIRichResponseLatexMetadata.AIRichResponseLatexExpression();
@@ -2934,7 +2934,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            AIRichResponseMapMetadata.fromObject = function fromObject(d) {
+            AIRichResponseMapMetadata.create = function fromObject(d) {
                 if (d instanceof $root.proto.AIRichResponseMessage.AIRichResponseMapMetadata)
                     return d;
                 var m = new $root.proto.AIRichResponseMessage.AIRichResponseMapMetadata();
@@ -2957,7 +2957,7 @@ export const proto = $root.proto = (() => {
                     for (var i = 0; i < d.annotations.length; ++i) {
                         if (typeof d.annotations[i] !== "object")
                             throw TypeError(".proto.AIRichResponseMessage.AIRichResponseMapMetadata.annotations: object expected");
-                        m.annotations[i] = $root.proto.AIRichResponseMessage.AIRichResponseMapMetadata.AIRichResponseMapAnnotation.fromObject(d.annotations[i]);
+                        m.annotations[i] = $root.proto.AIRichResponseMessage.AIRichResponseMapMetadata.AIRichResponseMapAnnotation.create(d.annotations[i]);
                     }
                 }
                 if (d.showInfoList != null) {
@@ -3122,7 +3122,7 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                AIRichResponseMapAnnotation.fromObject = function fromObject(d) {
+                AIRichResponseMapAnnotation.create = function fromObject(d) {
                     if (d instanceof $root.proto.AIRichResponseMessage.AIRichResponseMapMetadata.AIRichResponseMapAnnotation)
                         return d;
                     var m = new $root.proto.AIRichResponseMessage.AIRichResponseMapMetadata.AIRichResponseMapAnnotation();
@@ -3369,7 +3369,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            AIRichResponseSubMessage.fromObject = function fromObject(d) {
+            AIRichResponseSubMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.AIRichResponseMessage.AIRichResponseSubMessage)
                     return d;
                 var m = new $root.proto.AIRichResponseMessage.AIRichResponseSubMessage();
@@ -3424,7 +3424,7 @@ export const proto = $root.proto = (() => {
                 if (d.gridImageMetadata != null) {
                     if (typeof d.gridImageMetadata !== "object")
                         throw TypeError(".proto.AIRichResponseMessage.AIRichResponseSubMessage.gridImageMetadata: object expected");
-                    m.gridImageMetadata = $root.proto.AIRichResponseMessage.AIRichResponseGridImageMetadata.fromObject(d.gridImageMetadata);
+                    m.gridImageMetadata = $root.proto.AIRichResponseMessage.AIRichResponseGridImageMetadata.create(d.gridImageMetadata);
                 }
                 if (d.messageText != null) {
                     m.messageText = String(d.messageText);
@@ -3432,37 +3432,37 @@ export const proto = $root.proto = (() => {
                 if (d.imageMetadata != null) {
                     if (typeof d.imageMetadata !== "object")
                         throw TypeError(".proto.AIRichResponseMessage.AIRichResponseSubMessage.imageMetadata: object expected");
-                    m.imageMetadata = $root.proto.AIRichResponseMessage.AIRichResponseInlineImageMetadata.fromObject(d.imageMetadata);
+                    m.imageMetadata = $root.proto.AIRichResponseMessage.AIRichResponseInlineImageMetadata.create(d.imageMetadata);
                 }
                 if (d.codeMetadata != null) {
                     if (typeof d.codeMetadata !== "object")
                         throw TypeError(".proto.AIRichResponseMessage.AIRichResponseSubMessage.codeMetadata: object expected");
-                    m.codeMetadata = $root.proto.AIRichResponseMessage.AIRichResponseCodeMetadata.fromObject(d.codeMetadata);
+                    m.codeMetadata = $root.proto.AIRichResponseMessage.AIRichResponseCodeMetadata.create(d.codeMetadata);
                 }
                 if (d.tableMetadata != null) {
                     if (typeof d.tableMetadata !== "object")
                         throw TypeError(".proto.AIRichResponseMessage.AIRichResponseSubMessage.tableMetadata: object expected");
-                    m.tableMetadata = $root.proto.AIRichResponseMessage.AIRichResponseTableMetadata.fromObject(d.tableMetadata);
+                    m.tableMetadata = $root.proto.AIRichResponseMessage.AIRichResponseTableMetadata.create(d.tableMetadata);
                 }
                 if (d.dynamicMetadata != null) {
                     if (typeof d.dynamicMetadata !== "object")
                         throw TypeError(".proto.AIRichResponseMessage.AIRichResponseSubMessage.dynamicMetadata: object expected");
-                    m.dynamicMetadata = $root.proto.AIRichResponseMessage.AIRichResponseDynamicMetadata.fromObject(d.dynamicMetadata);
+                    m.dynamicMetadata = $root.proto.AIRichResponseMessage.AIRichResponseDynamicMetadata.create(d.dynamicMetadata);
                 }
                 if (d.latexMetadata != null) {
                     if (typeof d.latexMetadata !== "object")
                         throw TypeError(".proto.AIRichResponseMessage.AIRichResponseSubMessage.latexMetadata: object expected");
-                    m.latexMetadata = $root.proto.AIRichResponseMessage.AIRichResponseLatexMetadata.fromObject(d.latexMetadata);
+                    m.latexMetadata = $root.proto.AIRichResponseMessage.AIRichResponseLatexMetadata.create(d.latexMetadata);
                 }
                 if (d.mapMetadata != null) {
                     if (typeof d.mapMetadata !== "object")
                         throw TypeError(".proto.AIRichResponseMessage.AIRichResponseSubMessage.mapMetadata: object expected");
-                    m.mapMetadata = $root.proto.AIRichResponseMessage.AIRichResponseMapMetadata.fromObject(d.mapMetadata);
+                    m.mapMetadata = $root.proto.AIRichResponseMessage.AIRichResponseMapMetadata.create(d.mapMetadata);
                 }
                 if (d.contentItemsMetadata != null) {
                     if (typeof d.contentItemsMetadata !== "object")
                         throw TypeError(".proto.AIRichResponseMessage.AIRichResponseSubMessage.contentItemsMetadata: object expected");
-                    m.contentItemsMetadata = $root.proto.AIRichResponseMessage.AIRichResponseContentItemsMetadata.fromObject(d.contentItemsMetadata);
+                    m.contentItemsMetadata = $root.proto.AIRichResponseMessage.AIRichResponseContentItemsMetadata.create(d.contentItemsMetadata);
                 }
                 return m;
             };
@@ -3602,7 +3602,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            AIRichResponseTableMetadata.fromObject = function fromObject(d) {
+            AIRichResponseTableMetadata.create = function fromObject(d) {
                 if (d instanceof $root.proto.AIRichResponseMessage.AIRichResponseTableMetadata)
                     return d;
                 var m = new $root.proto.AIRichResponseMessage.AIRichResponseTableMetadata();
@@ -3613,7 +3613,7 @@ export const proto = $root.proto = (() => {
                     for (var i = 0; i < d.rows.length; ++i) {
                         if (typeof d.rows[i] !== "object")
                             throw TypeError(".proto.AIRichResponseMessage.AIRichResponseTableMetadata.rows: object expected");
-                        m.rows[i] = $root.proto.AIRichResponseMessage.AIRichResponseTableMetadata.AIRichResponseTableRow.fromObject(d.rows[i]);
+                        m.rows[i] = $root.proto.AIRichResponseMessage.AIRichResponseTableMetadata.AIRichResponseTableRow.create(d.rows[i]);
                     }
                 }
                 return m;
@@ -3710,7 +3710,7 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                AIRichResponseTableRow.fromObject = function fromObject(d) {
+                AIRichResponseTableRow.create = function fromObject(d) {
                     if (d instanceof $root.proto.AIRichResponseMessage.AIRichResponseTableMetadata.AIRichResponseTableRow)
                         return d;
                     var m = new $root.proto.AIRichResponseMessage.AIRichResponseTableMetadata.AIRichResponseTableRow();
@@ -3818,7 +3818,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            AIRichResponseUnifiedResponse.fromObject = function fromObject(d) {
+            AIRichResponseUnifiedResponse.create = function fromObject(d) {
                 if (d instanceof $root.proto.AIRichResponseMessage.AIRichResponseUnifiedResponse)
                     return d;
                 var m = new $root.proto.AIRichResponseMessage.AIRichResponseUnifiedResponse();
@@ -3951,7 +3951,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        Account.fromObject = function fromObject(d) {
+        Account.create = function fromObject(d) {
             if (d instanceof $root.proto.Account)
                 return d;
             var m = new $root.proto.Account();
@@ -4076,7 +4076,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        ActionLink.fromObject = function fromObject(d) {
+        ActionLink.create = function fromObject(d) {
             if (d instanceof $root.proto.ActionLink)
                 return d;
             var m = new $root.proto.ActionLink();
@@ -4211,7 +4211,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        AutoDownloadSettings.fromObject = function fromObject(d) {
+        AutoDownloadSettings.create = function fromObject(d) {
             if (d instanceof $root.proto.AutoDownloadSettings)
                 return d;
             var m = new $root.proto.AutoDownloadSettings();
@@ -4336,7 +4336,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        AvatarUserSettings.fromObject = function fromObject(d) {
+        AvatarUserSettings.create = function fromObject(d) {
             if (d instanceof $root.proto.AvatarUserSettings)
                 return d;
             var m = new $root.proto.AvatarUserSettings();
@@ -4484,7 +4484,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        BizAccountLinkInfo.fromObject = function fromObject(d) {
+        BizAccountLinkInfo.create = function fromObject(d) {
             if (d instanceof $root.proto.BizAccountLinkInfo)
                 return d;
             var m = new $root.proto.BizAccountLinkInfo();
@@ -4672,14 +4672,14 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        BizAccountPayload.fromObject = function fromObject(d) {
+        BizAccountPayload.create = function fromObject(d) {
             if (d instanceof $root.proto.BizAccountPayload)
                 return d;
             var m = new $root.proto.BizAccountPayload();
             if (d.vnameCert != null) {
                 if (typeof d.vnameCert !== "object")
                     throw TypeError(".proto.BizAccountPayload.vnameCert: object expected");
-                m.vnameCert = $root.proto.VerifiedNameCertificate.fromObject(d.vnameCert);
+                m.vnameCert = $root.proto.VerifiedNameCertificate.create(d.vnameCert);
             }
             if (d.bizAcctLinkInfo != null) {
                 if (typeof d.bizAcctLinkInfo === "string")
@@ -4864,7 +4864,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        BizIdentityInfo.fromObject = function fromObject(d) {
+        BizIdentityInfo.create = function fromObject(d) {
             if (d instanceof $root.proto.BizIdentityInfo)
                 return d;
             var m = new $root.proto.BizIdentityInfo();
@@ -4891,7 +4891,7 @@ export const proto = $root.proto = (() => {
             if (d.vnameCert != null) {
                 if (typeof d.vnameCert !== "object")
                     throw TypeError(".proto.BizIdentityInfo.vnameCert: object expected");
-                m.vnameCert = $root.proto.VerifiedNameCertificate.fromObject(d.vnameCert);
+                m.vnameCert = $root.proto.VerifiedNameCertificate.create(d.vnameCert);
             }
             if (d.signed != null) {
                 m.signed = Boolean(d.signed);
@@ -5108,7 +5108,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        BotAgeCollectionMetadata.fromObject = function fromObject(d) {
+        BotAgeCollectionMetadata.create = function fromObject(d) {
             if (d instanceof $root.proto.BotAgeCollectionMetadata)
                 return d;
             var m = new $root.proto.BotAgeCollectionMetadata();
@@ -5256,7 +5256,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        BotAvatarMetadata.fromObject = function fromObject(d) {
+        BotAvatarMetadata.create = function fromObject(d) {
             if (d instanceof $root.proto.BotAvatarMetadata)
                 return d;
             var m = new $root.proto.BotAvatarMetadata();
@@ -5380,7 +5380,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        BotCapabilityMetadata.fromObject = function fromObject(d) {
+        BotCapabilityMetadata.create = function fromObject(d) {
             if (d instanceof $root.proto.BotCapabilityMetadata)
                 return d;
             var m = new $root.proto.BotCapabilityMetadata();
@@ -5668,7 +5668,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        BotImagineMetadata.fromObject = function fromObject(d) {
+        BotImagineMetadata.create = function fromObject(d) {
             if (d instanceof $root.proto.BotImagineMetadata)
                 return d;
             var m = new $root.proto.BotImagineMetadata();
@@ -5791,7 +5791,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        BotLinkedAccount.fromObject = function fromObject(d) {
+        BotLinkedAccount.create = function fromObject(d) {
             if (d instanceof $root.proto.BotLinkedAccount)
                 return d;
             var m = new $root.proto.BotLinkedAccount();
@@ -5919,7 +5919,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        BotLinkedAccountsMetadata.fromObject = function fromObject(d) {
+        BotLinkedAccountsMetadata.create = function fromObject(d) {
             if (d instanceof $root.proto.BotLinkedAccountsMetadata)
                 return d;
             var m = new $root.proto.BotLinkedAccountsMetadata();
@@ -5930,7 +5930,7 @@ export const proto = $root.proto = (() => {
                 for (var i = 0; i < d.accounts.length; ++i) {
                     if (typeof d.accounts[i] !== "object")
                         throw TypeError(".proto.BotLinkedAccountsMetadata.accounts: object expected");
-                    m.accounts[i] = $root.proto.BotLinkedAccount.fromObject(d.accounts[i]);
+                    m.accounts[i] = $root.proto.BotLinkedAccount.create(d.accounts[i]);
                 }
             }
             if (d.acAuthTokens != null) {
@@ -6115,7 +6115,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        BotMediaMetadata.fromObject = function fromObject(d) {
+        BotMediaMetadata.create = function fromObject(d) {
             if (d instanceof $root.proto.BotMediaMetadata)
                 return d;
             var m = new $root.proto.BotMediaMetadata();
@@ -6299,7 +6299,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        BotMemoryFact.fromObject = function fromObject(d) {
+        BotMemoryFact.create = function fromObject(d) {
             if (d instanceof $root.proto.BotMemoryFact)
                 return d;
             var m = new $root.proto.BotMemoryFact();
@@ -6419,7 +6419,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        BotMemoryMetadata.fromObject = function fromObject(d) {
+        BotMemoryMetadata.create = function fromObject(d) {
             if (d instanceof $root.proto.BotMemoryMetadata)
                 return d;
             var m = new $root.proto.BotMemoryMetadata();
@@ -6430,7 +6430,7 @@ export const proto = $root.proto = (() => {
                 for (var i = 0; i < d.addedFacts.length; ++i) {
                     if (typeof d.addedFacts[i] !== "object")
                         throw TypeError(".proto.BotMemoryMetadata.addedFacts: object expected");
-                    m.addedFacts[i] = $root.proto.BotMemoryFact.fromObject(d.addedFacts[i]);
+                    m.addedFacts[i] = $root.proto.BotMemoryFact.create(d.addedFacts[i]);
                 }
             }
             if (d.removedFacts) {
@@ -6440,7 +6440,7 @@ export const proto = $root.proto = (() => {
                 for (var i = 0; i < d.removedFacts.length; ++i) {
                     if (typeof d.removedFacts[i] !== "object")
                         throw TypeError(".proto.BotMemoryMetadata.removedFacts: object expected");
-                    m.removedFacts[i] = $root.proto.BotMemoryFact.fromObject(d.removedFacts[i]);
+                    m.removedFacts[i] = $root.proto.BotMemoryFact.create(d.removedFacts[i]);
                 }
             }
             if (d.disclaimer != null) {
@@ -6540,7 +6540,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        BotMemuMetadata.fromObject = function fromObject(d) {
+        BotMemuMetadata.create = function fromObject(d) {
             if (d instanceof $root.proto.BotMemuMetadata)
                 return d;
             var m = new $root.proto.BotMemuMetadata();
@@ -6551,7 +6551,7 @@ export const proto = $root.proto = (() => {
                 for (var i = 0; i < d.faceImages.length; ++i) {
                     if (typeof d.faceImages[i] !== "object")
                         throw TypeError(".proto.BotMemuMetadata.faceImages: object expected");
-                    m.faceImages[i] = $root.proto.BotMediaMetadata.fromObject(d.faceImages[i]);
+                    m.faceImages[i] = $root.proto.BotMediaMetadata.create(d.faceImages[i]);
                 }
             }
             return m;
@@ -6938,14 +6938,14 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        BotMetadata.fromObject = function fromObject(d) {
+        BotMetadata.create = function fromObject(d) {
             if (d instanceof $root.proto.BotMetadata)
                 return d;
             var m = new $root.proto.BotMetadata();
             if (d.avatarMetadata != null) {
                 if (typeof d.avatarMetadata !== "object")
                     throw TypeError(".proto.BotMetadata.avatarMetadata: object expected");
-                m.avatarMetadata = $root.proto.BotAvatarMetadata.fromObject(d.avatarMetadata);
+                m.avatarMetadata = $root.proto.BotAvatarMetadata.create(d.avatarMetadata);
             }
             if (d.personaId != null) {
                 m.personaId = String(d.personaId);
@@ -6953,12 +6953,12 @@ export const proto = $root.proto = (() => {
             if (d.pluginMetadata != null) {
                 if (typeof d.pluginMetadata !== "object")
                     throw TypeError(".proto.BotMetadata.pluginMetadata: object expected");
-                m.pluginMetadata = $root.proto.BotPluginMetadata.fromObject(d.pluginMetadata);
+                m.pluginMetadata = $root.proto.BotPluginMetadata.create(d.pluginMetadata);
             }
             if (d.suggestedPromptMetadata != null) {
                 if (typeof d.suggestedPromptMetadata !== "object")
                     throw TypeError(".proto.BotMetadata.suggestedPromptMetadata: object expected");
-                m.suggestedPromptMetadata = $root.proto.BotSuggestedPromptMetadata.fromObject(d.suggestedPromptMetadata);
+                m.suggestedPromptMetadata = $root.proto.BotSuggestedPromptMetadata.create(d.suggestedPromptMetadata);
             }
             if (d.invokerJid != null) {
                 m.invokerJid = String(d.invokerJid);
@@ -6966,12 +6966,12 @@ export const proto = $root.proto = (() => {
             if (d.sessionMetadata != null) {
                 if (typeof d.sessionMetadata !== "object")
                     throw TypeError(".proto.BotMetadata.sessionMetadata: object expected");
-                m.sessionMetadata = $root.proto.BotSessionMetadata.fromObject(d.sessionMetadata);
+                m.sessionMetadata = $root.proto.BotSessionMetadata.create(d.sessionMetadata);
             }
             if (d.memuMetadata != null) {
                 if (typeof d.memuMetadata !== "object")
                     throw TypeError(".proto.BotMetadata.memuMetadata: object expected");
-                m.memuMetadata = $root.proto.BotMemuMetadata.fromObject(d.memuMetadata);
+                m.memuMetadata = $root.proto.BotMemuMetadata.create(d.memuMetadata);
             }
             if (d.timezone != null) {
                 m.timezone = String(d.timezone);
@@ -6979,12 +6979,12 @@ export const proto = $root.proto = (() => {
             if (d.reminderMetadata != null) {
                 if (typeof d.reminderMetadata !== "object")
                     throw TypeError(".proto.BotMetadata.reminderMetadata: object expected");
-                m.reminderMetadata = $root.proto.BotReminderMetadata.fromObject(d.reminderMetadata);
+                m.reminderMetadata = $root.proto.BotReminderMetadata.create(d.reminderMetadata);
             }
             if (d.modelMetadata != null) {
                 if (typeof d.modelMetadata !== "object")
                     throw TypeError(".proto.BotMetadata.modelMetadata: object expected");
-                m.modelMetadata = $root.proto.BotModelMetadata.fromObject(d.modelMetadata);
+                m.modelMetadata = $root.proto.BotModelMetadata.create(d.modelMetadata);
             }
             if (d.messageDisclaimerText != null) {
                 m.messageDisclaimerText = String(d.messageDisclaimerText);
@@ -6992,42 +6992,42 @@ export const proto = $root.proto = (() => {
             if (d.progressIndicatorMetadata != null) {
                 if (typeof d.progressIndicatorMetadata !== "object")
                     throw TypeError(".proto.BotMetadata.progressIndicatorMetadata: object expected");
-                m.progressIndicatorMetadata = $root.proto.BotProgressIndicatorMetadata.fromObject(d.progressIndicatorMetadata);
+                m.progressIndicatorMetadata = $root.proto.BotProgressIndicatorMetadata.create(d.progressIndicatorMetadata);
             }
             if (d.capabilityMetadata != null) {
                 if (typeof d.capabilityMetadata !== "object")
                     throw TypeError(".proto.BotMetadata.capabilityMetadata: object expected");
-                m.capabilityMetadata = $root.proto.BotCapabilityMetadata.fromObject(d.capabilityMetadata);
+                m.capabilityMetadata = $root.proto.BotCapabilityMetadata.create(d.capabilityMetadata);
             }
             if (d.imagineMetadata != null) {
                 if (typeof d.imagineMetadata !== "object")
                     throw TypeError(".proto.BotMetadata.imagineMetadata: object expected");
-                m.imagineMetadata = $root.proto.BotImagineMetadata.fromObject(d.imagineMetadata);
+                m.imagineMetadata = $root.proto.BotImagineMetadata.create(d.imagineMetadata);
             }
             if (d.memoryMetadata != null) {
                 if (typeof d.memoryMetadata !== "object")
                     throw TypeError(".proto.BotMetadata.memoryMetadata: object expected");
-                m.memoryMetadata = $root.proto.BotMemoryMetadata.fromObject(d.memoryMetadata);
+                m.memoryMetadata = $root.proto.BotMemoryMetadata.create(d.memoryMetadata);
             }
             if (d.renderingMetadata != null) {
                 if (typeof d.renderingMetadata !== "object")
                     throw TypeError(".proto.BotMetadata.renderingMetadata: object expected");
-                m.renderingMetadata = $root.proto.BotRenderingMetadata.fromObject(d.renderingMetadata);
+                m.renderingMetadata = $root.proto.BotRenderingMetadata.create(d.renderingMetadata);
             }
             if (d.botMetricsMetadata != null) {
                 if (typeof d.botMetricsMetadata !== "object")
                     throw TypeError(".proto.BotMetadata.botMetricsMetadata: object expected");
-                m.botMetricsMetadata = $root.proto.BotMetricsMetadata.fromObject(d.botMetricsMetadata);
+                m.botMetricsMetadata = $root.proto.BotMetricsMetadata.create(d.botMetricsMetadata);
             }
             if (d.botLinkedAccountsMetadata != null) {
                 if (typeof d.botLinkedAccountsMetadata !== "object")
                     throw TypeError(".proto.BotMetadata.botLinkedAccountsMetadata: object expected");
-                m.botLinkedAccountsMetadata = $root.proto.BotLinkedAccountsMetadata.fromObject(d.botLinkedAccountsMetadata);
+                m.botLinkedAccountsMetadata = $root.proto.BotLinkedAccountsMetadata.create(d.botLinkedAccountsMetadata);
             }
             if (d.richResponseSourcesMetadata != null) {
                 if (typeof d.richResponseSourcesMetadata !== "object")
                     throw TypeError(".proto.BotMetadata.richResponseSourcesMetadata: object expected");
-                m.richResponseSourcesMetadata = $root.proto.BotSourcesMetadata.fromObject(d.richResponseSourcesMetadata);
+                m.richResponseSourcesMetadata = $root.proto.BotSourcesMetadata.create(d.richResponseSourcesMetadata);
             }
             if (d.aiConversationContext != null) {
                 if (typeof d.aiConversationContext === "string")
@@ -7038,22 +7038,22 @@ export const proto = $root.proto = (() => {
             if (d.botPromotionMessageMetadata != null) {
                 if (typeof d.botPromotionMessageMetadata !== "object")
                     throw TypeError(".proto.BotMetadata.botPromotionMessageMetadata: object expected");
-                m.botPromotionMessageMetadata = $root.proto.BotPromotionMessageMetadata.fromObject(d.botPromotionMessageMetadata);
+                m.botPromotionMessageMetadata = $root.proto.BotPromotionMessageMetadata.create(d.botPromotionMessageMetadata);
             }
             if (d.botModeSelectionMetadata != null) {
                 if (typeof d.botModeSelectionMetadata !== "object")
                     throw TypeError(".proto.BotMetadata.botModeSelectionMetadata: object expected");
-                m.botModeSelectionMetadata = $root.proto.BotModeSelectionMetadata.fromObject(d.botModeSelectionMetadata);
+                m.botModeSelectionMetadata = $root.proto.BotModeSelectionMetadata.create(d.botModeSelectionMetadata);
             }
             if (d.botQuotaMetadata != null) {
                 if (typeof d.botQuotaMetadata !== "object")
                     throw TypeError(".proto.BotMetadata.botQuotaMetadata: object expected");
-                m.botQuotaMetadata = $root.proto.BotQuotaMetadata.fromObject(d.botQuotaMetadata);
+                m.botQuotaMetadata = $root.proto.BotQuotaMetadata.create(d.botQuotaMetadata);
             }
             if (d.botAgeCollectionMetadata != null) {
                 if (typeof d.botAgeCollectionMetadata !== "object")
                     throw TypeError(".proto.BotMetadata.botAgeCollectionMetadata: object expected");
-                m.botAgeCollectionMetadata = $root.proto.BotAgeCollectionMetadata.fromObject(d.botAgeCollectionMetadata);
+                m.botAgeCollectionMetadata = $root.proto.BotAgeCollectionMetadata.create(d.botAgeCollectionMetadata);
             }
             return m;
         };
@@ -7306,7 +7306,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        BotMetricsMetadata.fromObject = function fromObject(d) {
+        BotMetricsMetadata.create = function fromObject(d) {
             if (d instanceof $root.proto.BotMetricsMetadata)
                 return d;
             var m = new $root.proto.BotMetricsMetadata();
@@ -7545,7 +7545,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        BotModeSelectionMetadata.fromObject = function fromObject(d) {
+        BotModeSelectionMetadata.create = function fromObject(d) {
             if (d instanceof $root.proto.BotModeSelectionMetadata)
                 return d;
             var m = new $root.proto.BotModeSelectionMetadata();
@@ -7676,7 +7676,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        BotModelMetadata.fromObject = function fromObject(d) {
+        BotModelMetadata.create = function fromObject(d) {
             if (d instanceof $root.proto.BotModelMetadata)
                 return d;
             var m = new $root.proto.BotModelMetadata();
@@ -7965,7 +7965,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        BotPluginMetadata.fromObject = function fromObject(d) {
+        BotPluginMetadata.create = function fromObject(d) {
             if (d instanceof $root.proto.BotPluginMetadata)
                 return d;
             var m = new $root.proto.BotPluginMetadata();
@@ -8034,7 +8034,7 @@ export const proto = $root.proto = (() => {
             if (d.parentPluginMessageKey != null) {
                 if (typeof d.parentPluginMessageKey !== "object")
                     throw TypeError(".proto.BotPluginMetadata.parentPluginMessageKey: object expected");
-                m.parentPluginMessageKey = $root.proto.MessageKey.fromObject(d.parentPluginMessageKey);
+                m.parentPluginMessageKey = $root.proto.MessageKey.create(d.parentPluginMessageKey);
             }
             switch (d.deprecatedField) {
             default:
@@ -8244,7 +8244,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        BotProgressIndicatorMetadata.fromObject = function fromObject(d) {
+        BotProgressIndicatorMetadata.create = function fromObject(d) {
             if (d instanceof $root.proto.BotProgressIndicatorMetadata)
                 return d;
             var m = new $root.proto.BotProgressIndicatorMetadata();
@@ -8258,7 +8258,7 @@ export const proto = $root.proto = (() => {
                 for (var i = 0; i < d.stepsMetadata.length; ++i) {
                     if (typeof d.stepsMetadata[i] !== "object")
                         throw TypeError(".proto.BotProgressIndicatorMetadata.stepsMetadata: object expected");
-                    m.stepsMetadata[i] = $root.proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.fromObject(d.stepsMetadata[i]);
+                    m.stepsMetadata[i] = $root.proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.create(d.stepsMetadata[i]);
                 }
             }
             return m;
@@ -8424,7 +8424,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            BotPlanningStepMetadata.fromObject = function fromObject(d) {
+            BotPlanningStepMetadata.create = function fromObject(d) {
                 if (d instanceof $root.proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata)
                     return d;
                 var m = new $root.proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata();
@@ -8441,7 +8441,7 @@ export const proto = $root.proto = (() => {
                     for (var i = 0; i < d.sourcesMetadata.length; ++i) {
                         if (typeof d.sourcesMetadata[i] !== "object")
                             throw TypeError(".proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.sourcesMetadata: object expected");
-                        m.sourcesMetadata[i] = $root.proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.fromObject(d.sourcesMetadata[i]);
+                        m.sourcesMetadata[i] = $root.proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.create(d.sourcesMetadata[i]);
                     }
                 }
                 switch (d.status) {
@@ -8481,7 +8481,7 @@ export const proto = $root.proto = (() => {
                     for (var i = 0; i < d.sections.length; ++i) {
                         if (typeof d.sections[i] !== "object")
                             throw TypeError(".proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.sections: object expected");
-                        m.sections[i] = $root.proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata.fromObject(d.sections[i]);
+                        m.sections[i] = $root.proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata.create(d.sections[i]);
                     }
                 }
                 return m;
@@ -8637,7 +8637,7 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                BotPlanningSearchSourceMetadata.fromObject = function fromObject(d) {
+                BotPlanningSearchSourceMetadata.create = function fromObject(d) {
                     if (d instanceof $root.proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata)
                         return d;
                     var m = new $root.proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata();
@@ -8796,7 +8796,7 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                BotPlanningSearchSourcesMetadata.fromObject = function fromObject(d) {
+                BotPlanningSearchSourcesMetadata.create = function fromObject(d) {
                     if (d instanceof $root.proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata)
                         return d;
                     var m = new $root.proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata();
@@ -8955,7 +8955,7 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                BotPlanningStepSectionMetadata.fromObject = function fromObject(d) {
+                BotPlanningStepSectionMetadata.create = function fromObject(d) {
                     if (d instanceof $root.proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata)
                         return d;
                     var m = new $root.proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata();
@@ -8972,7 +8972,7 @@ export const proto = $root.proto = (() => {
                         for (var i = 0; i < d.sourcesMetadata.length; ++i) {
                             if (typeof d.sourcesMetadata[i] !== "object")
                                 throw TypeError(".proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata.sourcesMetadata: object expected");
-                            m.sourcesMetadata[i] = $root.proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata.fromObject(d.sourcesMetadata[i]);
+                            m.sourcesMetadata[i] = $root.proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata.create(d.sourcesMetadata[i]);
                         }
                     }
                     return m;
@@ -9107,7 +9107,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        BotPromotionMessageMetadata.fromObject = function fromObject(d) {
+        BotPromotionMessageMetadata.create = function fromObject(d) {
             if (d instanceof $root.proto.BotPromotionMessageMetadata)
                 return d;
             var m = new $root.proto.BotPromotionMessageMetadata();
@@ -9236,7 +9236,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        BotPromptSuggestion.fromObject = function fromObject(d) {
+        BotPromptSuggestion.create = function fromObject(d) {
             if (d instanceof $root.proto.BotPromptSuggestion)
                 return d;
             var m = new $root.proto.BotPromptSuggestion();
@@ -9329,7 +9329,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        BotPromptSuggestions.fromObject = function fromObject(d) {
+        BotPromptSuggestions.create = function fromObject(d) {
             if (d instanceof $root.proto.BotPromptSuggestions)
                 return d;
             var m = new $root.proto.BotPromptSuggestions();
@@ -9340,7 +9340,7 @@ export const proto = $root.proto = (() => {
                 for (var i = 0; i < d.suggestions.length; ++i) {
                     if (typeof d.suggestions[i] !== "object")
                         throw TypeError(".proto.BotPromptSuggestions.suggestions: object expected");
-                    m.suggestions[i] = $root.proto.BotPromptSuggestion.fromObject(d.suggestions[i]);
+                    m.suggestions[i] = $root.proto.BotPromptSuggestion.create(d.suggestions[i]);
                 }
             }
             return m;
@@ -9425,7 +9425,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        BotQuotaMetadata.fromObject = function fromObject(d) {
+        BotQuotaMetadata.create = function fromObject(d) {
             if (d instanceof $root.proto.BotQuotaMetadata)
                 return d;
             var m = new $root.proto.BotQuotaMetadata();
@@ -9436,7 +9436,7 @@ export const proto = $root.proto = (() => {
                 for (var i = 0; i < d.botFeatureQuotaMetadata.length; ++i) {
                     if (typeof d.botFeatureQuotaMetadata[i] !== "object")
                         throw TypeError(".proto.BotQuotaMetadata.botFeatureQuotaMetadata: object expected");
-                    m.botFeatureQuotaMetadata[i] = $root.proto.BotQuotaMetadata.BotFeatureQuotaMetadata.fromObject(d.botFeatureQuotaMetadata[i]);
+                    m.botFeatureQuotaMetadata[i] = $root.proto.BotQuotaMetadata.BotFeatureQuotaMetadata.create(d.botFeatureQuotaMetadata[i]);
                 }
             }
             return m;
@@ -9547,7 +9547,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            BotFeatureQuotaMetadata.fromObject = function fromObject(d) {
+            BotFeatureQuotaMetadata.create = function fromObject(d) {
                 if (d instanceof $root.proto.BotQuotaMetadata.BotFeatureQuotaMetadata)
                     return d;
                 var m = new $root.proto.BotQuotaMetadata.BotFeatureQuotaMetadata();
@@ -9736,14 +9736,14 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        BotReminderMetadata.fromObject = function fromObject(d) {
+        BotReminderMetadata.create = function fromObject(d) {
             if (d instanceof $root.proto.BotReminderMetadata)
                 return d;
             var m = new $root.proto.BotReminderMetadata();
             if (d.requestMessageKey != null) {
                 if (typeof d.requestMessageKey !== "object")
                     throw TypeError(".proto.BotReminderMetadata.requestMessageKey: object expected");
-                m.requestMessageKey = $root.proto.MessageKey.fromObject(d.requestMessageKey);
+                m.requestMessageKey = $root.proto.MessageKey.create(d.requestMessageKey);
             }
             switch (d.action) {
             default:
@@ -9930,7 +9930,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        BotRenderingMetadata.fromObject = function fromObject(d) {
+        BotRenderingMetadata.create = function fromObject(d) {
             if (d instanceof $root.proto.BotRenderingMetadata)
                 return d;
             var m = new $root.proto.BotRenderingMetadata();
@@ -9941,7 +9941,7 @@ export const proto = $root.proto = (() => {
                 for (var i = 0; i < d.keywords.length; ++i) {
                     if (typeof d.keywords[i] !== "object")
                         throw TypeError(".proto.BotRenderingMetadata.keywords: object expected");
-                    m.keywords[i] = $root.proto.BotRenderingMetadata.Keyword.fromObject(d.keywords[i]);
+                    m.keywords[i] = $root.proto.BotRenderingMetadata.Keyword.create(d.keywords[i]);
                 }
             }
             return m;
@@ -10038,7 +10038,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            Keyword.fromObject = function fromObject(d) {
+            Keyword.create = function fromObject(d) {
                 if (d instanceof $root.proto.BotRenderingMetadata.Keyword)
                     return d;
                 var m = new $root.proto.BotRenderingMetadata.Keyword();
@@ -10159,7 +10159,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        BotSessionMetadata.fromObject = function fromObject(d) {
+        BotSessionMetadata.create = function fromObject(d) {
             if (d instanceof $root.proto.BotSessionMetadata)
                 return d;
             var m = new $root.proto.BotSessionMetadata();
@@ -10297,7 +10297,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        BotSourcesMetadata.fromObject = function fromObject(d) {
+        BotSourcesMetadata.create = function fromObject(d) {
             if (d instanceof $root.proto.BotSourcesMetadata)
                 return d;
             var m = new $root.proto.BotSourcesMetadata();
@@ -10308,7 +10308,7 @@ export const proto = $root.proto = (() => {
                 for (var i = 0; i < d.sources.length; ++i) {
                     if (typeof d.sources[i] !== "object")
                         throw TypeError(".proto.BotSourcesMetadata.sources: object expected");
-                    m.sources[i] = $root.proto.BotSourcesMetadata.BotSourceItem.fromObject(d.sources[i]);
+                    m.sources[i] = $root.proto.BotSourcesMetadata.BotSourceItem.create(d.sources[i]);
                 }
             }
             return m;
@@ -10458,7 +10458,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            BotSourceItem.fromObject = function fromObject(d) {
+            BotSourceItem.create = function fromObject(d) {
                 if (d instanceof $root.proto.BotSourcesMetadata.BotSourceItem)
                     return d;
                 var m = new $root.proto.BotSourcesMetadata.BotSourceItem();
@@ -10657,7 +10657,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        BotSuggestedPromptMetadata.fromObject = function fromObject(d) {
+        BotSuggestedPromptMetadata.create = function fromObject(d) {
             if (d instanceof $root.proto.BotSuggestedPromptMetadata)
                 return d;
             var m = new $root.proto.BotSuggestedPromptMetadata();
@@ -10675,7 +10675,7 @@ export const proto = $root.proto = (() => {
             if (d.promptSuggestions != null) {
                 if (typeof d.promptSuggestions !== "object")
                     throw TypeError(".proto.BotSuggestedPromptMetadata.promptSuggestions: object expected");
-                m.promptSuggestions = $root.proto.BotPromptSuggestions.fromObject(d.promptSuggestions);
+                m.promptSuggestions = $root.proto.BotPromptSuggestions.create(d.promptSuggestions);
             }
             if (d.selectedPromptId != null) {
                 m.selectedPromptId = String(d.selectedPromptId);
@@ -10961,7 +10961,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        CallLogRecord.fromObject = function fromObject(d) {
+        CallLogRecord.create = function fromObject(d) {
             if (d instanceof $root.proto.CallLogRecord)
                 return d;
             var m = new $root.proto.CallLogRecord();
@@ -11095,7 +11095,7 @@ export const proto = $root.proto = (() => {
                 for (var i = 0; i < d.participants.length; ++i) {
                     if (typeof d.participants[i] !== "object")
                         throw TypeError(".proto.CallLogRecord.participants: object expected");
-                    m.participants[i] = $root.proto.CallLogRecord.ParticipantInfo.fromObject(d.participants[i]);
+                    m.participants[i] = $root.proto.CallLogRecord.ParticipantInfo.create(d.participants[i]);
                 }
             }
             switch (d.callType) {
@@ -11313,7 +11313,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            ParticipantInfo.fromObject = function fromObject(d) {
+            ParticipantInfo.create = function fromObject(d) {
                 if (d instanceof $root.proto.CallLogRecord.ParticipantInfo)
                     return d;
                 var m = new $root.proto.CallLogRecord.ParticipantInfo();
@@ -11483,19 +11483,19 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        CertChain.fromObject = function fromObject(d) {
+        CertChain.create = function fromObject(d) {
             if (d instanceof $root.proto.CertChain)
                 return d;
             var m = new $root.proto.CertChain();
             if (d.leaf != null) {
                 if (typeof d.leaf !== "object")
                     throw TypeError(".proto.CertChain.leaf: object expected");
-                m.leaf = $root.proto.CertChain.NoiseCertificate.fromObject(d.leaf);
+                m.leaf = $root.proto.CertChain.NoiseCertificate.create(d.leaf);
             }
             if (d.intermediate != null) {
                 if (typeof d.intermediate !== "object")
                     throw TypeError(".proto.CertChain.intermediate: object expected");
-                m.intermediate = $root.proto.CertChain.NoiseCertificate.fromObject(d.intermediate);
+                m.intermediate = $root.proto.CertChain.NoiseCertificate.create(d.intermediate);
             }
             return m;
         };
@@ -11593,7 +11593,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            NoiseCertificate.fromObject = function fromObject(d) {
+            NoiseCertificate.create = function fromObject(d) {
                 if (d instanceof $root.proto.CertChain.NoiseCertificate)
                     return d;
                 var m = new $root.proto.CertChain.NoiseCertificate();
@@ -11744,7 +11744,7 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                Details.fromObject = function fromObject(d) {
+                Details.create = function fromObject(d) {
                     if (d instanceof $root.proto.CertChain.NoiseCertificate.Details)
                         return d;
                     var m = new $root.proto.CertChain.NoiseCertificate.Details();
@@ -11906,7 +11906,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        ChatLockSettings.fromObject = function fromObject(d) {
+        ChatLockSettings.create = function fromObject(d) {
             if (d instanceof $root.proto.ChatLockSettings)
                 return d;
             var m = new $root.proto.ChatLockSettings();
@@ -11916,7 +11916,7 @@ export const proto = $root.proto = (() => {
             if (d.secretCode != null) {
                 if (typeof d.secretCode !== "object")
                     throw TypeError(".proto.ChatLockSettings.secretCode: object expected");
-                m.secretCode = $root.proto.UserPassword.fromObject(d.secretCode);
+                m.secretCode = $root.proto.UserPassword.create(d.secretCode);
             }
             return m;
         };
@@ -12004,14 +12004,14 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        ChatRowOpaqueData.fromObject = function fromObject(d) {
+        ChatRowOpaqueData.create = function fromObject(d) {
             if (d instanceof $root.proto.ChatRowOpaqueData)
                 return d;
             var m = new $root.proto.ChatRowOpaqueData();
             if (d.draftMessage != null) {
                 if (typeof d.draftMessage !== "object")
                     throw TypeError(".proto.ChatRowOpaqueData.draftMessage: object expected");
-                m.draftMessage = $root.proto.ChatRowOpaqueData.DraftMessage.fromObject(d.draftMessage);
+                m.draftMessage = $root.proto.ChatRowOpaqueData.DraftMessage.create(d.draftMessage);
             }
             return m;
         };
@@ -12143,7 +12143,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            DraftMessage.fromObject = function fromObject(d) {
+            DraftMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.ChatRowOpaqueData.DraftMessage)
                     return d;
                 var m = new $root.proto.ChatRowOpaqueData.DraftMessage();
@@ -12156,12 +12156,12 @@ export const proto = $root.proto = (() => {
                 if (d.ctwaContextLinkData != null) {
                     if (typeof d.ctwaContextLinkData !== "object")
                         throw TypeError(".proto.ChatRowOpaqueData.DraftMessage.ctwaContextLinkData: object expected");
-                    m.ctwaContextLinkData = $root.proto.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData.fromObject(d.ctwaContextLinkData);
+                    m.ctwaContextLinkData = $root.proto.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData.create(d.ctwaContextLinkData);
                 }
                 if (d.ctwaContext != null) {
                     if (typeof d.ctwaContext !== "object")
                         throw TypeError(".proto.ChatRowOpaqueData.DraftMessage.ctwaContext: object expected");
-                    m.ctwaContext = $root.proto.ChatRowOpaqueData.DraftMessage.CtwaContextData.fromObject(d.ctwaContext);
+                    m.ctwaContext = $root.proto.ChatRowOpaqueData.DraftMessage.CtwaContextData.create(d.ctwaContext);
                 }
                 if (d.timestamp != null) {
                     if ($util.Long)
@@ -12417,7 +12417,7 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                CtwaContextData.fromObject = function fromObject(d) {
+                CtwaContextData.create = function fromObject(d) {
                     if (d instanceof $root.proto.ChatRowOpaqueData.DraftMessage.CtwaContextData)
                         return d;
                     var m = new $root.proto.ChatRowOpaqueData.DraftMessage.CtwaContextData();
@@ -12660,7 +12660,7 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                CtwaContextLinkData.fromObject = function fromObject(d) {
+                CtwaContextLinkData.create = function fromObject(d) {
                     if (d instanceof $root.proto.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData)
                         return d;
                     var m = new $root.proto.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData();
@@ -12791,7 +12791,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        Citation.fromObject = function fromObject(d) {
+        Citation.create = function fromObject(d) {
             if (d instanceof $root.proto.Citation)
                 return d;
             var m = new $root.proto.Citation();
@@ -12914,7 +12914,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        ClientPairingProps.fromObject = function fromObject(d) {
+        ClientPairingProps.create = function fromObject(d) {
             if (d instanceof $root.proto.ClientPairingProps)
                 return d;
             var m = new $root.proto.ClientPairingProps();
@@ -13393,7 +13393,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        ClientPayload.fromObject = function fromObject(d) {
+        ClientPayload.create = function fromObject(d) {
             if (d instanceof $root.proto.ClientPayload)
                 return d;
             var m = new $root.proto.ClientPayload();
@@ -13413,12 +13413,12 @@ export const proto = $root.proto = (() => {
             if (d.userAgent != null) {
                 if (typeof d.userAgent !== "object")
                     throw TypeError(".proto.ClientPayload.userAgent: object expected");
-                m.userAgent = $root.proto.ClientPayload.UserAgent.fromObject(d.userAgent);
+                m.userAgent = $root.proto.ClientPayload.UserAgent.create(d.userAgent);
             }
             if (d.webInfo != null) {
                 if (typeof d.webInfo !== "object")
                     throw TypeError(".proto.ClientPayload.webInfo: object expected");
-                m.webInfo = $root.proto.ClientPayload.WebInfo.fromObject(d.webInfo);
+                m.webInfo = $root.proto.ClientPayload.WebInfo.create(d.webInfo);
             }
             if (d.pushName != null) {
                 m.pushName = String(d.pushName);
@@ -13544,7 +13544,7 @@ export const proto = $root.proto = (() => {
             if (d.dnsSource != null) {
                 if (typeof d.dnsSource !== "object")
                     throw TypeError(".proto.ClientPayload.dnsSource: object expected");
-                m.dnsSource = $root.proto.ClientPayload.DNSSource.fromObject(d.dnsSource);
+                m.dnsSource = $root.proto.ClientPayload.DNSSource.create(d.dnsSource);
             }
             if (d.connectAttemptCount != null) {
                 m.connectAttemptCount = d.connectAttemptCount >>> 0;
@@ -13555,7 +13555,7 @@ export const proto = $root.proto = (() => {
             if (d.devicePairingData != null) {
                 if (typeof d.devicePairingData !== "object")
                     throw TypeError(".proto.ClientPayload.devicePairingData: object expected");
-                m.devicePairingData = $root.proto.ClientPayload.DevicePairingRegistrationData.fromObject(d.devicePairingData);
+                m.devicePairingData = $root.proto.ClientPayload.DevicePairingRegistrationData.create(d.devicePairingData);
             }
             switch (d.product) {
             default:
@@ -13657,7 +13657,7 @@ export const proto = $root.proto = (() => {
             if (d.interopData != null) {
                 if (typeof d.interopData !== "object")
                     throw TypeError(".proto.ClientPayload.interopData: object expected");
-                m.interopData = $root.proto.ClientPayload.InteropData.fromObject(d.interopData);
+                m.interopData = $root.proto.ClientPayload.InteropData.create(d.interopData);
             }
             switch (d.trafficAnonymization) {
             default:
@@ -13979,7 +13979,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            DNSSource.fromObject = function fromObject(d) {
+            DNSSource.create = function fromObject(d) {
                 if (d instanceof $root.proto.ClientPayload.DNSSource)
                     return d;
                 var m = new $root.proto.ClientPayload.DNSSource();
@@ -14206,7 +14206,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            DevicePairingRegistrationData.fromObject = function fromObject(d) {
+            DevicePairingRegistrationData.create = function fromObject(d) {
                 if (d instanceof $root.proto.ClientPayload.DevicePairingRegistrationData)
                     return d;
                 var m = new $root.proto.ClientPayload.DevicePairingRegistrationData();
@@ -14408,7 +14408,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            InteropData.fromObject = function fromObject(d) {
+            InteropData.create = function fromObject(d) {
                 if (d instanceof $root.proto.ClientPayload.InteropData)
                     return d;
                 var m = new $root.proto.ClientPayload.InteropData();
@@ -14737,7 +14737,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            UserAgent.fromObject = function fromObject(d) {
+            UserAgent.create = function fromObject(d) {
                 if (d instanceof $root.proto.ClientPayload.UserAgent)
                     return d;
                 var m = new $root.proto.ClientPayload.UserAgent();
@@ -14896,7 +14896,7 @@ export const proto = $root.proto = (() => {
                 if (d.appVersion != null) {
                     if (typeof d.appVersion !== "object")
                         throw TypeError(".proto.ClientPayload.UserAgent.appVersion: object expected");
-                    m.appVersion = $root.proto.ClientPayload.UserAgent.AppVersion.fromObject(d.appVersion);
+                    m.appVersion = $root.proto.ClientPayload.UserAgent.AppVersion.create(d.appVersion);
                 }
                 if (d.mcc != null) {
                     m.mcc = String(d.mcc);
@@ -15191,7 +15191,7 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                AppVersion.fromObject = function fromObject(d) {
+                AppVersion.create = function fromObject(d) {
                     if (d instanceof $root.proto.ClientPayload.UserAgent.AppVersion)
                         return d;
                     var m = new $root.proto.ClientPayload.UserAgent.AppVersion();
@@ -15413,7 +15413,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            WebInfo.fromObject = function fromObject(d) {
+            WebInfo.create = function fromObject(d) {
                 if (d instanceof $root.proto.ClientPayload.WebInfo)
                     return d;
                 var m = new $root.proto.ClientPayload.WebInfo();
@@ -15426,7 +15426,7 @@ export const proto = $root.proto = (() => {
                 if (d.webdPayload != null) {
                     if (typeof d.webdPayload !== "object")
                         throw TypeError(".proto.ClientPayload.WebInfo.webdPayload: object expected");
-                    m.webdPayload = $root.proto.ClientPayload.WebInfo.WebdPayload.fromObject(d.webdPayload);
+                    m.webdPayload = $root.proto.ClientPayload.WebInfo.WebdPayload.create(d.webdPayload);
                 }
                 switch (d.webSubPlatform) {
                 default:
@@ -15694,7 +15694,7 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                WebdPayload.fromObject = function fromObject(d) {
+                WebdPayload.create = function fromObject(d) {
                     if (d instanceof $root.proto.ClientPayload.WebInfo.WebdPayload)
                         return d;
                     var m = new $root.proto.ClientPayload.WebInfo.WebdPayload();
@@ -15884,14 +15884,14 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        CommentMetadata.fromObject = function fromObject(d) {
+        CommentMetadata.create = function fromObject(d) {
             if (d instanceof $root.proto.CommentMetadata)
                 return d;
             var m = new $root.proto.CommentMetadata();
             if (d.commentParentKey != null) {
                 if (typeof d.commentParentKey !== "object")
                     throw TypeError(".proto.CommentMetadata.commentParentKey: object expected");
-                m.commentParentKey = $root.proto.MessageKey.fromObject(d.commentParentKey);
+                m.commentParentKey = $root.proto.MessageKey.create(d.commentParentKey);
             }
             if (d.replyCount != null) {
                 m.replyCount = d.replyCount >>> 0;
@@ -15982,7 +15982,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        CompanionCommitment.fromObject = function fromObject(d) {
+        CompanionCommitment.create = function fromObject(d) {
             if (d instanceof $root.proto.CompanionCommitment)
                 return d;
             var m = new $root.proto.CompanionCommitment();
@@ -16099,7 +16099,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        CompanionEphemeralIdentity.fromObject = function fromObject(d) {
+        CompanionEphemeralIdentity.create = function fromObject(d) {
             if (d instanceof $root.proto.CompanionEphemeralIdentity)
                 return d;
             var m = new $root.proto.CompanionEphemeralIdentity();
@@ -16342,7 +16342,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        Config.fromObject = function fromObject(d) {
+        Config.create = function fromObject(d) {
             if (d instanceof $root.proto.Config)
                 return d;
             var m = new $root.proto.Config();
@@ -16353,7 +16353,7 @@ export const proto = $root.proto = (() => {
                 for (var ks = Object.keys(d.field), i = 0; i < ks.length; ++i) {
                     if (typeof d.field[ks[i]] !== "object")
                         throw TypeError(".proto.Config.field: object expected");
-                    m.field[ks[i]] = $root.proto.Field.fromObject(d.field[ks[i]]);
+                    m.field[ks[i]] = $root.proto.Field.create(d.field[ks[i]]);
                 }
             }
             if (d.version != null) {
@@ -17046,7 +17046,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        ContextInfo.fromObject = function fromObject(d) {
+        ContextInfo.create = function fromObject(d) {
             if (d instanceof $root.proto.ContextInfo)
                 return d;
             var m = new $root.proto.ContextInfo();
@@ -17059,7 +17059,7 @@ export const proto = $root.proto = (() => {
             if (d.quotedMessage != null) {
                 if (typeof d.quotedMessage !== "object")
                     throw TypeError(".proto.ContextInfo.quotedMessage: object expected");
-                m.quotedMessage = $root.proto.Message.fromObject(d.quotedMessage);
+                m.quotedMessage = $root.proto.Message.create(d.quotedMessage);
             }
             if (d.remoteJid != null) {
                 m.remoteJid = String(d.remoteJid);
@@ -17093,12 +17093,12 @@ export const proto = $root.proto = (() => {
             if (d.quotedAd != null) {
                 if (typeof d.quotedAd !== "object")
                     throw TypeError(".proto.ContextInfo.quotedAd: object expected");
-                m.quotedAd = $root.proto.ContextInfo.AdReplyInfo.fromObject(d.quotedAd);
+                m.quotedAd = $root.proto.ContextInfo.AdReplyInfo.create(d.quotedAd);
             }
             if (d.placeholderKey != null) {
                 if (typeof d.placeholderKey !== "object")
                     throw TypeError(".proto.ContextInfo.placeholderKey: object expected");
-                m.placeholderKey = $root.proto.MessageKey.fromObject(d.placeholderKey);
+                m.placeholderKey = $root.proto.MessageKey.create(d.placeholderKey);
             }
             if (d.expiration != null) {
                 m.expiration = d.expiration >>> 0;
@@ -17122,7 +17122,7 @@ export const proto = $root.proto = (() => {
             if (d.externalAdReply != null) {
                 if (typeof d.externalAdReply !== "object")
                     throw TypeError(".proto.ContextInfo.externalAdReply: object expected");
-                m.externalAdReply = $root.proto.ContextInfo.ExternalAdReplyInfo.fromObject(d.externalAdReply);
+                m.externalAdReply = $root.proto.ContextInfo.ExternalAdReplyInfo.create(d.externalAdReply);
             }
             if (d.entryPointConversionSource != null) {
                 m.entryPointConversionSource = String(d.entryPointConversionSource);
@@ -17136,12 +17136,12 @@ export const proto = $root.proto = (() => {
             if (d.disappearingMode != null) {
                 if (typeof d.disappearingMode !== "object")
                     throw TypeError(".proto.ContextInfo.disappearingMode: object expected");
-                m.disappearingMode = $root.proto.DisappearingMode.fromObject(d.disappearingMode);
+                m.disappearingMode = $root.proto.DisappearingMode.create(d.disappearingMode);
             }
             if (d.actionLink != null) {
                 if (typeof d.actionLink !== "object")
                     throw TypeError(".proto.ContextInfo.actionLink: object expected");
-                m.actionLink = $root.proto.ActionLink.fromObject(d.actionLink);
+                m.actionLink = $root.proto.ActionLink.create(d.actionLink);
             }
             if (d.groupSubject != null) {
                 m.groupSubject = String(d.groupSubject);
@@ -17165,23 +17165,23 @@ export const proto = $root.proto = (() => {
                 for (var i = 0; i < d.groupMentions.length; ++i) {
                     if (typeof d.groupMentions[i] !== "object")
                         throw TypeError(".proto.ContextInfo.groupMentions: object expected");
-                    m.groupMentions[i] = $root.proto.GroupMention.fromObject(d.groupMentions[i]);
+                    m.groupMentions[i] = $root.proto.GroupMention.create(d.groupMentions[i]);
                 }
             }
             if (d.utm != null) {
                 if (typeof d.utm !== "object")
                     throw TypeError(".proto.ContextInfo.utm: object expected");
-                m.utm = $root.proto.ContextInfo.UTMInfo.fromObject(d.utm);
+                m.utm = $root.proto.ContextInfo.UTMInfo.create(d.utm);
             }
             if (d.forwardedNewsletterMessageInfo != null) {
                 if (typeof d.forwardedNewsletterMessageInfo !== "object")
                     throw TypeError(".proto.ContextInfo.forwardedNewsletterMessageInfo: object expected");
-                m.forwardedNewsletterMessageInfo = $root.proto.ContextInfo.ForwardedNewsletterMessageInfo.fromObject(d.forwardedNewsletterMessageInfo);
+                m.forwardedNewsletterMessageInfo = $root.proto.ContextInfo.ForwardedNewsletterMessageInfo.create(d.forwardedNewsletterMessageInfo);
             }
             if (d.businessMessageForwardInfo != null) {
                 if (typeof d.businessMessageForwardInfo !== "object")
                     throw TypeError(".proto.ContextInfo.businessMessageForwardInfo: object expected");
-                m.businessMessageForwardInfo = $root.proto.ContextInfo.BusinessMessageForwardInfo.fromObject(d.businessMessageForwardInfo);
+                m.businessMessageForwardInfo = $root.proto.ContextInfo.BusinessMessageForwardInfo.create(d.businessMessageForwardInfo);
             }
             if (d.smbClientCampaignId != null) {
                 m.smbClientCampaignId = String(d.smbClientCampaignId);
@@ -17192,7 +17192,7 @@ export const proto = $root.proto = (() => {
             if (d.dataSharingContext != null) {
                 if (typeof d.dataSharingContext !== "object")
                     throw TypeError(".proto.ContextInfo.dataSharingContext: object expected");
-                m.dataSharingContext = $root.proto.ContextInfo.DataSharingContext.fromObject(d.dataSharingContext);
+                m.dataSharingContext = $root.proto.ContextInfo.DataSharingContext.create(d.dataSharingContext);
             }
             if (d.alwaysShowAdAttribution != null) {
                 m.alwaysShowAdAttribution = Boolean(d.alwaysShowAdAttribution);
@@ -17200,7 +17200,7 @@ export const proto = $root.proto = (() => {
             if (d.featureEligibilities != null) {
                 if (typeof d.featureEligibilities !== "object")
                     throw TypeError(".proto.ContextInfo.featureEligibilities: object expected");
-                m.featureEligibilities = $root.proto.ContextInfo.FeatureEligibilities.fromObject(d.featureEligibilities);
+                m.featureEligibilities = $root.proto.ContextInfo.FeatureEligibilities.create(d.featureEligibilities);
             }
             if (d.entryPointConversionExternalSource != null) {
                 m.entryPointConversionExternalSource = String(d.entryPointConversionExternalSource);
@@ -17220,7 +17220,7 @@ export const proto = $root.proto = (() => {
             if (d.forwardedAiBotMessageInfo != null) {
                 if (typeof d.forwardedAiBotMessageInfo !== "object")
                     throw TypeError(".proto.ContextInfo.forwardedAiBotMessageInfo: object expected");
-                m.forwardedAiBotMessageInfo = $root.proto.ContextInfo.ForwardedAIBotMessageInfo.fromObject(d.forwardedAiBotMessageInfo);
+                m.forwardedAiBotMessageInfo = $root.proto.ContextInfo.ForwardedAIBotMessageInfo.create(d.forwardedAiBotMessageInfo);
             }
             switch (d.statusAttributionType) {
             default:
@@ -17245,7 +17245,7 @@ export const proto = $root.proto = (() => {
             if (d.urlTrackingMap != null) {
                 if (typeof d.urlTrackingMap !== "object")
                     throw TypeError(".proto.ContextInfo.urlTrackingMap: object expected");
-                m.urlTrackingMap = $root.proto.UrlTrackingMap.fromObject(d.urlTrackingMap);
+                m.urlTrackingMap = $root.proto.UrlTrackingMap.create(d.urlTrackingMap);
             }
             switch (d.pairedMediaType) {
             default:
@@ -17289,7 +17289,7 @@ export const proto = $root.proto = (() => {
             if (d.memberLabel != null) {
                 if (typeof d.memberLabel !== "object")
                     throw TypeError(".proto.ContextInfo.memberLabel: object expected");
-                m.memberLabel = $root.proto.MemberLabel.fromObject(d.memberLabel);
+                m.memberLabel = $root.proto.MemberLabel.create(d.memberLabel);
             }
             if (d.isQuestion != null) {
                 m.isQuestion = Boolean(d.isQuestion);
@@ -17682,7 +17682,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            AdReplyInfo.fromObject = function fromObject(d) {
+            AdReplyInfo.create = function fromObject(d) {
                 if (d instanceof $root.proto.ContextInfo.AdReplyInfo)
                     return d;
                 var m = new $root.proto.ContextInfo.AdReplyInfo();
@@ -17822,7 +17822,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            BusinessMessageForwardInfo.fromObject = function fromObject(d) {
+            BusinessMessageForwardInfo.create = function fromObject(d) {
                 if (d instanceof $root.proto.ContextInfo.BusinessMessageForwardInfo)
                     return d;
                 var m = new $root.proto.ContextInfo.BusinessMessageForwardInfo();
@@ -17935,7 +17935,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            DataSharingContext.fromObject = function fromObject(d) {
+            DataSharingContext.create = function fromObject(d) {
                 if (d instanceof $root.proto.ContextInfo.DataSharingContext)
                     return d;
                 var m = new $root.proto.ContextInfo.DataSharingContext();
@@ -17952,7 +17952,7 @@ export const proto = $root.proto = (() => {
                     for (var i = 0; i < d.parameters.length; ++i) {
                         if (typeof d.parameters[i] !== "object")
                             throw TypeError(".proto.ContextInfo.DataSharingContext.parameters: object expected");
-                        m.parameters[i] = $root.proto.ContextInfo.DataSharingContext.Parameters.fromObject(d.parameters[i]);
+                        m.parameters[i] = $root.proto.ContextInfo.DataSharingContext.Parameters.create(d.parameters[i]);
                     }
                 }
                 return m;
@@ -18099,7 +18099,7 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                Parameters.fromObject = function fromObject(d) {
+                Parameters.create = function fromObject(d) {
                     if (d instanceof $root.proto.ContextInfo.DataSharingContext.Parameters)
                         return d;
                     var m = new $root.proto.ContextInfo.DataSharingContext.Parameters();
@@ -18125,7 +18125,7 @@ export const proto = $root.proto = (() => {
                     if (d.contents != null) {
                         if (typeof d.contents !== "object")
                             throw TypeError(".proto.ContextInfo.DataSharingContext.Parameters.contents: object expected");
-                        m.contents = $root.proto.ContextInfo.DataSharingContext.Parameters.fromObject(d.contents);
+                        m.contents = $root.proto.ContextInfo.DataSharingContext.Parameters.create(d.contents);
                     }
                     return m;
                 };
@@ -18546,7 +18546,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            ExternalAdReplyInfo.fromObject = function fromObject(d) {
+            ExternalAdReplyInfo.create = function fromObject(d) {
                 if (d instanceof $root.proto.ContextInfo.ExternalAdReplyInfo)
                     return d;
                 var m = new $root.proto.ContextInfo.ExternalAdReplyInfo();
@@ -18913,7 +18913,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            FeatureEligibilities.fromObject = function fromObject(d) {
+            FeatureEligibilities.create = function fromObject(d) {
                 if (d instanceof $root.proto.ContextInfo.FeatureEligibilities)
                     return d;
                 var m = new $root.proto.ContextInfo.FeatureEligibilities();
@@ -19051,7 +19051,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            ForwardedAIBotMessageInfo.fromObject = function fromObject(d) {
+            ForwardedAIBotMessageInfo.create = function fromObject(d) {
                 if (d instanceof $root.proto.ContextInfo.ForwardedAIBotMessageInfo)
                     return d;
                 var m = new $root.proto.ContextInfo.ForwardedAIBotMessageInfo();
@@ -19207,7 +19207,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            ForwardedNewsletterMessageInfo.fromObject = function fromObject(d) {
+            ForwardedNewsletterMessageInfo.create = function fromObject(d) {
                 if (d instanceof $root.proto.ContextInfo.ForwardedNewsletterMessageInfo)
                     return d;
                 var m = new $root.proto.ContextInfo.ForwardedNewsletterMessageInfo();
@@ -19396,7 +19396,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            UTMInfo.fromObject = function fromObject(d) {
+            UTMInfo.create = function fromObject(d) {
                 if (d instanceof $root.proto.ContextInfo.UTMInfo)
                     return d;
                 var m = new $root.proto.ContextInfo.UTMInfo();
@@ -20163,7 +20163,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        Conversation.fromObject = function fromObject(d) {
+        Conversation.create = function fromObject(d) {
             if (d instanceof $root.proto.Conversation)
                 return d;
             var m = new $root.proto.Conversation();
@@ -20177,7 +20177,7 @@ export const proto = $root.proto = (() => {
                 for (var i = 0; i < d.messages.length; ++i) {
                     if (typeof d.messages[i] !== "object")
                         throw TypeError(".proto.Conversation.messages: object expected");
-                    m.messages[i] = $root.proto.HistorySyncMsg.fromObject(d.messages[i]);
+                    m.messages[i] = $root.proto.HistorySyncMsg.create(d.messages[i]);
                 }
             }
             if (d.newJid != null) {
@@ -20263,7 +20263,7 @@ export const proto = $root.proto = (() => {
             if (d.disappearingMode != null) {
                 if (typeof d.disappearingMode !== "object")
                     throw TypeError(".proto.Conversation.disappearingMode: object expected");
-                m.disappearingMode = $root.proto.DisappearingMode.fromObject(d.disappearingMode);
+                m.disappearingMode = $root.proto.DisappearingMode.create(d.disappearingMode);
             }
             if (d.unreadMentionCount != null) {
                 m.unreadMentionCount = d.unreadMentionCount >>> 0;
@@ -20278,7 +20278,7 @@ export const proto = $root.proto = (() => {
                 for (var i = 0; i < d.participant.length; ++i) {
                     if (typeof d.participant[i] !== "object")
                         throw TypeError(".proto.Conversation.participant: object expected");
-                    m.participant[i] = $root.proto.GroupParticipant.fromObject(d.participant[i]);
+                    m.participant[i] = $root.proto.GroupParticipant.create(d.participant[i]);
                 }
             }
             if (d.tcToken != null) {
@@ -20319,7 +20319,7 @@ export const proto = $root.proto = (() => {
             if (d.wallpaper != null) {
                 if (typeof d.wallpaper !== "object")
                     throw TypeError(".proto.Conversation.wallpaper: object expected");
-                m.wallpaper = $root.proto.WallpaperSettings.fromObject(d.wallpaper);
+                m.wallpaper = $root.proto.WallpaperSettings.create(d.wallpaper);
             }
             switch (d.mediaVisibility) {
             default:
@@ -20871,7 +20871,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        DeviceCapabilities.fromObject = function fromObject(d) {
+        DeviceCapabilities.create = function fromObject(d) {
             if (d instanceof $root.proto.DeviceCapabilities)
                 return d;
             var m = new $root.proto.DeviceCapabilities();
@@ -20898,7 +20898,7 @@ export const proto = $root.proto = (() => {
             if (d.lidMigration != null) {
                 if (typeof d.lidMigration !== "object")
                     throw TypeError(".proto.DeviceCapabilities.lidMigration: object expected");
-                m.lidMigration = $root.proto.DeviceCapabilities.LIDMigration.fromObject(d.lidMigration);
+                m.lidMigration = $root.proto.DeviceCapabilities.LIDMigration.create(d.lidMigration);
             }
             return m;
         };
@@ -20991,7 +20991,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            LIDMigration.fromObject = function fromObject(d) {
+            LIDMigration.create = function fromObject(d) {
                 if (d instanceof $root.proto.DeviceCapabilities.LIDMigration)
                     return d;
                 var m = new $root.proto.DeviceCapabilities.LIDMigration();
@@ -21105,7 +21105,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        DeviceConsistencyCodeMessage.fromObject = function fromObject(d) {
+        DeviceConsistencyCodeMessage.create = function fromObject(d) {
             if (d instanceof $root.proto.DeviceConsistencyCodeMessage)
                 return d;
             var m = new $root.proto.DeviceConsistencyCodeMessage();
@@ -21307,7 +21307,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        DeviceListMetadata.fromObject = function fromObject(d) {
+        DeviceListMetadata.create = function fromObject(d) {
             if (d instanceof $root.proto.DeviceListMetadata)
                 return d;
             var m = new $root.proto.DeviceListMetadata();
@@ -21571,7 +21571,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        DeviceProps.fromObject = function fromObject(d) {
+        DeviceProps.create = function fromObject(d) {
             if (d instanceof $root.proto.DeviceProps)
                 return d;
             var m = new $root.proto.DeviceProps();
@@ -21581,7 +21581,7 @@ export const proto = $root.proto = (() => {
             if (d.version != null) {
                 if (typeof d.version !== "object")
                     throw TypeError(".proto.DeviceProps.version: object expected");
-                m.version = $root.proto.DeviceProps.AppVersion.fromObject(d.version);
+                m.version = $root.proto.DeviceProps.AppVersion.create(d.version);
             }
             switch (d.platformType) {
             default:
@@ -21697,7 +21697,7 @@ export const proto = $root.proto = (() => {
             if (d.historySyncConfig != null) {
                 if (typeof d.historySyncConfig !== "object")
                     throw TypeError(".proto.DeviceProps.historySyncConfig: object expected");
-                m.historySyncConfig = $root.proto.DeviceProps.HistorySyncConfig.fromObject(d.historySyncConfig);
+                m.historySyncConfig = $root.proto.DeviceProps.HistorySyncConfig.create(d.historySyncConfig);
             }
             return m;
         };
@@ -21849,7 +21849,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            AppVersion.fromObject = function fromObject(d) {
+            AppVersion.create = function fromObject(d) {
                 if (d instanceof $root.proto.DeviceProps.AppVersion)
                     return d;
                 var m = new $root.proto.DeviceProps.AppVersion();
@@ -22138,7 +22138,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            HistorySyncConfig.fromObject = function fromObject(d) {
+            HistorySyncConfig.create = function fromObject(d) {
                 if (d instanceof $root.proto.DeviceProps.HistorySyncConfig)
                     return d;
                 var m = new $root.proto.DeviceProps.HistorySyncConfig();
@@ -22402,7 +22402,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        DisappearingMode.fromObject = function fromObject(d) {
+        DisappearingMode.create = function fromObject(d) {
             if (d instanceof $root.proto.DisappearingMode)
                 return d;
             var m = new $root.proto.DisappearingMode();
@@ -22590,19 +22590,19 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        EmbeddedContent.fromObject = function fromObject(d) {
+        EmbeddedContent.create = function fromObject(d) {
             if (d instanceof $root.proto.EmbeddedContent)
                 return d;
             var m = new $root.proto.EmbeddedContent();
             if (d.embeddedMessage != null) {
                 if (typeof d.embeddedMessage !== "object")
                     throw TypeError(".proto.EmbeddedContent.embeddedMessage: object expected");
-                m.embeddedMessage = $root.proto.EmbeddedMessage.fromObject(d.embeddedMessage);
+                m.embeddedMessage = $root.proto.EmbeddedMessage.create(d.embeddedMessage);
             }
             if (d.embeddedMusic != null) {
                 if (typeof d.embeddedMusic !== "object")
                     throw TypeError(".proto.EmbeddedContent.embeddedMusic: object expected");
-                m.embeddedMusic = $root.proto.EmbeddedMusic.fromObject(d.embeddedMusic);
+                m.embeddedMusic = $root.proto.EmbeddedMusic.create(d.embeddedMusic);
             }
             return m;
         };
@@ -22703,7 +22703,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        EmbeddedMessage.fromObject = function fromObject(d) {
+        EmbeddedMessage.create = function fromObject(d) {
             if (d instanceof $root.proto.EmbeddedMessage)
                 return d;
             var m = new $root.proto.EmbeddedMessage();
@@ -22713,7 +22713,7 @@ export const proto = $root.proto = (() => {
             if (d.message != null) {
                 if (typeof d.message !== "object")
                     throw TypeError(".proto.EmbeddedMessage.message: object expected");
-                m.message = $root.proto.Message.fromObject(d.message);
+                m.message = $root.proto.Message.create(d.message);
             }
             return m;
         };
@@ -22931,7 +22931,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        EmbeddedMusic.fromObject = function fromObject(d) {
+        EmbeddedMusic.create = function fromObject(d) {
             if (d instanceof $root.proto.EmbeddedMusic)
                 return d;
             var m = new $root.proto.EmbeddedMusic();
@@ -23124,7 +23124,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        EncryptedPairingRequest.fromObject = function fromObject(d) {
+        EncryptedPairingRequest.create = function fromObject(d) {
             if (d instanceof $root.proto.EncryptedPairingRequest)
                 return d;
             var m = new $root.proto.EncryptedPairingRequest();
@@ -23239,7 +23239,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        EphemeralSetting.fromObject = function fromObject(d) {
+        EphemeralSetting.create = function fromObject(d) {
             if (d instanceof $root.proto.EphemeralSetting)
                 return d;
             var m = new $root.proto.EphemeralSetting();
@@ -23345,7 +23345,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        EventAdditionalMetadata.fromObject = function fromObject(d) {
+        EventAdditionalMetadata.create = function fromObject(d) {
             if (d instanceof $root.proto.EventAdditionalMetadata)
                 return d;
             var m = new $root.proto.EventAdditionalMetadata();
@@ -23472,14 +23472,14 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        EventResponse.fromObject = function fromObject(d) {
+        EventResponse.create = function fromObject(d) {
             if (d instanceof $root.proto.EventResponse)
                 return d;
             var m = new $root.proto.EventResponse();
             if (d.eventResponseMessageKey != null) {
                 if (typeof d.eventResponseMessageKey !== "object")
                     throw TypeError(".proto.EventResponse.eventResponseMessageKey: object expected");
-                m.eventResponseMessageKey = $root.proto.MessageKey.fromObject(d.eventResponseMessageKey);
+                m.eventResponseMessageKey = $root.proto.MessageKey.create(d.eventResponseMessageKey);
             }
             if (d.timestampMs != null) {
                 if ($util.Long)
@@ -23494,7 +23494,7 @@ export const proto = $root.proto = (() => {
             if (d.eventResponseMessage != null) {
                 if (typeof d.eventResponseMessage !== "object")
                     throw TypeError(".proto.EventResponse.eventResponseMessage: object expected");
-                m.eventResponseMessage = $root.proto.Message.EventResponseMessage.fromObject(d.eventResponseMessage);
+                m.eventResponseMessage = $root.proto.Message.EventResponseMessage.create(d.eventResponseMessage);
             }
             if (d.unread != null) {
                 m.unread = Boolean(d.unread);
@@ -23611,7 +23611,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        ExitCode.fromObject = function fromObject(d) {
+        ExitCode.create = function fromObject(d) {
             if (d instanceof $root.proto.ExitCode)
                 return d;
             var m = new $root.proto.ExitCode();
@@ -23782,7 +23782,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        ExternalBlobReference.fromObject = function fromObject(d) {
+        ExternalBlobReference.create = function fromObject(d) {
             if (d instanceof $root.proto.ExternalBlobReference)
                 return d;
             var m = new $root.proto.ExternalBlobReference();
@@ -23999,7 +23999,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        Field.fromObject = function fromObject(d) {
+        Field.create = function fromObject(d) {
             if (d instanceof $root.proto.Field)
                 return d;
             var m = new $root.proto.Field();
@@ -24022,7 +24022,7 @@ export const proto = $root.proto = (() => {
                 for (var ks = Object.keys(d.subfield), i = 0; i < ks.length; ++i) {
                     if (typeof d.subfield[ks[i]] !== "object")
                         throw TypeError(".proto.Field.subfield: object expected");
-                    m.subfield[ks[i]] = $root.proto.Field.fromObject(d.subfield[ks[i]]);
+                    m.subfield[ks[i]] = $root.proto.Field.create(d.subfield[ks[i]]);
                 }
             }
             return m;
@@ -24378,14 +24378,14 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        GlobalSettings.fromObject = function fromObject(d) {
+        GlobalSettings.create = function fromObject(d) {
             if (d instanceof $root.proto.GlobalSettings)
                 return d;
             var m = new $root.proto.GlobalSettings();
             if (d.lightThemeWallpaper != null) {
                 if (typeof d.lightThemeWallpaper !== "object")
                     throw TypeError(".proto.GlobalSettings.lightThemeWallpaper: object expected");
-                m.lightThemeWallpaper = $root.proto.WallpaperSettings.fromObject(d.lightThemeWallpaper);
+                m.lightThemeWallpaper = $root.proto.WallpaperSettings.create(d.lightThemeWallpaper);
             }
             switch (d.mediaVisibility) {
             default:
@@ -24410,22 +24410,22 @@ export const proto = $root.proto = (() => {
             if (d.darkThemeWallpaper != null) {
                 if (typeof d.darkThemeWallpaper !== "object")
                     throw TypeError(".proto.GlobalSettings.darkThemeWallpaper: object expected");
-                m.darkThemeWallpaper = $root.proto.WallpaperSettings.fromObject(d.darkThemeWallpaper);
+                m.darkThemeWallpaper = $root.proto.WallpaperSettings.create(d.darkThemeWallpaper);
             }
             if (d.autoDownloadWiFi != null) {
                 if (typeof d.autoDownloadWiFi !== "object")
                     throw TypeError(".proto.GlobalSettings.autoDownloadWiFi: object expected");
-                m.autoDownloadWiFi = $root.proto.AutoDownloadSettings.fromObject(d.autoDownloadWiFi);
+                m.autoDownloadWiFi = $root.proto.AutoDownloadSettings.create(d.autoDownloadWiFi);
             }
             if (d.autoDownloadCellular != null) {
                 if (typeof d.autoDownloadCellular !== "object")
                     throw TypeError(".proto.GlobalSettings.autoDownloadCellular: object expected");
-                m.autoDownloadCellular = $root.proto.AutoDownloadSettings.fromObject(d.autoDownloadCellular);
+                m.autoDownloadCellular = $root.proto.AutoDownloadSettings.create(d.autoDownloadCellular);
             }
             if (d.autoDownloadRoaming != null) {
                 if (typeof d.autoDownloadRoaming !== "object")
                     throw TypeError(".proto.GlobalSettings.autoDownloadRoaming: object expected");
-                m.autoDownloadRoaming = $root.proto.AutoDownloadSettings.fromObject(d.autoDownloadRoaming);
+                m.autoDownloadRoaming = $root.proto.AutoDownloadSettings.create(d.autoDownloadRoaming);
             }
             if (d.showIndividualNotificationsPreview != null) {
                 m.showIndividualNotificationsPreview = Boolean(d.showIndividualNotificationsPreview);
@@ -24449,7 +24449,7 @@ export const proto = $root.proto = (() => {
             if (d.avatarUserSettings != null) {
                 if (typeof d.avatarUserSettings !== "object")
                     throw TypeError(".proto.GlobalSettings.avatarUserSettings: object expected");
-                m.avatarUserSettings = $root.proto.AvatarUserSettings.fromObject(d.avatarUserSettings);
+                m.avatarUserSettings = $root.proto.AvatarUserSettings.create(d.avatarUserSettings);
             }
             if (d.fontSize != null) {
                 m.fontSize = d.fontSize | 0;
@@ -24469,17 +24469,17 @@ export const proto = $root.proto = (() => {
             if (d.individualNotificationSettings != null) {
                 if (typeof d.individualNotificationSettings !== "object")
                     throw TypeError(".proto.GlobalSettings.individualNotificationSettings: object expected");
-                m.individualNotificationSettings = $root.proto.NotificationSettings.fromObject(d.individualNotificationSettings);
+                m.individualNotificationSettings = $root.proto.NotificationSettings.create(d.individualNotificationSettings);
             }
             if (d.groupNotificationSettings != null) {
                 if (typeof d.groupNotificationSettings !== "object")
                     throw TypeError(".proto.GlobalSettings.groupNotificationSettings: object expected");
-                m.groupNotificationSettings = $root.proto.NotificationSettings.fromObject(d.groupNotificationSettings);
+                m.groupNotificationSettings = $root.proto.NotificationSettings.create(d.groupNotificationSettings);
             }
             if (d.chatLockSettings != null) {
                 if (typeof d.chatLockSettings !== "object")
                     throw TypeError(".proto.GlobalSettings.chatLockSettings: object expected");
-                m.chatLockSettings = $root.proto.ChatLockSettings.fromObject(d.chatLockSettings);
+                m.chatLockSettings = $root.proto.ChatLockSettings.create(d.chatLockSettings);
             }
             if (d.chatDbLidMigrationTimestamp != null) {
                 if ($util.Long)
@@ -24686,7 +24686,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        GroupMention.fromObject = function fromObject(d) {
+        GroupMention.create = function fromObject(d) {
             if (d instanceof $root.proto.GroupMention)
                 return d;
             var m = new $root.proto.GroupMention();
@@ -24789,7 +24789,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        GroupParticipant.fromObject = function fromObject(d) {
+        GroupParticipant.create = function fromObject(d) {
             if (d instanceof $root.proto.GroupParticipant)
                 return d;
             var m = new $root.proto.GroupParticipant();
@@ -24937,24 +24937,24 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        HandshakeMessage.fromObject = function fromObject(d) {
+        HandshakeMessage.create = function fromObject(d) {
             if (d instanceof $root.proto.HandshakeMessage)
                 return d;
             var m = new $root.proto.HandshakeMessage();
             if (d.clientHello != null) {
                 if (typeof d.clientHello !== "object")
                     throw TypeError(".proto.HandshakeMessage.clientHello: object expected");
-                m.clientHello = $root.proto.HandshakeMessage.ClientHello.fromObject(d.clientHello);
+                m.clientHello = $root.proto.HandshakeMessage.ClientHello.create(d.clientHello);
             }
             if (d.serverHello != null) {
                 if (typeof d.serverHello !== "object")
                     throw TypeError(".proto.HandshakeMessage.serverHello: object expected");
-                m.serverHello = $root.proto.HandshakeMessage.ServerHello.fromObject(d.serverHello);
+                m.serverHello = $root.proto.HandshakeMessage.ServerHello.create(d.serverHello);
             }
             if (d.clientFinish != null) {
                 if (typeof d.clientFinish !== "object")
                     throw TypeError(".proto.HandshakeMessage.clientFinish: object expected");
-                m.clientFinish = $root.proto.HandshakeMessage.ClientFinish.fromObject(d.clientFinish);
+                m.clientFinish = $root.proto.HandshakeMessage.ClientFinish.create(d.clientFinish);
             }
             return m;
         };
@@ -25057,7 +25057,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            ClientFinish.fromObject = function fromObject(d) {
+            ClientFinish.create = function fromObject(d) {
                 if (d instanceof $root.proto.HandshakeMessage.ClientFinish)
                     return d;
                 var m = new $root.proto.HandshakeMessage.ClientFinish();
@@ -25185,7 +25185,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            ClientHello.fromObject = function fromObject(d) {
+            ClientHello.create = function fromObject(d) {
                 if (d instanceof $root.proto.HandshakeMessage.ClientHello)
                     return d;
                 var m = new $root.proto.HandshakeMessage.ClientHello();
@@ -25324,7 +25324,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            ServerHello.fromObject = function fromObject(d) {
+            ServerHello.create = function fromObject(d) {
                 if (d instanceof $root.proto.HandshakeMessage.ServerHello)
                     return d;
                 var m = new $root.proto.HandshakeMessage.ServerHello();
@@ -25634,7 +25634,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        HistorySync.fromObject = function fromObject(d) {
+        HistorySync.create = function fromObject(d) {
             if (d instanceof $root.proto.HistorySync)
                 return d;
             var m = new $root.proto.HistorySync();
@@ -25681,7 +25681,7 @@ export const proto = $root.proto = (() => {
                 for (var i = 0; i < d.conversations.length; ++i) {
                     if (typeof d.conversations[i] !== "object")
                         throw TypeError(".proto.HistorySync.conversations: object expected");
-                    m.conversations[i] = $root.proto.Conversation.fromObject(d.conversations[i]);
+                    m.conversations[i] = $root.proto.Conversation.create(d.conversations[i]);
                 }
             }
             if (d.statusV3Messages) {
@@ -25691,7 +25691,7 @@ export const proto = $root.proto = (() => {
                 for (var i = 0; i < d.statusV3Messages.length; ++i) {
                     if (typeof d.statusV3Messages[i] !== "object")
                         throw TypeError(".proto.HistorySync.statusV3Messages: object expected");
-                    m.statusV3Messages[i] = $root.proto.WebMessageInfo.fromObject(d.statusV3Messages[i]);
+                    m.statusV3Messages[i] = $root.proto.WebMessageInfo.create(d.statusV3Messages[i]);
                 }
             }
             if (d.chunkOrder != null) {
@@ -25707,13 +25707,13 @@ export const proto = $root.proto = (() => {
                 for (var i = 0; i < d.pushnames.length; ++i) {
                     if (typeof d.pushnames[i] !== "object")
                         throw TypeError(".proto.HistorySync.pushnames: object expected");
-                    m.pushnames[i] = $root.proto.Pushname.fromObject(d.pushnames[i]);
+                    m.pushnames[i] = $root.proto.Pushname.create(d.pushnames[i]);
                 }
             }
             if (d.globalSettings != null) {
                 if (typeof d.globalSettings !== "object")
                     throw TypeError(".proto.HistorySync.globalSettings: object expected");
-                m.globalSettings = $root.proto.GlobalSettings.fromObject(d.globalSettings);
+                m.globalSettings = $root.proto.GlobalSettings.create(d.globalSettings);
             }
             if (d.threadIdUserSecret != null) {
                 if (typeof d.threadIdUserSecret === "string")
@@ -25731,7 +25731,7 @@ export const proto = $root.proto = (() => {
                 for (var i = 0; i < d.recentStickers.length; ++i) {
                     if (typeof d.recentStickers[i] !== "object")
                         throw TypeError(".proto.HistorySync.recentStickers: object expected");
-                    m.recentStickers[i] = $root.proto.StickerMetadata.fromObject(d.recentStickers[i]);
+                    m.recentStickers[i] = $root.proto.StickerMetadata.create(d.recentStickers[i]);
                 }
             }
             if (d.pastParticipants) {
@@ -25741,7 +25741,7 @@ export const proto = $root.proto = (() => {
                 for (var i = 0; i < d.pastParticipants.length; ++i) {
                     if (typeof d.pastParticipants[i] !== "object")
                         throw TypeError(".proto.HistorySync.pastParticipants: object expected");
-                    m.pastParticipants[i] = $root.proto.PastParticipants.fromObject(d.pastParticipants[i]);
+                    m.pastParticipants[i] = $root.proto.PastParticipants.create(d.pastParticipants[i]);
                 }
             }
             if (d.callLogRecords) {
@@ -25751,7 +25751,7 @@ export const proto = $root.proto = (() => {
                 for (var i = 0; i < d.callLogRecords.length; ++i) {
                     if (typeof d.callLogRecords[i] !== "object")
                         throw TypeError(".proto.HistorySync.callLogRecords: object expected");
-                    m.callLogRecords[i] = $root.proto.CallLogRecord.fromObject(d.callLogRecords[i]);
+                    m.callLogRecords[i] = $root.proto.CallLogRecord.create(d.callLogRecords[i]);
                 }
             }
             switch (d.aiWaitListState) {
@@ -25777,7 +25777,7 @@ export const proto = $root.proto = (() => {
                 for (var i = 0; i < d.phoneNumberToLidMappings.length; ++i) {
                     if (typeof d.phoneNumberToLidMappings[i] !== "object")
                         throw TypeError(".proto.HistorySync.phoneNumberToLidMappings: object expected");
-                    m.phoneNumberToLidMappings[i] = $root.proto.PhoneNumberToLIDMapping.fromObject(d.phoneNumberToLidMappings[i]);
+                    m.phoneNumberToLidMappings[i] = $root.proto.PhoneNumberToLIDMapping.create(d.phoneNumberToLidMappings[i]);
                 }
             }
             if (d.companionMetaNonce != null) {
@@ -25796,7 +25796,7 @@ export const proto = $root.proto = (() => {
                 for (var i = 0; i < d.accounts.length; ++i) {
                     if (typeof d.accounts[i] !== "object")
                         throw TypeError(".proto.HistorySync.accounts: object expected");
-                    m.accounts[i] = $root.proto.Account.fromObject(d.accounts[i]);
+                    m.accounts[i] = $root.proto.Account.create(d.accounts[i]);
                 }
             }
             return m;
@@ -26011,14 +26011,14 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        HistorySyncMsg.fromObject = function fromObject(d) {
+        HistorySyncMsg.create = function fromObject(d) {
             if (d instanceof $root.proto.HistorySyncMsg)
                 return d;
             var m = new $root.proto.HistorySyncMsg();
             if (d.message != null) {
                 if (typeof d.message !== "object")
                     throw TypeError(".proto.HistorySyncMsg.message: object expected");
-                m.message = $root.proto.WebMessageInfo.fromObject(d.message);
+                m.message = $root.proto.WebMessageInfo.create(d.message);
             }
             if (d.msgOrderId != null) {
                 if ($util.Long)
@@ -26145,7 +26145,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        HydratedTemplateButton.fromObject = function fromObject(d) {
+        HydratedTemplateButton.create = function fromObject(d) {
             if (d instanceof $root.proto.HydratedTemplateButton)
                 return d;
             var m = new $root.proto.HydratedTemplateButton();
@@ -26155,17 +26155,17 @@ export const proto = $root.proto = (() => {
             if (d.quickReplyButton != null) {
                 if (typeof d.quickReplyButton !== "object")
                     throw TypeError(".proto.HydratedTemplateButton.quickReplyButton: object expected");
-                m.quickReplyButton = $root.proto.HydratedTemplateButton.HydratedQuickReplyButton.fromObject(d.quickReplyButton);
+                m.quickReplyButton = $root.proto.HydratedTemplateButton.HydratedQuickReplyButton.create(d.quickReplyButton);
             }
             if (d.urlButton != null) {
                 if (typeof d.urlButton !== "object")
                     throw TypeError(".proto.HydratedTemplateButton.urlButton: object expected");
-                m.urlButton = $root.proto.HydratedTemplateButton.HydratedURLButton.fromObject(d.urlButton);
+                m.urlButton = $root.proto.HydratedTemplateButton.HydratedURLButton.create(d.urlButton);
             }
             if (d.callButton != null) {
                 if (typeof d.callButton !== "object")
                     throw TypeError(".proto.HydratedTemplateButton.callButton: object expected");
-                m.callButton = $root.proto.HydratedTemplateButton.HydratedCallButton.fromObject(d.callButton);
+                m.callButton = $root.proto.HydratedTemplateButton.HydratedCallButton.create(d.callButton);
             }
             return m;
         };
@@ -26273,7 +26273,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            HydratedCallButton.fromObject = function fromObject(d) {
+            HydratedCallButton.create = function fromObject(d) {
                 if (d instanceof $root.proto.HydratedTemplateButton.HydratedCallButton)
                     return d;
                 var m = new $root.proto.HydratedTemplateButton.HydratedCallButton();
@@ -26382,7 +26382,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            HydratedQuickReplyButton.fromObject = function fromObject(d) {
+            HydratedQuickReplyButton.create = function fromObject(d) {
                 if (d instanceof $root.proto.HydratedTemplateButton.HydratedQuickReplyButton)
                     return d;
                 var m = new $root.proto.HydratedTemplateButton.HydratedQuickReplyButton();
@@ -26517,7 +26517,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            HydratedURLButton.fromObject = function fromObject(d) {
+            HydratedURLButton.create = function fromObject(d) {
                 if (d instanceof $root.proto.HydratedTemplateButton.HydratedURLButton)
                     return d;
                 var m = new $root.proto.HydratedTemplateButton.HydratedURLButton();
@@ -26670,7 +26670,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        IdentityKeyPairStructure.fromObject = function fromObject(d) {
+        IdentityKeyPairStructure.create = function fromObject(d) {
             if (d instanceof $root.proto.IdentityKeyPairStructure)
                 return d;
             var m = new $root.proto.IdentityKeyPairStructure();
@@ -26843,7 +26843,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        InteractiveAnnotation.fromObject = function fromObject(d) {
+        InteractiveAnnotation.create = function fromObject(d) {
             if (d instanceof $root.proto.InteractiveAnnotation)
                 return d;
             var m = new $root.proto.InteractiveAnnotation();
@@ -26854,7 +26854,7 @@ export const proto = $root.proto = (() => {
                 for (var i = 0; i < d.polygonVertices.length; ++i) {
                     if (typeof d.polygonVertices[i] !== "object")
                         throw TypeError(".proto.InteractiveAnnotation.polygonVertices: object expected");
-                    m.polygonVertices[i] = $root.proto.Point.fromObject(d.polygonVertices[i]);
+                    m.polygonVertices[i] = $root.proto.Point.create(d.polygonVertices[i]);
                 }
             }
             if (d.shouldSkipConfirmation != null) {
@@ -26863,7 +26863,7 @@ export const proto = $root.proto = (() => {
             if (d.embeddedContent != null) {
                 if (typeof d.embeddedContent !== "object")
                     throw TypeError(".proto.InteractiveAnnotation.embeddedContent: object expected");
-                m.embeddedContent = $root.proto.EmbeddedContent.fromObject(d.embeddedContent);
+                m.embeddedContent = $root.proto.EmbeddedContent.create(d.embeddedContent);
             }
             switch (d.statusLinkType) {
             default:
@@ -26888,12 +26888,12 @@ export const proto = $root.proto = (() => {
             if (d.location != null) {
                 if (typeof d.location !== "object")
                     throw TypeError(".proto.InteractiveAnnotation.location: object expected");
-                m.location = $root.proto.Location.fromObject(d.location);
+                m.location = $root.proto.Location.create(d.location);
             }
             if (d.newsletter != null) {
                 if (typeof d.newsletter !== "object")
                     throw TypeError(".proto.InteractiveAnnotation.newsletter: object expected");
-                m.newsletter = $root.proto.ContextInfo.ForwardedNewsletterMessageInfo.fromObject(d.newsletter);
+                m.newsletter = $root.proto.ContextInfo.ForwardedNewsletterMessageInfo.create(d.newsletter);
             }
             if (d.embeddedAction != null) {
                 m.embeddedAction = Boolean(d.embeddedAction);
@@ -26901,7 +26901,7 @@ export const proto = $root.proto = (() => {
             if (d.tapAction != null) {
                 if (typeof d.tapAction !== "object")
                     throw TypeError(".proto.InteractiveAnnotation.tapAction: object expected");
-                m.tapAction = $root.proto.TapLinkAction.fromObject(d.tapAction);
+                m.tapAction = $root.proto.TapLinkAction.create(d.tapAction);
             }
             return m;
         };
@@ -27096,7 +27096,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        KeepInChat.fromObject = function fromObject(d) {
+        KeepInChat.create = function fromObject(d) {
             if (d instanceof $root.proto.KeepInChat)
                 return d;
             var m = new $root.proto.KeepInChat();
@@ -27133,7 +27133,7 @@ export const proto = $root.proto = (() => {
             if (d.key != null) {
                 if (typeof d.key !== "object")
                     throw TypeError(".proto.KeepInChat.key: object expected");
-                m.key = $root.proto.MessageKey.fromObject(d.key);
+                m.key = $root.proto.MessageKey.create(d.key);
             }
             if (d.deviceJid != null) {
                 m.deviceJid = String(d.deviceJid);
@@ -27333,7 +27333,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        KeyExchangeMessage.fromObject = function fromObject(d) {
+        KeyExchangeMessage.create = function fromObject(d) {
             if (d instanceof $root.proto.KeyExchangeMessage)
                 return d;
             var m = new $root.proto.KeyExchangeMessage();
@@ -27465,7 +27465,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        KeyId.fromObject = function fromObject(d) {
+        KeyId.create = function fromObject(d) {
             if (d instanceof $root.proto.KeyId)
                 return d;
             var m = new $root.proto.KeyId();
@@ -27570,7 +27570,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        LIDMigrationMapping.fromObject = function fromObject(d) {
+        LIDMigrationMapping.create = function fromObject(d) {
             if (d instanceof $root.proto.LIDMigrationMapping)
                 return d;
             var m = new $root.proto.LIDMigrationMapping();
@@ -27712,7 +27712,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        LIDMigrationMappingSyncMessage.fromObject = function fromObject(d) {
+        LIDMigrationMappingSyncMessage.create = function fromObject(d) {
             if (d instanceof $root.proto.LIDMigrationMappingSyncMessage)
                 return d;
             var m = new $root.proto.LIDMigrationMappingSyncMessage();
@@ -27815,7 +27815,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        LIDMigrationMappingSyncPayload.fromObject = function fromObject(d) {
+        LIDMigrationMappingSyncPayload.create = function fromObject(d) {
             if (d instanceof $root.proto.LIDMigrationMappingSyncPayload)
                 return d;
             var m = new $root.proto.LIDMigrationMappingSyncPayload();
@@ -27826,7 +27826,7 @@ export const proto = $root.proto = (() => {
                 for (var i = 0; i < d.pnToLidMappings.length; ++i) {
                     if (typeof d.pnToLidMappings[i] !== "object")
                         throw TypeError(".proto.LIDMigrationMappingSyncPayload.pnToLidMappings: object expected");
-                    m.pnToLidMappings[i] = $root.proto.LIDMigrationMapping.fromObject(d.pnToLidMappings[i]);
+                    m.pnToLidMappings[i] = $root.proto.LIDMigrationMapping.create(d.pnToLidMappings[i]);
                 }
             }
             if (d.chatDbMigrationTimestamp != null) {
@@ -27945,19 +27945,19 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        LegacyMessage.fromObject = function fromObject(d) {
+        LegacyMessage.create = function fromObject(d) {
             if (d instanceof $root.proto.LegacyMessage)
                 return d;
             var m = new $root.proto.LegacyMessage();
             if (d.eventResponseMessage != null) {
                 if (typeof d.eventResponseMessage !== "object")
                     throw TypeError(".proto.LegacyMessage.eventResponseMessage: object expected");
-                m.eventResponseMessage = $root.proto.Message.EventResponseMessage.fromObject(d.eventResponseMessage);
+                m.eventResponseMessage = $root.proto.Message.EventResponseMessage.create(d.eventResponseMessage);
             }
             if (d.pollVote != null) {
                 if (typeof d.pollVote !== "object")
                     throw TypeError(".proto.LegacyMessage.pollVote: object expected");
-                m.pollVote = $root.proto.Message.PollVoteMessage.fromObject(d.pollVote);
+                m.pollVote = $root.proto.Message.PollVoteMessage.create(d.pollVote);
             }
             return m;
         };
@@ -28084,7 +28084,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        LimitSharing.fromObject = function fromObject(d) {
+        LimitSharing.create = function fromObject(d) {
             if (d instanceof $root.proto.LimitSharing)
                 return d;
             var m = new $root.proto.LimitSharing();
@@ -28262,7 +28262,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        LocalizedName.fromObject = function fromObject(d) {
+        LocalizedName.create = function fromObject(d) {
             if (d instanceof $root.proto.LocalizedName)
                 return d;
             var m = new $root.proto.LocalizedName();
@@ -28392,7 +28392,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        Location.fromObject = function fromObject(d) {
+        Location.create = function fromObject(d) {
             if (d instanceof $root.proto.Location)
                 return d;
             var m = new $root.proto.Location();
@@ -28496,7 +28496,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        MediaData.fromObject = function fromObject(d) {
+        MediaData.create = function fromObject(d) {
             if (d instanceof $root.proto.MediaData)
                 return d;
             var m = new $root.proto.MediaData();
@@ -28610,7 +28610,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        MediaNotifyMessage.fromObject = function fromObject(d) {
+        MediaNotifyMessage.create = function fromObject(d) {
             if (d instanceof $root.proto.MediaNotifyMessage)
                 return d;
             var m = new $root.proto.MediaNotifyMessage();
@@ -28766,7 +28766,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        MediaRetryNotification.fromObject = function fromObject(d) {
+        MediaRetryNotification.create = function fromObject(d) {
             if (d instanceof $root.proto.MediaRetryNotification)
                 return d;
             var m = new $root.proto.MediaRetryNotification();
@@ -28932,7 +28932,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        MemberLabel.fromObject = function fromObject(d) {
+        MemberLabel.create = function fromObject(d) {
             if (d instanceof $root.proto.MemberLabel)
                 return d;
             var m = new $root.proto.MemberLabel();
@@ -30143,7 +30143,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        Message.fromObject = function fromObject(d) {
+        Message.create = function fromObject(d) {
             if (d instanceof $root.proto.Message)
                 return d;
             var m = new $root.proto.Message();
@@ -30153,427 +30153,427 @@ export const proto = $root.proto = (() => {
             if (d.senderKeyDistributionMessage != null) {
                 if (typeof d.senderKeyDistributionMessage !== "object")
                     throw TypeError(".proto.Message.senderKeyDistributionMessage: object expected");
-                m.senderKeyDistributionMessage = $root.proto.Message.SenderKeyDistributionMessage.fromObject(d.senderKeyDistributionMessage);
+                m.senderKeyDistributionMessage = $root.proto.Message.SenderKeyDistributionMessage.create(d.senderKeyDistributionMessage);
             }
             if (d.imageMessage != null) {
                 if (typeof d.imageMessage !== "object")
                     throw TypeError(".proto.Message.imageMessage: object expected");
-                m.imageMessage = $root.proto.Message.ImageMessage.fromObject(d.imageMessage);
+                m.imageMessage = $root.proto.Message.ImageMessage.create(d.imageMessage);
             }
             if (d.contactMessage != null) {
                 if (typeof d.contactMessage !== "object")
                     throw TypeError(".proto.Message.contactMessage: object expected");
-                m.contactMessage = $root.proto.Message.ContactMessage.fromObject(d.contactMessage);
+                m.contactMessage = $root.proto.Message.ContactMessage.create(d.contactMessage);
             }
             if (d.locationMessage != null) {
                 if (typeof d.locationMessage !== "object")
                     throw TypeError(".proto.Message.locationMessage: object expected");
-                m.locationMessage = $root.proto.Message.LocationMessage.fromObject(d.locationMessage);
+                m.locationMessage = $root.proto.Message.LocationMessage.create(d.locationMessage);
             }
             if (d.extendedTextMessage != null) {
                 if (typeof d.extendedTextMessage !== "object")
                     throw TypeError(".proto.Message.extendedTextMessage: object expected");
-                m.extendedTextMessage = $root.proto.Message.ExtendedTextMessage.fromObject(d.extendedTextMessage);
+                m.extendedTextMessage = $root.proto.Message.ExtendedTextMessage.create(d.extendedTextMessage);
             }
             if (d.documentMessage != null) {
                 if (typeof d.documentMessage !== "object")
                     throw TypeError(".proto.Message.documentMessage: object expected");
-                m.documentMessage = $root.proto.Message.DocumentMessage.fromObject(d.documentMessage);
+                m.documentMessage = $root.proto.Message.DocumentMessage.create(d.documentMessage);
             }
             if (d.audioMessage != null) {
                 if (typeof d.audioMessage !== "object")
                     throw TypeError(".proto.Message.audioMessage: object expected");
-                m.audioMessage = $root.proto.Message.AudioMessage.fromObject(d.audioMessage);
+                m.audioMessage = $root.proto.Message.AudioMessage.create(d.audioMessage);
             }
             if (d.videoMessage != null) {
                 if (typeof d.videoMessage !== "object")
                     throw TypeError(".proto.Message.videoMessage: object expected");
-                m.videoMessage = $root.proto.Message.VideoMessage.fromObject(d.videoMessage);
+                m.videoMessage = $root.proto.Message.VideoMessage.create(d.videoMessage);
             }
             if (d.call != null) {
                 if (typeof d.call !== "object")
                     throw TypeError(".proto.Message.call: object expected");
-                m.call = $root.proto.Message.Call.fromObject(d.call);
+                m.call = $root.proto.Message.Call.create(d.call);
             }
             if (d.chat != null) {
                 if (typeof d.chat !== "object")
                     throw TypeError(".proto.Message.chat: object expected");
-                m.chat = $root.proto.Message.Chat.fromObject(d.chat);
+                m.chat = $root.proto.Message.Chat.create(d.chat);
             }
             if (d.protocolMessage != null) {
                 if (typeof d.protocolMessage !== "object")
                     throw TypeError(".proto.Message.protocolMessage: object expected");
-                m.protocolMessage = $root.proto.Message.ProtocolMessage.fromObject(d.protocolMessage);
+                m.protocolMessage = $root.proto.Message.ProtocolMessage.create(d.protocolMessage);
             }
             if (d.contactsArrayMessage != null) {
                 if (typeof d.contactsArrayMessage !== "object")
                     throw TypeError(".proto.Message.contactsArrayMessage: object expected");
-                m.contactsArrayMessage = $root.proto.Message.ContactsArrayMessage.fromObject(d.contactsArrayMessage);
+                m.contactsArrayMessage = $root.proto.Message.ContactsArrayMessage.create(d.contactsArrayMessage);
             }
             if (d.highlyStructuredMessage != null) {
                 if (typeof d.highlyStructuredMessage !== "object")
                     throw TypeError(".proto.Message.highlyStructuredMessage: object expected");
-                m.highlyStructuredMessage = $root.proto.Message.HighlyStructuredMessage.fromObject(d.highlyStructuredMessage);
+                m.highlyStructuredMessage = $root.proto.Message.HighlyStructuredMessage.create(d.highlyStructuredMessage);
             }
             if (d.fastRatchetKeySenderKeyDistributionMessage != null) {
                 if (typeof d.fastRatchetKeySenderKeyDistributionMessage !== "object")
                     throw TypeError(".proto.Message.fastRatchetKeySenderKeyDistributionMessage: object expected");
-                m.fastRatchetKeySenderKeyDistributionMessage = $root.proto.Message.SenderKeyDistributionMessage.fromObject(d.fastRatchetKeySenderKeyDistributionMessage);
+                m.fastRatchetKeySenderKeyDistributionMessage = $root.proto.Message.SenderKeyDistributionMessage.create(d.fastRatchetKeySenderKeyDistributionMessage);
             }
             if (d.sendPaymentMessage != null) {
                 if (typeof d.sendPaymentMessage !== "object")
                     throw TypeError(".proto.Message.sendPaymentMessage: object expected");
-                m.sendPaymentMessage = $root.proto.Message.SendPaymentMessage.fromObject(d.sendPaymentMessage);
+                m.sendPaymentMessage = $root.proto.Message.SendPaymentMessage.create(d.sendPaymentMessage);
             }
             if (d.liveLocationMessage != null) {
                 if (typeof d.liveLocationMessage !== "object")
                     throw TypeError(".proto.Message.liveLocationMessage: object expected");
-                m.liveLocationMessage = $root.proto.Message.LiveLocationMessage.fromObject(d.liveLocationMessage);
+                m.liveLocationMessage = $root.proto.Message.LiveLocationMessage.create(d.liveLocationMessage);
             }
             if (d.requestPaymentMessage != null) {
                 if (typeof d.requestPaymentMessage !== "object")
                     throw TypeError(".proto.Message.requestPaymentMessage: object expected");
-                m.requestPaymentMessage = $root.proto.Message.RequestPaymentMessage.fromObject(d.requestPaymentMessage);
+                m.requestPaymentMessage = $root.proto.Message.RequestPaymentMessage.create(d.requestPaymentMessage);
             }
             if (d.declinePaymentRequestMessage != null) {
                 if (typeof d.declinePaymentRequestMessage !== "object")
                     throw TypeError(".proto.Message.declinePaymentRequestMessage: object expected");
-                m.declinePaymentRequestMessage = $root.proto.Message.DeclinePaymentRequestMessage.fromObject(d.declinePaymentRequestMessage);
+                m.declinePaymentRequestMessage = $root.proto.Message.DeclinePaymentRequestMessage.create(d.declinePaymentRequestMessage);
             }
             if (d.cancelPaymentRequestMessage != null) {
                 if (typeof d.cancelPaymentRequestMessage !== "object")
                     throw TypeError(".proto.Message.cancelPaymentRequestMessage: object expected");
-                m.cancelPaymentRequestMessage = $root.proto.Message.CancelPaymentRequestMessage.fromObject(d.cancelPaymentRequestMessage);
+                m.cancelPaymentRequestMessage = $root.proto.Message.CancelPaymentRequestMessage.create(d.cancelPaymentRequestMessage);
             }
             if (d.templateMessage != null) {
                 if (typeof d.templateMessage !== "object")
                     throw TypeError(".proto.Message.templateMessage: object expected");
-                m.templateMessage = $root.proto.Message.TemplateMessage.fromObject(d.templateMessage);
+                m.templateMessage = $root.proto.Message.TemplateMessage.create(d.templateMessage);
             }
             if (d.stickerMessage != null) {
                 if (typeof d.stickerMessage !== "object")
                     throw TypeError(".proto.Message.stickerMessage: object expected");
-                m.stickerMessage = $root.proto.Message.StickerMessage.fromObject(d.stickerMessage);
+                m.stickerMessage = $root.proto.Message.StickerMessage.create(d.stickerMessage);
             }
             if (d.groupInviteMessage != null) {
                 if (typeof d.groupInviteMessage !== "object")
                     throw TypeError(".proto.Message.groupInviteMessage: object expected");
-                m.groupInviteMessage = $root.proto.Message.GroupInviteMessage.fromObject(d.groupInviteMessage);
+                m.groupInviteMessage = $root.proto.Message.GroupInviteMessage.create(d.groupInviteMessage);
             }
             if (d.templateButtonReplyMessage != null) {
                 if (typeof d.templateButtonReplyMessage !== "object")
                     throw TypeError(".proto.Message.templateButtonReplyMessage: object expected");
-                m.templateButtonReplyMessage = $root.proto.Message.TemplateButtonReplyMessage.fromObject(d.templateButtonReplyMessage);
+                m.templateButtonReplyMessage = $root.proto.Message.TemplateButtonReplyMessage.create(d.templateButtonReplyMessage);
             }
             if (d.productMessage != null) {
                 if (typeof d.productMessage !== "object")
                     throw TypeError(".proto.Message.productMessage: object expected");
-                m.productMessage = $root.proto.Message.ProductMessage.fromObject(d.productMessage);
+                m.productMessage = $root.proto.Message.ProductMessage.create(d.productMessage);
             }
             if (d.deviceSentMessage != null) {
                 if (typeof d.deviceSentMessage !== "object")
                     throw TypeError(".proto.Message.deviceSentMessage: object expected");
-                m.deviceSentMessage = $root.proto.Message.DeviceSentMessage.fromObject(d.deviceSentMessage);
+                m.deviceSentMessage = $root.proto.Message.DeviceSentMessage.create(d.deviceSentMessage);
             }
             if (d.messageContextInfo != null) {
                 if (typeof d.messageContextInfo !== "object")
                     throw TypeError(".proto.Message.messageContextInfo: object expected");
-                m.messageContextInfo = $root.proto.MessageContextInfo.fromObject(d.messageContextInfo);
+                m.messageContextInfo = $root.proto.MessageContextInfo.create(d.messageContextInfo);
             }
             if (d.listMessage != null) {
                 if (typeof d.listMessage !== "object")
                     throw TypeError(".proto.Message.listMessage: object expected");
-                m.listMessage = $root.proto.Message.ListMessage.fromObject(d.listMessage);
+                m.listMessage = $root.proto.Message.ListMessage.create(d.listMessage);
             }
             if (d.viewOnceMessage != null) {
                 if (typeof d.viewOnceMessage !== "object")
                     throw TypeError(".proto.Message.viewOnceMessage: object expected");
-                m.viewOnceMessage = $root.proto.Message.FutureProofMessage.fromObject(d.viewOnceMessage);
+                m.viewOnceMessage = $root.proto.Message.FutureProofMessage.create(d.viewOnceMessage);
             }
             if (d.orderMessage != null) {
                 if (typeof d.orderMessage !== "object")
                     throw TypeError(".proto.Message.orderMessage: object expected");
-                m.orderMessage = $root.proto.Message.OrderMessage.fromObject(d.orderMessage);
+                m.orderMessage = $root.proto.Message.OrderMessage.create(d.orderMessage);
             }
             if (d.listResponseMessage != null) {
                 if (typeof d.listResponseMessage !== "object")
                     throw TypeError(".proto.Message.listResponseMessage: object expected");
-                m.listResponseMessage = $root.proto.Message.ListResponseMessage.fromObject(d.listResponseMessage);
+                m.listResponseMessage = $root.proto.Message.ListResponseMessage.create(d.listResponseMessage);
             }
             if (d.ephemeralMessage != null) {
                 if (typeof d.ephemeralMessage !== "object")
                     throw TypeError(".proto.Message.ephemeralMessage: object expected");
-                m.ephemeralMessage = $root.proto.Message.FutureProofMessage.fromObject(d.ephemeralMessage);
+                m.ephemeralMessage = $root.proto.Message.FutureProofMessage.create(d.ephemeralMessage);
             }
             if (d.invoiceMessage != null) {
                 if (typeof d.invoiceMessage !== "object")
                     throw TypeError(".proto.Message.invoiceMessage: object expected");
-                m.invoiceMessage = $root.proto.Message.InvoiceMessage.fromObject(d.invoiceMessage);
+                m.invoiceMessage = $root.proto.Message.InvoiceMessage.create(d.invoiceMessage);
             }
             if (d.buttonsMessage != null) {
                 if (typeof d.buttonsMessage !== "object")
                     throw TypeError(".proto.Message.buttonsMessage: object expected");
-                m.buttonsMessage = $root.proto.Message.ButtonsMessage.fromObject(d.buttonsMessage);
+                m.buttonsMessage = $root.proto.Message.ButtonsMessage.create(d.buttonsMessage);
             }
             if (d.buttonsResponseMessage != null) {
                 if (typeof d.buttonsResponseMessage !== "object")
                     throw TypeError(".proto.Message.buttonsResponseMessage: object expected");
-                m.buttonsResponseMessage = $root.proto.Message.ButtonsResponseMessage.fromObject(d.buttonsResponseMessage);
+                m.buttonsResponseMessage = $root.proto.Message.ButtonsResponseMessage.create(d.buttonsResponseMessage);
             }
             if (d.paymentInviteMessage != null) {
                 if (typeof d.paymentInviteMessage !== "object")
                     throw TypeError(".proto.Message.paymentInviteMessage: object expected");
-                m.paymentInviteMessage = $root.proto.Message.PaymentInviteMessage.fromObject(d.paymentInviteMessage);
+                m.paymentInviteMessage = $root.proto.Message.PaymentInviteMessage.create(d.paymentInviteMessage);
             }
             if (d.interactiveMessage != null) {
                 if (typeof d.interactiveMessage !== "object")
                     throw TypeError(".proto.Message.interactiveMessage: object expected");
-                m.interactiveMessage = $root.proto.Message.InteractiveMessage.fromObject(d.interactiveMessage);
+                m.interactiveMessage = $root.proto.Message.InteractiveMessage.create(d.interactiveMessage);
             }
             if (d.reactionMessage != null) {
                 if (typeof d.reactionMessage !== "object")
                     throw TypeError(".proto.Message.reactionMessage: object expected");
-                m.reactionMessage = $root.proto.Message.ReactionMessage.fromObject(d.reactionMessage);
+                m.reactionMessage = $root.proto.Message.ReactionMessage.create(d.reactionMessage);
             }
             if (d.stickerSyncRmrMessage != null) {
                 if (typeof d.stickerSyncRmrMessage !== "object")
                     throw TypeError(".proto.Message.stickerSyncRmrMessage: object expected");
-                m.stickerSyncRmrMessage = $root.proto.Message.StickerSyncRMRMessage.fromObject(d.stickerSyncRmrMessage);
+                m.stickerSyncRmrMessage = $root.proto.Message.StickerSyncRMRMessage.create(d.stickerSyncRmrMessage);
             }
             if (d.interactiveResponseMessage != null) {
                 if (typeof d.interactiveResponseMessage !== "object")
                     throw TypeError(".proto.Message.interactiveResponseMessage: object expected");
-                m.interactiveResponseMessage = $root.proto.Message.InteractiveResponseMessage.fromObject(d.interactiveResponseMessage);
+                m.interactiveResponseMessage = $root.proto.Message.InteractiveResponseMessage.create(d.interactiveResponseMessage);
             }
             if (d.pollCreationMessage != null) {
                 if (typeof d.pollCreationMessage !== "object")
                     throw TypeError(".proto.Message.pollCreationMessage: object expected");
-                m.pollCreationMessage = $root.proto.Message.PollCreationMessage.fromObject(d.pollCreationMessage);
+                m.pollCreationMessage = $root.proto.Message.PollCreationMessage.create(d.pollCreationMessage);
             }
             if (d.pollUpdateMessage != null) {
                 if (typeof d.pollUpdateMessage !== "object")
                     throw TypeError(".proto.Message.pollUpdateMessage: object expected");
-                m.pollUpdateMessage = $root.proto.Message.PollUpdateMessage.fromObject(d.pollUpdateMessage);
+                m.pollUpdateMessage = $root.proto.Message.PollUpdateMessage.create(d.pollUpdateMessage);
             }
             if (d.keepInChatMessage != null) {
                 if (typeof d.keepInChatMessage !== "object")
                     throw TypeError(".proto.Message.keepInChatMessage: object expected");
-                m.keepInChatMessage = $root.proto.Message.KeepInChatMessage.fromObject(d.keepInChatMessage);
+                m.keepInChatMessage = $root.proto.Message.KeepInChatMessage.create(d.keepInChatMessage);
             }
             if (d.documentWithCaptionMessage != null) {
                 if (typeof d.documentWithCaptionMessage !== "object")
                     throw TypeError(".proto.Message.documentWithCaptionMessage: object expected");
-                m.documentWithCaptionMessage = $root.proto.Message.FutureProofMessage.fromObject(d.documentWithCaptionMessage);
+                m.documentWithCaptionMessage = $root.proto.Message.FutureProofMessage.create(d.documentWithCaptionMessage);
             }
             if (d.requestPhoneNumberMessage != null) {
                 if (typeof d.requestPhoneNumberMessage !== "object")
                     throw TypeError(".proto.Message.requestPhoneNumberMessage: object expected");
-                m.requestPhoneNumberMessage = $root.proto.Message.RequestPhoneNumberMessage.fromObject(d.requestPhoneNumberMessage);
+                m.requestPhoneNumberMessage = $root.proto.Message.RequestPhoneNumberMessage.create(d.requestPhoneNumberMessage);
             }
             if (d.viewOnceMessageV2 != null) {
                 if (typeof d.viewOnceMessageV2 !== "object")
                     throw TypeError(".proto.Message.viewOnceMessageV2: object expected");
-                m.viewOnceMessageV2 = $root.proto.Message.FutureProofMessage.fromObject(d.viewOnceMessageV2);
+                m.viewOnceMessageV2 = $root.proto.Message.FutureProofMessage.create(d.viewOnceMessageV2);
             }
             if (d.encReactionMessage != null) {
                 if (typeof d.encReactionMessage !== "object")
                     throw TypeError(".proto.Message.encReactionMessage: object expected");
-                m.encReactionMessage = $root.proto.Message.EncReactionMessage.fromObject(d.encReactionMessage);
+                m.encReactionMessage = $root.proto.Message.EncReactionMessage.create(d.encReactionMessage);
             }
             if (d.editedMessage != null) {
                 if (typeof d.editedMessage !== "object")
                     throw TypeError(".proto.Message.editedMessage: object expected");
-                m.editedMessage = $root.proto.Message.FutureProofMessage.fromObject(d.editedMessage);
+                m.editedMessage = $root.proto.Message.FutureProofMessage.create(d.editedMessage);
             }
             if (d.viewOnceMessageV2Extension != null) {
                 if (typeof d.viewOnceMessageV2Extension !== "object")
                     throw TypeError(".proto.Message.viewOnceMessageV2Extension: object expected");
-                m.viewOnceMessageV2Extension = $root.proto.Message.FutureProofMessage.fromObject(d.viewOnceMessageV2Extension);
+                m.viewOnceMessageV2Extension = $root.proto.Message.FutureProofMessage.create(d.viewOnceMessageV2Extension);
             }
             if (d.pollCreationMessageV2 != null) {
                 if (typeof d.pollCreationMessageV2 !== "object")
                     throw TypeError(".proto.Message.pollCreationMessageV2: object expected");
-                m.pollCreationMessageV2 = $root.proto.Message.PollCreationMessage.fromObject(d.pollCreationMessageV2);
+                m.pollCreationMessageV2 = $root.proto.Message.PollCreationMessage.create(d.pollCreationMessageV2);
             }
             if (d.scheduledCallCreationMessage != null) {
                 if (typeof d.scheduledCallCreationMessage !== "object")
                     throw TypeError(".proto.Message.scheduledCallCreationMessage: object expected");
-                m.scheduledCallCreationMessage = $root.proto.Message.ScheduledCallCreationMessage.fromObject(d.scheduledCallCreationMessage);
+                m.scheduledCallCreationMessage = $root.proto.Message.ScheduledCallCreationMessage.create(d.scheduledCallCreationMessage);
             }
             if (d.groupMentionedMessage != null) {
                 if (typeof d.groupMentionedMessage !== "object")
                     throw TypeError(".proto.Message.groupMentionedMessage: object expected");
-                m.groupMentionedMessage = $root.proto.Message.FutureProofMessage.fromObject(d.groupMentionedMessage);
+                m.groupMentionedMessage = $root.proto.Message.FutureProofMessage.create(d.groupMentionedMessage);
             }
             if (d.pinInChatMessage != null) {
                 if (typeof d.pinInChatMessage !== "object")
                     throw TypeError(".proto.Message.pinInChatMessage: object expected");
-                m.pinInChatMessage = $root.proto.Message.PinInChatMessage.fromObject(d.pinInChatMessage);
+                m.pinInChatMessage = $root.proto.Message.PinInChatMessage.create(d.pinInChatMessage);
             }
             if (d.pollCreationMessageV3 != null) {
                 if (typeof d.pollCreationMessageV3 !== "object")
                     throw TypeError(".proto.Message.pollCreationMessageV3: object expected");
-                m.pollCreationMessageV3 = $root.proto.Message.PollCreationMessage.fromObject(d.pollCreationMessageV3);
+                m.pollCreationMessageV3 = $root.proto.Message.PollCreationMessage.create(d.pollCreationMessageV3);
             }
             if (d.scheduledCallEditMessage != null) {
                 if (typeof d.scheduledCallEditMessage !== "object")
                     throw TypeError(".proto.Message.scheduledCallEditMessage: object expected");
-                m.scheduledCallEditMessage = $root.proto.Message.ScheduledCallEditMessage.fromObject(d.scheduledCallEditMessage);
+                m.scheduledCallEditMessage = $root.proto.Message.ScheduledCallEditMessage.create(d.scheduledCallEditMessage);
             }
             if (d.ptvMessage != null) {
                 if (typeof d.ptvMessage !== "object")
                     throw TypeError(".proto.Message.ptvMessage: object expected");
-                m.ptvMessage = $root.proto.Message.VideoMessage.fromObject(d.ptvMessage);
+                m.ptvMessage = $root.proto.Message.VideoMessage.create(d.ptvMessage);
             }
             if (d.botInvokeMessage != null) {
                 if (typeof d.botInvokeMessage !== "object")
                     throw TypeError(".proto.Message.botInvokeMessage: object expected");
-                m.botInvokeMessage = $root.proto.Message.FutureProofMessage.fromObject(d.botInvokeMessage);
+                m.botInvokeMessage = $root.proto.Message.FutureProofMessage.create(d.botInvokeMessage);
             }
             if (d.callLogMesssage != null) {
                 if (typeof d.callLogMesssage !== "object")
                     throw TypeError(".proto.Message.callLogMesssage: object expected");
-                m.callLogMesssage = $root.proto.Message.CallLogMessage.fromObject(d.callLogMesssage);
+                m.callLogMesssage = $root.proto.Message.CallLogMessage.create(d.callLogMesssage);
             }
             if (d.messageHistoryBundle != null) {
                 if (typeof d.messageHistoryBundle !== "object")
                     throw TypeError(".proto.Message.messageHistoryBundle: object expected");
-                m.messageHistoryBundle = $root.proto.Message.MessageHistoryBundle.fromObject(d.messageHistoryBundle);
+                m.messageHistoryBundle = $root.proto.Message.MessageHistoryBundle.create(d.messageHistoryBundle);
             }
             if (d.encCommentMessage != null) {
                 if (typeof d.encCommentMessage !== "object")
                     throw TypeError(".proto.Message.encCommentMessage: object expected");
-                m.encCommentMessage = $root.proto.Message.EncCommentMessage.fromObject(d.encCommentMessage);
+                m.encCommentMessage = $root.proto.Message.EncCommentMessage.create(d.encCommentMessage);
             }
             if (d.bcallMessage != null) {
                 if (typeof d.bcallMessage !== "object")
                     throw TypeError(".proto.Message.bcallMessage: object expected");
-                m.bcallMessage = $root.proto.Message.BCallMessage.fromObject(d.bcallMessage);
+                m.bcallMessage = $root.proto.Message.BCallMessage.create(d.bcallMessage);
             }
             if (d.lottieStickerMessage != null) {
                 if (typeof d.lottieStickerMessage !== "object")
                     throw TypeError(".proto.Message.lottieStickerMessage: object expected");
-                m.lottieStickerMessage = $root.proto.Message.FutureProofMessage.fromObject(d.lottieStickerMessage);
+                m.lottieStickerMessage = $root.proto.Message.FutureProofMessage.create(d.lottieStickerMessage);
             }
             if (d.eventMessage != null) {
                 if (typeof d.eventMessage !== "object")
                     throw TypeError(".proto.Message.eventMessage: object expected");
-                m.eventMessage = $root.proto.Message.EventMessage.fromObject(d.eventMessage);
+                m.eventMessage = $root.proto.Message.EventMessage.create(d.eventMessage);
             }
             if (d.encEventResponseMessage != null) {
                 if (typeof d.encEventResponseMessage !== "object")
                     throw TypeError(".proto.Message.encEventResponseMessage: object expected");
-                m.encEventResponseMessage = $root.proto.Message.EncEventResponseMessage.fromObject(d.encEventResponseMessage);
+                m.encEventResponseMessage = $root.proto.Message.EncEventResponseMessage.create(d.encEventResponseMessage);
             }
             if (d.commentMessage != null) {
                 if (typeof d.commentMessage !== "object")
                     throw TypeError(".proto.Message.commentMessage: object expected");
-                m.commentMessage = $root.proto.Message.CommentMessage.fromObject(d.commentMessage);
+                m.commentMessage = $root.proto.Message.CommentMessage.create(d.commentMessage);
             }
             if (d.newsletterAdminInviteMessage != null) {
                 if (typeof d.newsletterAdminInviteMessage !== "object")
                     throw TypeError(".proto.Message.newsletterAdminInviteMessage: object expected");
-                m.newsletterAdminInviteMessage = $root.proto.Message.NewsletterAdminInviteMessage.fromObject(d.newsletterAdminInviteMessage);
+                m.newsletterAdminInviteMessage = $root.proto.Message.NewsletterAdminInviteMessage.create(d.newsletterAdminInviteMessage);
             }
             if (d.placeholderMessage != null) {
                 if (typeof d.placeholderMessage !== "object")
                     throw TypeError(".proto.Message.placeholderMessage: object expected");
-                m.placeholderMessage = $root.proto.Message.PlaceholderMessage.fromObject(d.placeholderMessage);
+                m.placeholderMessage = $root.proto.Message.PlaceholderMessage.create(d.placeholderMessage);
             }
             if (d.secretEncryptedMessage != null) {
                 if (typeof d.secretEncryptedMessage !== "object")
                     throw TypeError(".proto.Message.secretEncryptedMessage: object expected");
-                m.secretEncryptedMessage = $root.proto.Message.SecretEncryptedMessage.fromObject(d.secretEncryptedMessage);
+                m.secretEncryptedMessage = $root.proto.Message.SecretEncryptedMessage.create(d.secretEncryptedMessage);
             }
             if (d.albumMessage != null) {
                 if (typeof d.albumMessage !== "object")
                     throw TypeError(".proto.Message.albumMessage: object expected");
-                m.albumMessage = $root.proto.Message.AlbumMessage.fromObject(d.albumMessage);
+                m.albumMessage = $root.proto.Message.AlbumMessage.create(d.albumMessage);
             }
             if (d.eventCoverImage != null) {
                 if (typeof d.eventCoverImage !== "object")
                     throw TypeError(".proto.Message.eventCoverImage: object expected");
-                m.eventCoverImage = $root.proto.Message.FutureProofMessage.fromObject(d.eventCoverImage);
+                m.eventCoverImage = $root.proto.Message.FutureProofMessage.create(d.eventCoverImage);
             }
             if (d.stickerPackMessage != null) {
                 if (typeof d.stickerPackMessage !== "object")
                     throw TypeError(".proto.Message.stickerPackMessage: object expected");
-                m.stickerPackMessage = $root.proto.Message.StickerPackMessage.fromObject(d.stickerPackMessage);
+                m.stickerPackMessage = $root.proto.Message.StickerPackMessage.create(d.stickerPackMessage);
             }
             if (d.statusMentionMessage != null) {
                 if (typeof d.statusMentionMessage !== "object")
                     throw TypeError(".proto.Message.statusMentionMessage: object expected");
-                m.statusMentionMessage = $root.proto.Message.FutureProofMessage.fromObject(d.statusMentionMessage);
+                m.statusMentionMessage = $root.proto.Message.FutureProofMessage.create(d.statusMentionMessage);
             }
             if (d.pollResultSnapshotMessage != null) {
                 if (typeof d.pollResultSnapshotMessage !== "object")
                     throw TypeError(".proto.Message.pollResultSnapshotMessage: object expected");
-                m.pollResultSnapshotMessage = $root.proto.Message.PollResultSnapshotMessage.fromObject(d.pollResultSnapshotMessage);
+                m.pollResultSnapshotMessage = $root.proto.Message.PollResultSnapshotMessage.create(d.pollResultSnapshotMessage);
             }
             if (d.pollCreationOptionImageMessage != null) {
                 if (typeof d.pollCreationOptionImageMessage !== "object")
                     throw TypeError(".proto.Message.pollCreationOptionImageMessage: object expected");
-                m.pollCreationOptionImageMessage = $root.proto.Message.FutureProofMessage.fromObject(d.pollCreationOptionImageMessage);
+                m.pollCreationOptionImageMessage = $root.proto.Message.FutureProofMessage.create(d.pollCreationOptionImageMessage);
             }
             if (d.associatedChildMessage != null) {
                 if (typeof d.associatedChildMessage !== "object")
                     throw TypeError(".proto.Message.associatedChildMessage: object expected");
-                m.associatedChildMessage = $root.proto.Message.FutureProofMessage.fromObject(d.associatedChildMessage);
+                m.associatedChildMessage = $root.proto.Message.FutureProofMessage.create(d.associatedChildMessage);
             }
             if (d.groupStatusMentionMessage != null) {
                 if (typeof d.groupStatusMentionMessage !== "object")
                     throw TypeError(".proto.Message.groupStatusMentionMessage: object expected");
-                m.groupStatusMentionMessage = $root.proto.Message.FutureProofMessage.fromObject(d.groupStatusMentionMessage);
+                m.groupStatusMentionMessage = $root.proto.Message.FutureProofMessage.create(d.groupStatusMentionMessage);
             }
             if (d.pollCreationMessageV4 != null) {
                 if (typeof d.pollCreationMessageV4 !== "object")
                     throw TypeError(".proto.Message.pollCreationMessageV4: object expected");
-                m.pollCreationMessageV4 = $root.proto.Message.FutureProofMessage.fromObject(d.pollCreationMessageV4);
+                m.pollCreationMessageV4 = $root.proto.Message.FutureProofMessage.create(d.pollCreationMessageV4);
             }
             if (d.pollCreationMessageV5 != null) {
                 if (typeof d.pollCreationMessageV5 !== "object")
                     throw TypeError(".proto.Message.pollCreationMessageV5: object expected");
-                m.pollCreationMessageV5 = $root.proto.Message.FutureProofMessage.fromObject(d.pollCreationMessageV5);
+                m.pollCreationMessageV5 = $root.proto.Message.FutureProofMessage.create(d.pollCreationMessageV5);
             }
             if (d.statusAddYours != null) {
                 if (typeof d.statusAddYours !== "object")
                     throw TypeError(".proto.Message.statusAddYours: object expected");
-                m.statusAddYours = $root.proto.Message.FutureProofMessage.fromObject(d.statusAddYours);
+                m.statusAddYours = $root.proto.Message.FutureProofMessage.create(d.statusAddYours);
             }
             if (d.groupStatusMessage != null) {
                 if (typeof d.groupStatusMessage !== "object")
                     throw TypeError(".proto.Message.groupStatusMessage: object expected");
-                m.groupStatusMessage = $root.proto.Message.FutureProofMessage.fromObject(d.groupStatusMessage);
+                m.groupStatusMessage = $root.proto.Message.FutureProofMessage.create(d.groupStatusMessage);
             }
             if (d.richResponseMessage != null) {
                 if (typeof d.richResponseMessage !== "object")
                     throw TypeError(".proto.Message.richResponseMessage: object expected");
-                m.richResponseMessage = $root.proto.AIRichResponseMessage.fromObject(d.richResponseMessage);
+                m.richResponseMessage = $root.proto.AIRichResponseMessage.create(d.richResponseMessage);
             }
             if (d.statusNotificationMessage != null) {
                 if (typeof d.statusNotificationMessage !== "object")
                     throw TypeError(".proto.Message.statusNotificationMessage: object expected");
-                m.statusNotificationMessage = $root.proto.Message.StatusNotificationMessage.fromObject(d.statusNotificationMessage);
+                m.statusNotificationMessage = $root.proto.Message.StatusNotificationMessage.create(d.statusNotificationMessage);
             }
             if (d.limitSharingMessage != null) {
                 if (typeof d.limitSharingMessage !== "object")
                     throw TypeError(".proto.Message.limitSharingMessage: object expected");
-                m.limitSharingMessage = $root.proto.Message.FutureProofMessage.fromObject(d.limitSharingMessage);
+                m.limitSharingMessage = $root.proto.Message.FutureProofMessage.create(d.limitSharingMessage);
             }
             if (d.botTaskMessage != null) {
                 if (typeof d.botTaskMessage !== "object")
                     throw TypeError(".proto.Message.botTaskMessage: object expected");
-                m.botTaskMessage = $root.proto.Message.FutureProofMessage.fromObject(d.botTaskMessage);
+                m.botTaskMessage = $root.proto.Message.FutureProofMessage.create(d.botTaskMessage);
             }
             if (d.questionMessage != null) {
                 if (typeof d.questionMessage !== "object")
                     throw TypeError(".proto.Message.questionMessage: object expected");
-                m.questionMessage = $root.proto.Message.FutureProofMessage.fromObject(d.questionMessage);
+                m.questionMessage = $root.proto.Message.FutureProofMessage.create(d.questionMessage);
             }
             if (d.messageHistoryNotice != null) {
                 if (typeof d.messageHistoryNotice !== "object")
                     throw TypeError(".proto.Message.messageHistoryNotice: object expected");
-                m.messageHistoryNotice = $root.proto.Message.MessageHistoryNotice.fromObject(d.messageHistoryNotice);
+                m.messageHistoryNotice = $root.proto.Message.MessageHistoryNotice.create(d.messageHistoryNotice);
             }
             return m;
         };
@@ -31104,7 +31104,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            AlbumMessage.fromObject = function fromObject(d) {
+            AlbumMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.AlbumMessage)
                     return d;
                 var m = new $root.proto.Message.AlbumMessage();
@@ -31117,7 +31117,7 @@ export const proto = $root.proto = (() => {
                 if (d.contextInfo != null) {
                     if (typeof d.contextInfo !== "object")
                         throw TypeError(".proto.Message.AlbumMessage.contextInfo: object expected");
-                    m.contextInfo = $root.proto.ContextInfo.fromObject(d.contextInfo);
+                    m.contextInfo = $root.proto.ContextInfo.create(d.contextInfo);
                 }
                 return m;
             };
@@ -31222,7 +31222,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            AppStateFatalExceptionNotification.fromObject = function fromObject(d) {
+            AppStateFatalExceptionNotification.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.AppStateFatalExceptionNotification)
                     return d;
                 var m = new $root.proto.Message.AppStateFatalExceptionNotification();
@@ -31350,19 +31350,19 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            AppStateSyncKey.fromObject = function fromObject(d) {
+            AppStateSyncKey.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.AppStateSyncKey)
                     return d;
                 var m = new $root.proto.Message.AppStateSyncKey();
                 if (d.keyId != null) {
                     if (typeof d.keyId !== "object")
                         throw TypeError(".proto.Message.AppStateSyncKey.keyId: object expected");
-                    m.keyId = $root.proto.Message.AppStateSyncKeyId.fromObject(d.keyId);
+                    m.keyId = $root.proto.Message.AppStateSyncKeyId.create(d.keyId);
                 }
                 if (d.keyData != null) {
                     if (typeof d.keyData !== "object")
                         throw TypeError(".proto.Message.AppStateSyncKey.keyData: object expected");
-                    m.keyData = $root.proto.Message.AppStateSyncKeyData.fromObject(d.keyData);
+                    m.keyData = $root.proto.Message.AppStateSyncKeyData.create(d.keyData);
                 }
                 return m;
             };
@@ -31476,7 +31476,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            AppStateSyncKeyData.fromObject = function fromObject(d) {
+            AppStateSyncKeyData.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.AppStateSyncKeyData)
                     return d;
                 var m = new $root.proto.Message.AppStateSyncKeyData();
@@ -31489,7 +31489,7 @@ export const proto = $root.proto = (() => {
                 if (d.fingerprint != null) {
                     if (typeof d.fingerprint !== "object")
                         throw TypeError(".proto.Message.AppStateSyncKeyData.fingerprint: object expected");
-                    m.fingerprint = $root.proto.Message.AppStateSyncKeyFingerprint.fromObject(d.fingerprint);
+                    m.fingerprint = $root.proto.Message.AppStateSyncKeyFingerprint.create(d.fingerprint);
                 }
                 if (d.timestamp != null) {
                     if ($util.Long)
@@ -31627,7 +31627,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            AppStateSyncKeyFingerprint.fromObject = function fromObject(d) {
+            AppStateSyncKeyFingerprint.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.AppStateSyncKeyFingerprint)
                     return d;
                 var m = new $root.proto.Message.AppStateSyncKeyFingerprint();
@@ -31740,7 +31740,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            AppStateSyncKeyId.fromObject = function fromObject(d) {
+            AppStateSyncKeyId.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.AppStateSyncKeyId)
                     return d;
                 var m = new $root.proto.Message.AppStateSyncKeyId();
@@ -31828,7 +31828,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            AppStateSyncKeyRequest.fromObject = function fromObject(d) {
+            AppStateSyncKeyRequest.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.AppStateSyncKeyRequest)
                     return d;
                 var m = new $root.proto.Message.AppStateSyncKeyRequest();
@@ -31839,7 +31839,7 @@ export const proto = $root.proto = (() => {
                     for (var i = 0; i < d.keyIds.length; ++i) {
                         if (typeof d.keyIds[i] !== "object")
                             throw TypeError(".proto.Message.AppStateSyncKeyRequest.keyIds: object expected");
-                        m.keyIds[i] = $root.proto.Message.AppStateSyncKeyId.fromObject(d.keyIds[i]);
+                        m.keyIds[i] = $root.proto.Message.AppStateSyncKeyId.create(d.keyIds[i]);
                     }
                 }
                 return m;
@@ -31924,7 +31924,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            AppStateSyncKeyShare.fromObject = function fromObject(d) {
+            AppStateSyncKeyShare.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.AppStateSyncKeyShare)
                     return d;
                 var m = new $root.proto.Message.AppStateSyncKeyShare();
@@ -31935,7 +31935,7 @@ export const proto = $root.proto = (() => {
                     for (var i = 0; i < d.keys.length; ++i) {
                         if (typeof d.keys[i] !== "object")
                             throw TypeError(".proto.Message.AppStateSyncKeyShare.keys: object expected");
-                        m.keys[i] = $root.proto.Message.AppStateSyncKey.fromObject(d.keys[i]);
+                        m.keys[i] = $root.proto.Message.AppStateSyncKey.create(d.keys[i]);
                     }
                 }
                 return m;
@@ -32218,7 +32218,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            AudioMessage.fromObject = function fromObject(d) {
+            AudioMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.AudioMessage)
                     return d;
                 var m = new $root.proto.Message.AudioMessage();
@@ -32278,7 +32278,7 @@ export const proto = $root.proto = (() => {
                 if (d.contextInfo != null) {
                     if (typeof d.contextInfo !== "object")
                         throw TypeError(".proto.Message.AudioMessage.contextInfo: object expected");
-                    m.contextInfo = $root.proto.ContextInfo.fromObject(d.contextInfo);
+                    m.contextInfo = $root.proto.ContextInfo.create(d.contextInfo);
                 }
                 if (d.streamingSidecar != null) {
                     if (typeof d.streamingSidecar === "string")
@@ -32502,7 +32502,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            BCallMessage.fromObject = function fromObject(d) {
+            BCallMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.BCallMessage)
                     return d;
                 var m = new $root.proto.Message.BCallMessage();
@@ -32707,14 +32707,14 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            BotFeedbackMessage.fromObject = function fromObject(d) {
+            BotFeedbackMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.BotFeedbackMessage)
                     return d;
                 var m = new $root.proto.Message.BotFeedbackMessage();
                 if (d.messageKey != null) {
                     if (typeof d.messageKey !== "object")
                         throw TypeError(".proto.Message.BotFeedbackMessage.messageKey: object expected");
-                    m.messageKey = $root.proto.MessageKey.fromObject(d.messageKey);
+                    m.messageKey = $root.proto.MessageKey.create(d.messageKey);
                 }
                 switch (d.kind) {
                 default:
@@ -33058,7 +33058,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            ButtonsMessage.fromObject = function fromObject(d) {
+            ButtonsMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.ButtonsMessage)
                     return d;
                 var m = new $root.proto.Message.ButtonsMessage();
@@ -33071,7 +33071,7 @@ export const proto = $root.proto = (() => {
                 if (d.contextInfo != null) {
                     if (typeof d.contextInfo !== "object")
                         throw TypeError(".proto.Message.ButtonsMessage.contextInfo: object expected");
-                    m.contextInfo = $root.proto.ContextInfo.fromObject(d.contextInfo);
+                    m.contextInfo = $root.proto.ContextInfo.create(d.contextInfo);
                 }
                 if (d.buttons) {
                     if (!Array.isArray(d.buttons))
@@ -33080,7 +33080,7 @@ export const proto = $root.proto = (() => {
                     for (var i = 0; i < d.buttons.length; ++i) {
                         if (typeof d.buttons[i] !== "object")
                             throw TypeError(".proto.Message.ButtonsMessage.buttons: object expected");
-                        m.buttons[i] = $root.proto.Message.ButtonsMessage.Button.fromObject(d.buttons[i]);
+                        m.buttons[i] = $root.proto.Message.ButtonsMessage.Button.create(d.buttons[i]);
                     }
                 }
                 switch (d.headerType) {
@@ -33125,22 +33125,22 @@ export const proto = $root.proto = (() => {
                 if (d.documentMessage != null) {
                     if (typeof d.documentMessage !== "object")
                         throw TypeError(".proto.Message.ButtonsMessage.documentMessage: object expected");
-                    m.documentMessage = $root.proto.Message.DocumentMessage.fromObject(d.documentMessage);
+                    m.documentMessage = $root.proto.Message.DocumentMessage.create(d.documentMessage);
                 }
                 if (d.imageMessage != null) {
                     if (typeof d.imageMessage !== "object")
                         throw TypeError(".proto.Message.ButtonsMessage.imageMessage: object expected");
-                    m.imageMessage = $root.proto.Message.ImageMessage.fromObject(d.imageMessage);
+                    m.imageMessage = $root.proto.Message.ImageMessage.create(d.imageMessage);
                 }
                 if (d.videoMessage != null) {
                     if (typeof d.videoMessage !== "object")
                         throw TypeError(".proto.Message.ButtonsMessage.videoMessage: object expected");
-                    m.videoMessage = $root.proto.Message.VideoMessage.fromObject(d.videoMessage);
+                    m.videoMessage = $root.proto.Message.VideoMessage.create(d.videoMessage);
                 }
                 if (d.locationMessage != null) {
                     if (typeof d.locationMessage !== "object")
                         throw TypeError(".proto.Message.ButtonsMessage.locationMessage: object expected");
-                    m.locationMessage = $root.proto.Message.LocationMessage.fromObject(d.locationMessage);
+                    m.locationMessage = $root.proto.Message.LocationMessage.create(d.locationMessage);
                 }
                 return m;
             };
@@ -33308,7 +33308,7 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                Button.fromObject = function fromObject(d) {
+                Button.create = function fromObject(d) {
                     if (d instanceof $root.proto.Message.ButtonsMessage.Button)
                         return d;
                     var m = new $root.proto.Message.ButtonsMessage.Button();
@@ -33318,7 +33318,7 @@ export const proto = $root.proto = (() => {
                     if (d.buttonText != null) {
                         if (typeof d.buttonText !== "object")
                             throw TypeError(".proto.Message.ButtonsMessage.Button.buttonText: object expected");
-                        m.buttonText = $root.proto.Message.ButtonsMessage.Button.ButtonText.fromObject(d.buttonText);
+                        m.buttonText = $root.proto.Message.ButtonsMessage.Button.ButtonText.create(d.buttonText);
                     }
                     switch (d.type) {
                     default:
@@ -33343,7 +33343,7 @@ export const proto = $root.proto = (() => {
                     if (d.nativeFlowInfo != null) {
                         if (typeof d.nativeFlowInfo !== "object")
                             throw TypeError(".proto.Message.ButtonsMessage.Button.nativeFlowInfo: object expected");
-                        m.nativeFlowInfo = $root.proto.Message.ButtonsMessage.Button.NativeFlowInfo.fromObject(d.nativeFlowInfo);
+                        m.nativeFlowInfo = $root.proto.Message.ButtonsMessage.Button.NativeFlowInfo.create(d.nativeFlowInfo);
                     }
                     return m;
                 };
@@ -33438,7 +33438,7 @@ export const proto = $root.proto = (() => {
                         return m;
                     };
 
-                    ButtonText.fromObject = function fromObject(d) {
+                    ButtonText.create = function fromObject(d) {
                         if (d instanceof $root.proto.Message.ButtonsMessage.Button.ButtonText)
                             return d;
                         var m = new $root.proto.Message.ButtonsMessage.Button.ButtonText();
@@ -33539,7 +33539,7 @@ export const proto = $root.proto = (() => {
                         return m;
                     };
 
-                    NativeFlowInfo.fromObject = function fromObject(d) {
+                    NativeFlowInfo.create = function fromObject(d) {
                         if (d instanceof $root.proto.Message.ButtonsMessage.Button.NativeFlowInfo)
                             return d;
                         var m = new $root.proto.Message.ButtonsMessage.Button.NativeFlowInfo();
@@ -33699,7 +33699,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            ButtonsResponseMessage.fromObject = function fromObject(d) {
+            ButtonsResponseMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.ButtonsResponseMessage)
                     return d;
                 var m = new $root.proto.Message.ButtonsResponseMessage();
@@ -33709,7 +33709,7 @@ export const proto = $root.proto = (() => {
                 if (d.contextInfo != null) {
                     if (typeof d.contextInfo !== "object")
                         throw TypeError(".proto.Message.ButtonsResponseMessage.contextInfo: object expected");
-                    m.contextInfo = $root.proto.ContextInfo.fromObject(d.contextInfo);
+                    m.contextInfo = $root.proto.ContextInfo.create(d.contextInfo);
                 }
                 switch (d.type) {
                 default:
@@ -33911,7 +33911,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            Call.fromObject = function fromObject(d) {
+            Call.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.Call)
                     return d;
                 var m = new $root.proto.Message.Call();
@@ -33945,7 +33945,7 @@ export const proto = $root.proto = (() => {
                 if (d.contextInfo != null) {
                     if (typeof d.contextInfo !== "object")
                         throw TypeError(".proto.Message.Call.contextInfo: object expected");
-                    m.contextInfo = $root.proto.ContextInfo.fromObject(d.contextInfo);
+                    m.contextInfo = $root.proto.ContextInfo.create(d.contextInfo);
                 }
                 return m;
             };
@@ -34109,7 +34109,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            CallLogMessage.fromObject = function fromObject(d) {
+            CallLogMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.CallLogMessage)
                     return d;
                 var m = new $root.proto.Message.CallLogMessage();
@@ -34193,7 +34193,7 @@ export const proto = $root.proto = (() => {
                     for (var i = 0; i < d.participants.length; ++i) {
                         if (typeof d.participants[i] !== "object")
                             throw TypeError(".proto.Message.CallLogMessage.participants: object expected");
-                        m.participants[i] = $root.proto.Message.CallLogMessage.CallParticipant.fromObject(d.participants[i]);
+                        m.participants[i] = $root.proto.Message.CallLogMessage.CallParticipant.create(d.participants[i]);
                     }
                 }
                 return m;
@@ -34327,7 +34327,7 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                CallParticipant.fromObject = function fromObject(d) {
+                CallParticipant.create = function fromObject(d) {
                     if (d instanceof $root.proto.Message.CallLogMessage.CallParticipant)
                         return d;
                     var m = new $root.proto.Message.CallLogMessage.CallParticipant();
@@ -34471,14 +34471,14 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            CancelPaymentRequestMessage.fromObject = function fromObject(d) {
+            CancelPaymentRequestMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.CancelPaymentRequestMessage)
                     return d;
                 var m = new $root.proto.Message.CancelPaymentRequestMessage();
                 if (d.key != null) {
                     if (typeof d.key !== "object")
                         throw TypeError(".proto.Message.CancelPaymentRequestMessage.key: object expected");
-                    m.key = $root.proto.MessageKey.fromObject(d.key);
+                    m.key = $root.proto.MessageKey.create(d.key);
                 }
                 return m;
             };
@@ -34574,7 +34574,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            Chat.fromObject = function fromObject(d) {
+            Chat.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.Chat)
                     return d;
                 var m = new $root.proto.Message.Chat();
@@ -34722,7 +34722,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            CloudAPIThreadControlNotification.fromObject = function fromObject(d) {
+            CloudAPIThreadControlNotification.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.CloudAPIThreadControlNotification)
                     return d;
                 var m = new $root.proto.Message.CloudAPIThreadControlNotification();
@@ -34765,7 +34765,7 @@ export const proto = $root.proto = (() => {
                 if (d.notificationContent != null) {
                     if (typeof d.notificationContent !== "object")
                         throw TypeError(".proto.Message.CloudAPIThreadControlNotification.notificationContent: object expected");
-                    m.notificationContent = $root.proto.Message.CloudAPIThreadControlNotification.CloudAPIThreadControlNotificationContent.fromObject(d.notificationContent);
+                    m.notificationContent = $root.proto.Message.CloudAPIThreadControlNotification.CloudAPIThreadControlNotificationContent.create(d.notificationContent);
                 }
                 return m;
             };
@@ -34889,7 +34889,7 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                CloudAPIThreadControlNotificationContent.fromObject = function fromObject(d) {
+                CloudAPIThreadControlNotificationContent.create = function fromObject(d) {
                     if (d instanceof $root.proto.Message.CloudAPIThreadControlNotification.CloudAPIThreadControlNotificationContent)
                         return d;
                     var m = new $root.proto.Message.CloudAPIThreadControlNotification.CloudAPIThreadControlNotificationContent();
@@ -35001,19 +35001,19 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            CommentMessage.fromObject = function fromObject(d) {
+            CommentMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.CommentMessage)
                     return d;
                 var m = new $root.proto.Message.CommentMessage();
                 if (d.message != null) {
                     if (typeof d.message !== "object")
                         throw TypeError(".proto.Message.CommentMessage.message: object expected");
-                    m.message = $root.proto.Message.fromObject(d.message);
+                    m.message = $root.proto.Message.create(d.message);
                 }
                 if (d.targetMessageKey != null) {
                     if (typeof d.targetMessageKey !== "object")
                         throw TypeError(".proto.Message.CommentMessage.targetMessageKey: object expected");
-                    m.targetMessageKey = $root.proto.MessageKey.fromObject(d.targetMessageKey);
+                    m.targetMessageKey = $root.proto.MessageKey.create(d.targetMessageKey);
                 }
                 return m;
             };
@@ -35127,7 +35127,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            ContactMessage.fromObject = function fromObject(d) {
+            ContactMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.ContactMessage)
                     return d;
                 var m = new $root.proto.Message.ContactMessage();
@@ -35140,7 +35140,7 @@ export const proto = $root.proto = (() => {
                 if (d.contextInfo != null) {
                     if (typeof d.contextInfo !== "object")
                         throw TypeError(".proto.Message.ContactMessage.contextInfo: object expected");
-                    m.contextInfo = $root.proto.ContextInfo.fromObject(d.contextInfo);
+                    m.contextInfo = $root.proto.ContextInfo.create(d.contextInfo);
                 }
                 return m;
             };
@@ -35258,7 +35258,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            ContactsArrayMessage.fromObject = function fromObject(d) {
+            ContactsArrayMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.ContactsArrayMessage)
                     return d;
                 var m = new $root.proto.Message.ContactsArrayMessage();
@@ -35272,13 +35272,13 @@ export const proto = $root.proto = (() => {
                     for (var i = 0; i < d.contacts.length; ++i) {
                         if (typeof d.contacts[i] !== "object")
                             throw TypeError(".proto.Message.ContactsArrayMessage.contacts: object expected");
-                        m.contacts[i] = $root.proto.Message.ContactMessage.fromObject(d.contacts[i]);
+                        m.contacts[i] = $root.proto.Message.ContactMessage.create(d.contacts[i]);
                     }
                 }
                 if (d.contextInfo != null) {
                     if (typeof d.contextInfo !== "object")
                         throw TypeError(".proto.Message.ContactsArrayMessage.contextInfo: object expected");
-                    m.contextInfo = $root.proto.ContextInfo.fromObject(d.contextInfo);
+                    m.contextInfo = $root.proto.ContextInfo.create(d.contextInfo);
                 }
                 return m;
             };
@@ -35375,14 +35375,14 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            DeclinePaymentRequestMessage.fromObject = function fromObject(d) {
+            DeclinePaymentRequestMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.DeclinePaymentRequestMessage)
                     return d;
                 var m = new $root.proto.Message.DeclinePaymentRequestMessage();
                 if (d.key != null) {
                     if (typeof d.key !== "object")
                         throw TypeError(".proto.Message.DeclinePaymentRequestMessage.key: object expected");
-                    m.key = $root.proto.MessageKey.fromObject(d.key);
+                    m.key = $root.proto.MessageKey.create(d.key);
                 }
                 return m;
             };
@@ -35491,7 +35491,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            DeviceSentMessage.fromObject = function fromObject(d) {
+            DeviceSentMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.DeviceSentMessage)
                     return d;
                 var m = new $root.proto.Message.DeviceSentMessage();
@@ -35501,7 +35501,7 @@ export const proto = $root.proto = (() => {
                 if (d.message != null) {
                     if (typeof d.message !== "object")
                         throw TypeError(".proto.Message.DeviceSentMessage.message: object expected");
-                    m.message = $root.proto.Message.fromObject(d.message);
+                    m.message = $root.proto.Message.create(d.message);
                 }
                 if (d.phash != null) {
                     m.phash = String(d.phash);
@@ -35857,7 +35857,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            DocumentMessage.fromObject = function fromObject(d) {
+            DocumentMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.DocumentMessage)
                     return d;
                 var m = new $root.proto.Message.DocumentMessage();
@@ -35944,7 +35944,7 @@ export const proto = $root.proto = (() => {
                 if (d.contextInfo != null) {
                     if (typeof d.contextInfo !== "object")
                         throw TypeError(".proto.Message.DocumentMessage.contextInfo: object expected");
-                    m.contextInfo = $root.proto.ContextInfo.fromObject(d.contextInfo);
+                    m.contextInfo = $root.proto.ContextInfo.create(d.contextInfo);
                 }
                 if (d.thumbnailHeight != null) {
                     m.thumbnailHeight = d.thumbnailHeight >>> 0;
@@ -36171,14 +36171,14 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            EncCommentMessage.fromObject = function fromObject(d) {
+            EncCommentMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.EncCommentMessage)
                     return d;
                 var m = new $root.proto.Message.EncCommentMessage();
                 if (d.targetMessageKey != null) {
                     if (typeof d.targetMessageKey !== "object")
                         throw TypeError(".proto.Message.EncCommentMessage.targetMessageKey: object expected");
-                    m.targetMessageKey = $root.proto.MessageKey.fromObject(d.targetMessageKey);
+                    m.targetMessageKey = $root.proto.MessageKey.create(d.targetMessageKey);
                 }
                 if (d.encPayload != null) {
                     if (typeof d.encPayload === "string")
@@ -36309,14 +36309,14 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            EncEventResponseMessage.fromObject = function fromObject(d) {
+            EncEventResponseMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.EncEventResponseMessage)
                     return d;
                 var m = new $root.proto.Message.EncEventResponseMessage();
                 if (d.eventCreationMessageKey != null) {
                     if (typeof d.eventCreationMessageKey !== "object")
                         throw TypeError(".proto.Message.EncEventResponseMessage.eventCreationMessageKey: object expected");
-                    m.eventCreationMessageKey = $root.proto.MessageKey.fromObject(d.eventCreationMessageKey);
+                    m.eventCreationMessageKey = $root.proto.MessageKey.create(d.eventCreationMessageKey);
                 }
                 if (d.encPayload != null) {
                     if (typeof d.encPayload === "string")
@@ -36447,14 +36447,14 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            EncReactionMessage.fromObject = function fromObject(d) {
+            EncReactionMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.EncReactionMessage)
                     return d;
                 var m = new $root.proto.Message.EncReactionMessage();
                 if (d.targetMessageKey != null) {
                     if (typeof d.targetMessageKey !== "object")
                         throw TypeError(".proto.Message.EncReactionMessage.targetMessageKey: object expected");
-                    m.targetMessageKey = $root.proto.MessageKey.fromObject(d.targetMessageKey);
+                    m.targetMessageKey = $root.proto.MessageKey.create(d.targetMessageKey);
                 }
                 if (d.encPayload != null) {
                     if (typeof d.encPayload === "string")
@@ -36676,14 +36676,14 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            EventMessage.fromObject = function fromObject(d) {
+            EventMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.EventMessage)
                     return d;
                 var m = new $root.proto.Message.EventMessage();
                 if (d.contextInfo != null) {
                     if (typeof d.contextInfo !== "object")
                         throw TypeError(".proto.Message.EventMessage.contextInfo: object expected");
-                    m.contextInfo = $root.proto.ContextInfo.fromObject(d.contextInfo);
+                    m.contextInfo = $root.proto.ContextInfo.create(d.contextInfo);
                 }
                 if (d.isCanceled != null) {
                     m.isCanceled = Boolean(d.isCanceled);
@@ -36697,7 +36697,7 @@ export const proto = $root.proto = (() => {
                 if (d.location != null) {
                     if (typeof d.location !== "object")
                         throw TypeError(".proto.Message.EventMessage.location: object expected");
-                    m.location = $root.proto.Message.LocationMessage.fromObject(d.location);
+                    m.location = $root.proto.Message.LocationMessage.create(d.location);
                 }
                 if (d.joinLink != null) {
                     m.joinLink = String(d.joinLink);
@@ -36886,7 +36886,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            EventResponseMessage.fromObject = function fromObject(d) {
+            EventResponseMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.EventResponseMessage)
                     return d;
                 var m = new $root.proto.Message.EventResponseMessage();
@@ -37381,7 +37381,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            ExtendedTextMessage.fromObject = function fromObject(d) {
+            ExtendedTextMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.ExtendedTextMessage)
                     return d;
                 var m = new $root.proto.Message.ExtendedTextMessage();
@@ -37484,7 +37484,7 @@ export const proto = $root.proto = (() => {
                 if (d.contextInfo != null) {
                     if (typeof d.contextInfo !== "object")
                         throw TypeError(".proto.Message.ExtendedTextMessage.contextInfo: object expected");
-                    m.contextInfo = $root.proto.ContextInfo.fromObject(d.contextInfo);
+                    m.contextInfo = $root.proto.ContextInfo.create(d.contextInfo);
                 }
                 if (d.doNotPlayInline != null) {
                     m.doNotPlayInline = Boolean(d.doNotPlayInline);
@@ -37595,17 +37595,17 @@ export const proto = $root.proto = (() => {
                 if (d.faviconMMSMetadata != null) {
                     if (typeof d.faviconMMSMetadata !== "object")
                         throw TypeError(".proto.Message.ExtendedTextMessage.faviconMMSMetadata: object expected");
-                    m.faviconMMSMetadata = $root.proto.Message.MMSThumbnailMetadata.fromObject(d.faviconMMSMetadata);
+                    m.faviconMMSMetadata = $root.proto.Message.MMSThumbnailMetadata.create(d.faviconMMSMetadata);
                 }
                 if (d.linkPreviewMetadata != null) {
                     if (typeof d.linkPreviewMetadata !== "object")
                         throw TypeError(".proto.Message.ExtendedTextMessage.linkPreviewMetadata: object expected");
-                    m.linkPreviewMetadata = $root.proto.Message.LinkPreviewMetadata.fromObject(d.linkPreviewMetadata);
+                    m.linkPreviewMetadata = $root.proto.Message.LinkPreviewMetadata.create(d.linkPreviewMetadata);
                 }
                 if (d.paymentLinkMetadata != null) {
                     if (typeof d.paymentLinkMetadata !== "object")
                         throw TypeError(".proto.Message.ExtendedTextMessage.paymentLinkMetadata: object expected");
-                    m.paymentLinkMetadata = $root.proto.Message.PaymentLinkMetadata.fromObject(d.paymentLinkMetadata);
+                    m.paymentLinkMetadata = $root.proto.Message.PaymentLinkMetadata.create(d.paymentLinkMetadata);
                 }
                 return m;
             };
@@ -37859,7 +37859,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            FullHistorySyncOnDemandRequestMetadata.fromObject = function fromObject(d) {
+            FullHistorySyncOnDemandRequestMetadata.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.FullHistorySyncOnDemandRequestMetadata)
                     return d;
                 var m = new $root.proto.Message.FullHistorySyncOnDemandRequestMetadata();
@@ -37947,14 +37947,14 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            FutureProofMessage.fromObject = function fromObject(d) {
+            FutureProofMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.FutureProofMessage)
                     return d;
                 var m = new $root.proto.Message.FutureProofMessage();
                 if (d.message != null) {
                     if (typeof d.message !== "object")
                         throw TypeError(".proto.Message.FutureProofMessage.message: object expected");
-                    m.message = $root.proto.Message.fromObject(d.message);
+                    m.message = $root.proto.Message.create(d.message);
                 }
                 return m;
             };
@@ -38128,7 +38128,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            GroupInviteMessage.fromObject = function fromObject(d) {
+            GroupInviteMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.GroupInviteMessage)
                     return d;
                 var m = new $root.proto.Message.GroupInviteMessage();
@@ -38163,7 +38163,7 @@ export const proto = $root.proto = (() => {
                 if (d.contextInfo != null) {
                     if (typeof d.contextInfo !== "object")
                         throw TypeError(".proto.Message.GroupInviteMessage.contextInfo: object expected");
-                    m.contextInfo = $root.proto.ContextInfo.fromObject(d.contextInfo);
+                    m.contextInfo = $root.proto.ContextInfo.create(d.contextInfo);
                 }
                 switch (d.groupType) {
                 default:
@@ -38409,7 +38409,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            HighlyStructuredMessage.fromObject = function fromObject(d) {
+            HighlyStructuredMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.HighlyStructuredMessage)
                     return d;
                 var m = new $root.proto.Message.HighlyStructuredMessage();
@@ -38440,7 +38440,7 @@ export const proto = $root.proto = (() => {
                     for (var i = 0; i < d.localizableParams.length; ++i) {
                         if (typeof d.localizableParams[i] !== "object")
                             throw TypeError(".proto.Message.HighlyStructuredMessage.localizableParams: object expected");
-                        m.localizableParams[i] = $root.proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.fromObject(d.localizableParams[i]);
+                        m.localizableParams[i] = $root.proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.create(d.localizableParams[i]);
                     }
                 }
                 if (d.deterministicLg != null) {
@@ -38452,7 +38452,7 @@ export const proto = $root.proto = (() => {
                 if (d.hydratedHsm != null) {
                     if (typeof d.hydratedHsm !== "object")
                         throw TypeError(".proto.Message.HighlyStructuredMessage.hydratedHsm: object expected");
-                    m.hydratedHsm = $root.proto.Message.TemplateMessage.fromObject(d.hydratedHsm);
+                    m.hydratedHsm = $root.proto.Message.TemplateMessage.create(d.hydratedHsm);
                 }
                 return m;
             };
@@ -38597,7 +38597,7 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                HSMLocalizableParameter.fromObject = function fromObject(d) {
+                HSMLocalizableParameter.create = function fromObject(d) {
                     if (d instanceof $root.proto.Message.HighlyStructuredMessage.HSMLocalizableParameter)
                         return d;
                     var m = new $root.proto.Message.HighlyStructuredMessage.HSMLocalizableParameter();
@@ -38607,12 +38607,12 @@ export const proto = $root.proto = (() => {
                     if (d.currency != null) {
                         if (typeof d.currency !== "object")
                             throw TypeError(".proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.currency: object expected");
-                        m.currency = $root.proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMCurrency.fromObject(d.currency);
+                        m.currency = $root.proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMCurrency.create(d.currency);
                     }
                     if (d.dateTime != null) {
                         if (typeof d.dateTime !== "object")
                             throw TypeError(".proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.dateTime: object expected");
-                        m.dateTime = $root.proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.fromObject(d.dateTime);
+                        m.dateTime = $root.proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.create(d.dateTime);
                     }
                     return m;
                 };
@@ -38715,7 +38715,7 @@ export const proto = $root.proto = (() => {
                         return m;
                     };
 
-                    HSMCurrency.fromObject = function fromObject(d) {
+                    HSMCurrency.create = function fromObject(d) {
                         if (d instanceof $root.proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMCurrency)
                             return d;
                         var m = new $root.proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMCurrency();
@@ -38827,19 +38827,19 @@ export const proto = $root.proto = (() => {
                         return m;
                     };
 
-                    HSMDateTime.fromObject = function fromObject(d) {
+                    HSMDateTime.create = function fromObject(d) {
                         if (d instanceof $root.proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime)
                             return d;
                         var m = new $root.proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime();
                         if (d.component != null) {
                             if (typeof d.component !== "object")
                                 throw TypeError(".proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.component: object expected");
-                            m.component = $root.proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.HSMDateTimeComponent.fromObject(d.component);
+                            m.component = $root.proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.HSMDateTimeComponent.create(d.component);
                         }
                         if (d.unixEpoch != null) {
                             if (typeof d.unixEpoch !== "object")
                                 throw TypeError(".proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.unixEpoch: object expected");
-                            m.unixEpoch = $root.proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.HSMDateTimeUnixEpoch.fromObject(d.unixEpoch);
+                            m.unixEpoch = $root.proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.HSMDateTimeUnixEpoch.create(d.unixEpoch);
                         }
                         return m;
                     };
@@ -39002,7 +39002,7 @@ export const proto = $root.proto = (() => {
                             return m;
                         };
 
-                        HSMDateTimeComponent.fromObject = function fromObject(d) {
+                        HSMDateTimeComponent.create = function fromObject(d) {
                             if (d instanceof $root.proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.HSMDateTimeComponent)
                                 return d;
                             var m = new $root.proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.HSMDateTimeComponent();
@@ -39203,7 +39203,7 @@ export const proto = $root.proto = (() => {
                             return m;
                         };
 
-                        HSMDateTimeUnixEpoch.fromObject = function fromObject(d) {
+                        HSMDateTimeUnixEpoch.create = function fromObject(d) {
                             if (d instanceof $root.proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.HSMDateTimeUnixEpoch)
                                 return d;
                             var m = new $root.proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.HSMDateTimeUnixEpoch();
@@ -39479,7 +39479,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            HistorySyncNotification.fromObject = function fromObject(d) {
+            HistorySyncNotification.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.HistorySyncNotification)
                     return d;
                 var m = new $root.proto.Message.HistorySyncNotification();
@@ -39585,7 +39585,7 @@ export const proto = $root.proto = (() => {
                 if (d.fullHistorySyncOnDemandRequestMetadata != null) {
                     if (typeof d.fullHistorySyncOnDemandRequestMetadata !== "object")
                         throw TypeError(".proto.Message.HistorySyncNotification.fullHistorySyncOnDemandRequestMetadata: object expected");
-                    m.fullHistorySyncOnDemandRequestMetadata = $root.proto.Message.FullHistorySyncOnDemandRequestMetadata.fromObject(d.fullHistorySyncOnDemandRequestMetadata);
+                    m.fullHistorySyncOnDemandRequestMetadata = $root.proto.Message.FullHistorySyncOnDemandRequestMetadata.create(d.fullHistorySyncOnDemandRequestMetadata);
                 }
                 if (d.encHandle != null) {
                     m.encHandle = String(d.encHandle);
@@ -40123,7 +40123,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            ImageMessage.fromObject = function fromObject(d) {
+            ImageMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.ImageMessage)
                     return d;
                 var m = new $root.proto.Message.ImageMessage();
@@ -40177,7 +40177,7 @@ export const proto = $root.proto = (() => {
                     for (var i = 0; i < d.interactiveAnnotations.length; ++i) {
                         if (typeof d.interactiveAnnotations[i] !== "object")
                             throw TypeError(".proto.Message.ImageMessage.interactiveAnnotations: object expected");
-                        m.interactiveAnnotations[i] = $root.proto.InteractiveAnnotation.fromObject(d.interactiveAnnotations[i]);
+                        m.interactiveAnnotations[i] = $root.proto.InteractiveAnnotation.create(d.interactiveAnnotations[i]);
                     }
                 }
                 if (d.directPath != null) {
@@ -40202,7 +40202,7 @@ export const proto = $root.proto = (() => {
                 if (d.contextInfo != null) {
                     if (typeof d.contextInfo !== "object")
                         throw TypeError(".proto.Message.ImageMessage.contextInfo: object expected");
-                    m.contextInfo = $root.proto.ContextInfo.fromObject(d.contextInfo);
+                    m.contextInfo = $root.proto.ContextInfo.create(d.contextInfo);
                 }
                 if (d.firstScanSidecar != null) {
                     if (typeof d.firstScanSidecar === "string")
@@ -40270,7 +40270,7 @@ export const proto = $root.proto = (() => {
                     for (var i = 0; i < d.annotations.length; ++i) {
                         if (typeof d.annotations[i] !== "object")
                             throw TypeError(".proto.Message.ImageMessage.annotations: object expected");
-                        m.annotations[i] = $root.proto.InteractiveAnnotation.fromObject(d.annotations[i]);
+                        m.annotations[i] = $root.proto.InteractiveAnnotation.create(d.annotations[i]);
                     }
                 }
                 switch (d.imageSourceType) {
@@ -40544,7 +40544,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            InitialSecurityNotificationSettingSync.fromObject = function fromObject(d) {
+            InitialSecurityNotificationSettingSync.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.InitialSecurityNotificationSettingSync)
                     return d;
                 var m = new $root.proto.Message.InitialSecurityNotificationSettingSync();
@@ -40717,54 +40717,54 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            InteractiveMessage.fromObject = function fromObject(d) {
+            InteractiveMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.InteractiveMessage)
                     return d;
                 var m = new $root.proto.Message.InteractiveMessage();
                 if (d.header != null) {
                     if (typeof d.header !== "object")
                         throw TypeError(".proto.Message.InteractiveMessage.header: object expected");
-                    m.header = $root.proto.Message.InteractiveMessage.Header.fromObject(d.header);
+                    m.header = $root.proto.Message.InteractiveMessage.Header.create(d.header);
                 }
                 if (d.body != null) {
                     if (typeof d.body !== "object")
                         throw TypeError(".proto.Message.InteractiveMessage.body: object expected");
-                    m.body = $root.proto.Message.InteractiveMessage.Body.fromObject(d.body);
+                    m.body = $root.proto.Message.InteractiveMessage.Body.create(d.body);
                 }
                 if (d.footer != null) {
                     if (typeof d.footer !== "object")
                         throw TypeError(".proto.Message.InteractiveMessage.footer: object expected");
-                    m.footer = $root.proto.Message.InteractiveMessage.Footer.fromObject(d.footer);
+                    m.footer = $root.proto.Message.InteractiveMessage.Footer.create(d.footer);
                 }
                 if (d.contextInfo != null) {
                     if (typeof d.contextInfo !== "object")
                         throw TypeError(".proto.Message.InteractiveMessage.contextInfo: object expected");
-                    m.contextInfo = $root.proto.ContextInfo.fromObject(d.contextInfo);
+                    m.contextInfo = $root.proto.ContextInfo.create(d.contextInfo);
                 }
                 if (d.urlTrackingMap != null) {
                     if (typeof d.urlTrackingMap !== "object")
                         throw TypeError(".proto.Message.InteractiveMessage.urlTrackingMap: object expected");
-                    m.urlTrackingMap = $root.proto.UrlTrackingMap.fromObject(d.urlTrackingMap);
+                    m.urlTrackingMap = $root.proto.UrlTrackingMap.create(d.urlTrackingMap);
                 }
                 if (d.shopStorefrontMessage != null) {
                     if (typeof d.shopStorefrontMessage !== "object")
                         throw TypeError(".proto.Message.InteractiveMessage.shopStorefrontMessage: object expected");
-                    m.shopStorefrontMessage = $root.proto.Message.InteractiveMessage.ShopMessage.fromObject(d.shopStorefrontMessage);
+                    m.shopStorefrontMessage = $root.proto.Message.InteractiveMessage.ShopMessage.create(d.shopStorefrontMessage);
                 }
                 if (d.collectionMessage != null) {
                     if (typeof d.collectionMessage !== "object")
                         throw TypeError(".proto.Message.InteractiveMessage.collectionMessage: object expected");
-                    m.collectionMessage = $root.proto.Message.InteractiveMessage.CollectionMessage.fromObject(d.collectionMessage);
+                    m.collectionMessage = $root.proto.Message.InteractiveMessage.CollectionMessage.create(d.collectionMessage);
                 }
                 if (d.nativeFlowMessage != null) {
                     if (typeof d.nativeFlowMessage !== "object")
                         throw TypeError(".proto.Message.InteractiveMessage.nativeFlowMessage: object expected");
-                    m.nativeFlowMessage = $root.proto.Message.InteractiveMessage.NativeFlowMessage.fromObject(d.nativeFlowMessage);
+                    m.nativeFlowMessage = $root.proto.Message.InteractiveMessage.NativeFlowMessage.create(d.nativeFlowMessage);
                 }
                 if (d.carouselMessage != null) {
                     if (typeof d.carouselMessage !== "object")
                         throw TypeError(".proto.Message.InteractiveMessage.carouselMessage: object expected");
-                    m.carouselMessage = $root.proto.Message.InteractiveMessage.CarouselMessage.fromObject(d.carouselMessage);
+                    m.carouselMessage = $root.proto.Message.InteractiveMessage.CarouselMessage.create(d.carouselMessage);
                 }
                 return m;
             };
@@ -40884,7 +40884,7 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                Body.fromObject = function fromObject(d) {
+                Body.create = function fromObject(d) {
                     if (d instanceof $root.proto.Message.InteractiveMessage.Body)
                         return d;
                     var m = new $root.proto.Message.InteractiveMessage.Body();
@@ -40984,7 +40984,7 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                CarouselMessage.fromObject = function fromObject(d) {
+                CarouselMessage.create = function fromObject(d) {
                     if (d instanceof $root.proto.Message.InteractiveMessage.CarouselMessage)
                         return d;
                     var m = new $root.proto.Message.InteractiveMessage.CarouselMessage();
@@ -40995,7 +40995,7 @@ export const proto = $root.proto = (() => {
                         for (var i = 0; i < d.cards.length; ++i) {
                             if (typeof d.cards[i] !== "object")
                                 throw TypeError(".proto.Message.InteractiveMessage.CarouselMessage.cards: object expected");
-                            m.cards[i] = $root.proto.Message.InteractiveMessage.fromObject(d.cards[i]);
+                            m.cards[i] = $root.proto.Message.InteractiveMessage.create(d.cards[i]);
                         }
                     }
                     if (d.messageVersion != null) {
@@ -41117,7 +41117,7 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                CollectionMessage.fromObject = function fromObject(d) {
+                CollectionMessage.create = function fromObject(d) {
                     if (d instanceof $root.proto.Message.InteractiveMessage.CollectionMessage)
                         return d;
                     var m = new $root.proto.Message.InteractiveMessage.CollectionMessage();
@@ -41221,7 +41221,7 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                Footer.fromObject = function fromObject(d) {
+                Footer.create = function fromObject(d) {
                     if (d instanceof $root.proto.Message.InteractiveMessage.Footer)
                         return d;
                     var m = new $root.proto.Message.InteractiveMessage.Footer();
@@ -41382,7 +41382,7 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                Header.fromObject = function fromObject(d) {
+                Header.create = function fromObject(d) {
                     if (d instanceof $root.proto.Message.InteractiveMessage.Header)
                         return d;
                     var m = new $root.proto.Message.InteractiveMessage.Header();
@@ -41398,12 +41398,12 @@ export const proto = $root.proto = (() => {
                     if (d.documentMessage != null) {
                         if (typeof d.documentMessage !== "object")
                             throw TypeError(".proto.Message.InteractiveMessage.Header.documentMessage: object expected");
-                        m.documentMessage = $root.proto.Message.DocumentMessage.fromObject(d.documentMessage);
+                        m.documentMessage = $root.proto.Message.DocumentMessage.create(d.documentMessage);
                     }
                     if (d.imageMessage != null) {
                         if (typeof d.imageMessage !== "object")
                             throw TypeError(".proto.Message.InteractiveMessage.Header.imageMessage: object expected");
-                        m.imageMessage = $root.proto.Message.ImageMessage.fromObject(d.imageMessage);
+                        m.imageMessage = $root.proto.Message.ImageMessage.create(d.imageMessage);
                     }
                     if (d.jpegThumbnail != null) {
                         if (typeof d.jpegThumbnail === "string")
@@ -41414,17 +41414,17 @@ export const proto = $root.proto = (() => {
                     if (d.videoMessage != null) {
                         if (typeof d.videoMessage !== "object")
                             throw TypeError(".proto.Message.InteractiveMessage.Header.videoMessage: object expected");
-                        m.videoMessage = $root.proto.Message.VideoMessage.fromObject(d.videoMessage);
+                        m.videoMessage = $root.proto.Message.VideoMessage.create(d.videoMessage);
                     }
                     if (d.locationMessage != null) {
                         if (typeof d.locationMessage !== "object")
                             throw TypeError(".proto.Message.InteractiveMessage.Header.locationMessage: object expected");
-                        m.locationMessage = $root.proto.Message.LocationMessage.fromObject(d.locationMessage);
+                        m.locationMessage = $root.proto.Message.LocationMessage.create(d.locationMessage);
                     }
                     if (d.productMessage != null) {
                         if (typeof d.productMessage !== "object")
                             throw TypeError(".proto.Message.InteractiveMessage.Header.productMessage: object expected");
-                        m.productMessage = $root.proto.Message.ProductMessage.fromObject(d.productMessage);
+                        m.productMessage = $root.proto.Message.ProductMessage.create(d.productMessage);
                     }
                     return m;
                 };
@@ -41572,7 +41572,7 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                NativeFlowMessage.fromObject = function fromObject(d) {
+                NativeFlowMessage.create = function fromObject(d) {
                     if (d instanceof $root.proto.Message.InteractiveMessage.NativeFlowMessage)
                         return d;
                     var m = new $root.proto.Message.InteractiveMessage.NativeFlowMessage();
@@ -41583,7 +41583,7 @@ export const proto = $root.proto = (() => {
                         for (var i = 0; i < d.buttons.length; ++i) {
                             if (typeof d.buttons[i] !== "object")
                                 throw TypeError(".proto.Message.InteractiveMessage.NativeFlowMessage.buttons: object expected");
-                            m.buttons[i] = $root.proto.Message.InteractiveMessage.NativeFlowMessage.NativeFlowButton.fromObject(d.buttons[i]);
+                            m.buttons[i] = $root.proto.Message.InteractiveMessage.NativeFlowMessage.NativeFlowButton.create(d.buttons[i]);
                         }
                     }
                     if (d.messageParamsJson != null) {
@@ -41697,7 +41697,7 @@ export const proto = $root.proto = (() => {
                         return m;
                     };
 
-                    NativeFlowButton.fromObject = function fromObject(d) {
+                    NativeFlowButton.create = function fromObject(d) {
                         if (d instanceof $root.proto.Message.InteractiveMessage.NativeFlowMessage.NativeFlowButton)
                             return d;
                         var m = new $root.proto.Message.InteractiveMessage.NativeFlowMessage.NativeFlowButton();
@@ -41822,7 +41822,7 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                ShopMessage.fromObject = function fromObject(d) {
+                ShopMessage.create = function fromObject(d) {
                     if (d instanceof $root.proto.Message.InteractiveMessage.ShopMessage)
                         return d;
                     var m = new $root.proto.Message.InteractiveMessage.ShopMessage();
@@ -41984,24 +41984,24 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            InteractiveResponseMessage.fromObject = function fromObject(d) {
+            InteractiveResponseMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.InteractiveResponseMessage)
                     return d;
                 var m = new $root.proto.Message.InteractiveResponseMessage();
                 if (d.body != null) {
                     if (typeof d.body !== "object")
                         throw TypeError(".proto.Message.InteractiveResponseMessage.body: object expected");
-                    m.body = $root.proto.Message.InteractiveResponseMessage.Body.fromObject(d.body);
+                    m.body = $root.proto.Message.InteractiveResponseMessage.Body.create(d.body);
                 }
                 if (d.contextInfo != null) {
                     if (typeof d.contextInfo !== "object")
                         throw TypeError(".proto.Message.InteractiveResponseMessage.contextInfo: object expected");
-                    m.contextInfo = $root.proto.ContextInfo.fromObject(d.contextInfo);
+                    m.contextInfo = $root.proto.ContextInfo.create(d.contextInfo);
                 }
                 if (d.nativeFlowResponseMessage != null) {
                     if (typeof d.nativeFlowResponseMessage !== "object")
                         throw TypeError(".proto.Message.InteractiveResponseMessage.nativeFlowResponseMessage: object expected");
-                    m.nativeFlowResponseMessage = $root.proto.Message.InteractiveResponseMessage.NativeFlowResponseMessage.fromObject(d.nativeFlowResponseMessage);
+                    m.nativeFlowResponseMessage = $root.proto.Message.InteractiveResponseMessage.NativeFlowResponseMessage.create(d.nativeFlowResponseMessage);
                 }
                 return m;
             };
@@ -42104,7 +42104,7 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                Body.fromObject = function fromObject(d) {
+                Body.create = function fromObject(d) {
                     if (d instanceof $root.proto.Message.InteractiveResponseMessage.Body)
                         return d;
                     var m = new $root.proto.Message.InteractiveResponseMessage.Body();
@@ -42246,7 +42246,7 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                NativeFlowResponseMessage.fromObject = function fromObject(d) {
+                NativeFlowResponseMessage.create = function fromObject(d) {
                     if (d instanceof $root.proto.Message.InteractiveResponseMessage.NativeFlowResponseMessage)
                         return d;
                     var m = new $root.proto.Message.InteractiveResponseMessage.NativeFlowResponseMessage();
@@ -42470,7 +42470,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            InvoiceMessage.fromObject = function fromObject(d) {
+            InvoiceMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.InvoiceMessage)
                     return d;
                 var m = new $root.proto.Message.InvoiceMessage();
@@ -42698,14 +42698,14 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            KeepInChatMessage.fromObject = function fromObject(d) {
+            KeepInChatMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.KeepInChatMessage)
                     return d;
                 var m = new $root.proto.Message.KeepInChatMessage();
                 if (d.key != null) {
                     if (typeof d.key !== "object")
                         throw TypeError(".proto.Message.KeepInChatMessage.key: object expected");
-                    m.key = $root.proto.MessageKey.fromObject(d.key);
+                    m.key = $root.proto.MessageKey.create(d.key);
                 }
                 switch (d.keepType) {
                 default:
@@ -42857,19 +42857,19 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            LinkPreviewMetadata.fromObject = function fromObject(d) {
+            LinkPreviewMetadata.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.LinkPreviewMetadata)
                     return d;
                 var m = new $root.proto.Message.LinkPreviewMetadata();
                 if (d.paymentLinkMetadata != null) {
                     if (typeof d.paymentLinkMetadata !== "object")
                         throw TypeError(".proto.Message.LinkPreviewMetadata.paymentLinkMetadata: object expected");
-                    m.paymentLinkMetadata = $root.proto.Message.PaymentLinkMetadata.fromObject(d.paymentLinkMetadata);
+                    m.paymentLinkMetadata = $root.proto.Message.PaymentLinkMetadata.create(d.paymentLinkMetadata);
                 }
                 if (d.urlMetadata != null) {
                     if (typeof d.urlMetadata !== "object")
                         throw TypeError(".proto.Message.LinkPreviewMetadata.urlMetadata: object expected");
-                    m.urlMetadata = $root.proto.Message.URLMetadata.fromObject(d.urlMetadata);
+                    m.urlMetadata = $root.proto.Message.URLMetadata.create(d.urlMetadata);
                 }
                 if (d.fbExperimentId != null) {
                     m.fbExperimentId = d.fbExperimentId >>> 0;
@@ -43055,7 +43055,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            ListMessage.fromObject = function fromObject(d) {
+            ListMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.ListMessage)
                     return d;
                 var m = new $root.proto.Message.ListMessage();
@@ -43095,13 +43095,13 @@ export const proto = $root.proto = (() => {
                     for (var i = 0; i < d.sections.length; ++i) {
                         if (typeof d.sections[i] !== "object")
                             throw TypeError(".proto.Message.ListMessage.sections: object expected");
-                        m.sections[i] = $root.proto.Message.ListMessage.Section.fromObject(d.sections[i]);
+                        m.sections[i] = $root.proto.Message.ListMessage.Section.create(d.sections[i]);
                     }
                 }
                 if (d.productListInfo != null) {
                     if (typeof d.productListInfo !== "object")
                         throw TypeError(".proto.Message.ListMessage.productListInfo: object expected");
-                    m.productListInfo = $root.proto.Message.ListMessage.ProductListInfo.fromObject(d.productListInfo);
+                    m.productListInfo = $root.proto.Message.ListMessage.ProductListInfo.create(d.productListInfo);
                 }
                 if (d.footerText != null) {
                     m.footerText = String(d.footerText);
@@ -43109,7 +43109,7 @@ export const proto = $root.proto = (() => {
                 if (d.contextInfo != null) {
                     if (typeof d.contextInfo !== "object")
                         throw TypeError(".proto.Message.ListMessage.contextInfo: object expected");
-                    m.contextInfo = $root.proto.ContextInfo.fromObject(d.contextInfo);
+                    m.contextInfo = $root.proto.ContextInfo.create(d.contextInfo);
                 }
                 return m;
             };
@@ -43236,7 +43236,7 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                Product.fromObject = function fromObject(d) {
+                Product.create = function fromObject(d) {
                     if (d instanceof $root.proto.Message.ListMessage.Product)
                         return d;
                     var m = new $root.proto.Message.ListMessage.Product();
@@ -43337,7 +43337,7 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                ProductListHeaderImage.fromObject = function fromObject(d) {
+                ProductListHeaderImage.create = function fromObject(d) {
                     if (d instanceof $root.proto.Message.ListMessage.ProductListHeaderImage)
                         return d;
                     var m = new $root.proto.Message.ListMessage.ProductListHeaderImage();
@@ -43461,7 +43461,7 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                ProductListInfo.fromObject = function fromObject(d) {
+                ProductListInfo.create = function fromObject(d) {
                     if (d instanceof $root.proto.Message.ListMessage.ProductListInfo)
                         return d;
                     var m = new $root.proto.Message.ListMessage.ProductListInfo();
@@ -43472,13 +43472,13 @@ export const proto = $root.proto = (() => {
                         for (var i = 0; i < d.productSections.length; ++i) {
                             if (typeof d.productSections[i] !== "object")
                                 throw TypeError(".proto.Message.ListMessage.ProductListInfo.productSections: object expected");
-                            m.productSections[i] = $root.proto.Message.ListMessage.ProductSection.fromObject(d.productSections[i]);
+                            m.productSections[i] = $root.proto.Message.ListMessage.ProductSection.create(d.productSections[i]);
                         }
                     }
                     if (d.headerImage != null) {
                         if (typeof d.headerImage !== "object")
                             throw TypeError(".proto.Message.ListMessage.ProductListInfo.headerImage: object expected");
-                        m.headerImage = $root.proto.Message.ListMessage.ProductListHeaderImage.fromObject(d.headerImage);
+                        m.headerImage = $root.proto.Message.ListMessage.ProductListHeaderImage.create(d.headerImage);
                     }
                     if (d.businessOwnerJid != null) {
                         m.businessOwnerJid = String(d.businessOwnerJid);
@@ -43590,7 +43590,7 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                ProductSection.fromObject = function fromObject(d) {
+                ProductSection.create = function fromObject(d) {
                     if (d instanceof $root.proto.Message.ListMessage.ProductSection)
                         return d;
                     var m = new $root.proto.Message.ListMessage.ProductSection();
@@ -43604,7 +43604,7 @@ export const proto = $root.proto = (() => {
                         for (var i = 0; i < d.products.length; ++i) {
                             if (typeof d.products[i] !== "object")
                                 throw TypeError(".proto.Message.ListMessage.ProductSection.products: object expected");
-                            m.products[i] = $root.proto.Message.ListMessage.Product.fromObject(d.products[i]);
+                            m.products[i] = $root.proto.Message.ListMessage.Product.create(d.products[i]);
                         }
                     }
                     return m;
@@ -43723,7 +43723,7 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                Row.fromObject = function fromObject(d) {
+                Row.create = function fromObject(d) {
                     if (d instanceof $root.proto.Message.ListMessage.Row)
                         return d;
                     var m = new $root.proto.Message.ListMessage.Row();
@@ -43839,7 +43839,7 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                Section.fromObject = function fromObject(d) {
+                Section.create = function fromObject(d) {
                     if (d instanceof $root.proto.Message.ListMessage.Section)
                         return d;
                     var m = new $root.proto.Message.ListMessage.Section();
@@ -43853,7 +43853,7 @@ export const proto = $root.proto = (() => {
                         for (var i = 0; i < d.rows.length; ++i) {
                             if (typeof d.rows[i] !== "object")
                                 throw TypeError(".proto.Message.ListMessage.Section.rows: object expected");
-                            m.rows[i] = $root.proto.Message.ListMessage.Row.fromObject(d.rows[i]);
+                            m.rows[i] = $root.proto.Message.ListMessage.Row.create(d.rows[i]);
                         }
                     }
                     return m;
@@ -44001,7 +44001,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            ListResponseMessage.fromObject = function fromObject(d) {
+            ListResponseMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.ListResponseMessage)
                     return d;
                 var m = new $root.proto.Message.ListResponseMessage();
@@ -44027,12 +44027,12 @@ export const proto = $root.proto = (() => {
                 if (d.singleSelectReply != null) {
                     if (typeof d.singleSelectReply !== "object")
                         throw TypeError(".proto.Message.ListResponseMessage.singleSelectReply: object expected");
-                    m.singleSelectReply = $root.proto.Message.ListResponseMessage.SingleSelectReply.fromObject(d.singleSelectReply);
+                    m.singleSelectReply = $root.proto.Message.ListResponseMessage.SingleSelectReply.create(d.singleSelectReply);
                 }
                 if (d.contextInfo != null) {
                     if (typeof d.contextInfo !== "object")
                         throw TypeError(".proto.Message.ListResponseMessage.contextInfo: object expected");
-                    m.contextInfo = $root.proto.ContextInfo.fromObject(d.contextInfo);
+                    m.contextInfo = $root.proto.ContextInfo.create(d.contextInfo);
                 }
                 if (d.description != null) {
                     m.description = String(d.description);
@@ -44142,7 +44142,7 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                SingleSelectReply.fromObject = function fromObject(d) {
+                SingleSelectReply.create = function fromObject(d) {
                     if (d instanceof $root.proto.Message.ListResponseMessage.SingleSelectReply)
                         return d;
                     var m = new $root.proto.Message.ListResponseMessage.SingleSelectReply();
@@ -44350,7 +44350,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            LiveLocationMessage.fromObject = function fromObject(d) {
+            LiveLocationMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.LiveLocationMessage)
                     return d;
                 var m = new $root.proto.Message.LiveLocationMessage();
@@ -44394,7 +44394,7 @@ export const proto = $root.proto = (() => {
                 if (d.contextInfo != null) {
                     if (typeof d.contextInfo !== "object")
                         throw TypeError(".proto.Message.LiveLocationMessage.contextInfo: object expected");
-                    m.contextInfo = $root.proto.ContextInfo.fromObject(d.contextInfo);
+                    m.contextInfo = $root.proto.ContextInfo.create(d.contextInfo);
                 }
                 return m;
             };
@@ -44668,7 +44668,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            LocationMessage.fromObject = function fromObject(d) {
+            LocationMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.LocationMessage)
                     return d;
                 var m = new $root.proto.Message.LocationMessage();
@@ -44711,7 +44711,7 @@ export const proto = $root.proto = (() => {
                 if (d.contextInfo != null) {
                     if (typeof d.contextInfo !== "object")
                         throw TypeError(".proto.Message.LocationMessage.contextInfo: object expected");
-                    m.contextInfo = $root.proto.ContextInfo.fromObject(d.contextInfo);
+                    m.contextInfo = $root.proto.ContextInfo.create(d.contextInfo);
                 }
                 return m;
             };
@@ -44927,7 +44927,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            MMSThumbnailMetadata.fromObject = function fromObject(d) {
+            MMSThumbnailMetadata.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.MMSThumbnailMetadata)
                     return d;
                 var m = new $root.proto.Message.MMSThumbnailMetadata();
@@ -45173,7 +45173,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            MessageHistoryBundle.fromObject = function fromObject(d) {
+            MessageHistoryBundle.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.MessageHistoryBundle)
                     return d;
                 var m = new $root.proto.Message.MessageHistoryBundle();
@@ -45214,12 +45214,12 @@ export const proto = $root.proto = (() => {
                 if (d.contextInfo != null) {
                     if (typeof d.contextInfo !== "object")
                         throw TypeError(".proto.Message.MessageHistoryBundle.contextInfo: object expected");
-                    m.contextInfo = $root.proto.ContextInfo.fromObject(d.contextInfo);
+                    m.contextInfo = $root.proto.ContextInfo.create(d.contextInfo);
                 }
                 if (d.messageHistoryMetadata != null) {
                     if (typeof d.messageHistoryMetadata !== "object")
                         throw TypeError(".proto.Message.MessageHistoryBundle.messageHistoryMetadata: object expected");
-                    m.messageHistoryMetadata = $root.proto.Message.MessageHistoryMetadata.fromObject(d.messageHistoryMetadata);
+                    m.messageHistoryMetadata = $root.proto.Message.MessageHistoryMetadata.create(d.messageHistoryMetadata);
                 }
                 return m;
             };
@@ -45365,7 +45365,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            MessageHistoryMetadata.fromObject = function fromObject(d) {
+            MessageHistoryMetadata.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.MessageHistoryMetadata)
                     return d;
                 var m = new $root.proto.Message.MessageHistoryMetadata();
@@ -45511,19 +45511,19 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            MessageHistoryNotice.fromObject = function fromObject(d) {
+            MessageHistoryNotice.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.MessageHistoryNotice)
                     return d;
                 var m = new $root.proto.Message.MessageHistoryNotice();
                 if (d.contextInfo != null) {
                     if (typeof d.contextInfo !== "object")
                         throw TypeError(".proto.Message.MessageHistoryNotice.contextInfo: object expected");
-                    m.contextInfo = $root.proto.ContextInfo.fromObject(d.contextInfo);
+                    m.contextInfo = $root.proto.ContextInfo.create(d.contextInfo);
                 }
                 if (d.messageHistoryMetadata != null) {
                     if (typeof d.messageHistoryMetadata !== "object")
                         throw TypeError(".proto.Message.MessageHistoryNotice.messageHistoryMetadata: object expected");
-                    m.messageHistoryMetadata = $root.proto.Message.MessageHistoryMetadata.fromObject(d.messageHistoryMetadata);
+                    m.messageHistoryMetadata = $root.proto.Message.MessageHistoryMetadata.create(d.messageHistoryMetadata);
                 }
                 return m;
             };
@@ -45676,7 +45676,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            NewsletterAdminInviteMessage.fromObject = function fromObject(d) {
+            NewsletterAdminInviteMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.NewsletterAdminInviteMessage)
                     return d;
                 var m = new $root.proto.Message.NewsletterAdminInviteMessage();
@@ -45708,7 +45708,7 @@ export const proto = $root.proto = (() => {
                 if (d.contextInfo != null) {
                     if (typeof d.contextInfo !== "object")
                         throw TypeError(".proto.Message.NewsletterAdminInviteMessage.contextInfo: object expected");
-                    m.contextInfo = $root.proto.ContextInfo.fromObject(d.contextInfo);
+                    m.contextInfo = $root.proto.ContextInfo.create(d.contextInfo);
                 }
                 return m;
             };
@@ -46001,7 +46001,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            OrderMessage.fromObject = function fromObject(d) {
+            OrderMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.OrderMessage)
                     return d;
                 var m = new $root.proto.Message.OrderMessage();
@@ -46077,7 +46077,7 @@ export const proto = $root.proto = (() => {
                 if (d.contextInfo != null) {
                     if (typeof d.contextInfo !== "object")
                         throw TypeError(".proto.Message.OrderMessage.contextInfo: object expected");
-                    m.contextInfo = $root.proto.ContextInfo.fromObject(d.contextInfo);
+                    m.contextInfo = $root.proto.ContextInfo.create(d.contextInfo);
                 }
                 if (d.messageVersion != null) {
                     m.messageVersion = d.messageVersion | 0;
@@ -46085,7 +46085,7 @@ export const proto = $root.proto = (() => {
                 if (d.orderRequestMessageId != null) {
                     if (typeof d.orderRequestMessageId !== "object")
                         throw TypeError(".proto.Message.OrderMessage.orderRequestMessageId: object expected");
-                    m.orderRequestMessageId = $root.proto.MessageKey.fromObject(d.orderRequestMessageId);
+                    m.orderRequestMessageId = $root.proto.MessageKey.create(d.orderRequestMessageId);
                 }
                 if (d.catalogType != null) {
                     m.catalogType = String(d.catalogType);
@@ -46271,7 +46271,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            PaymentInviteMessage.fromObject = function fromObject(d) {
+            PaymentInviteMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.PaymentInviteMessage)
                     return d;
                 var m = new $root.proto.Message.PaymentInviteMessage();
@@ -46420,19 +46420,19 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            PaymentLinkMetadata.fromObject = function fromObject(d) {
+            PaymentLinkMetadata.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.PaymentLinkMetadata)
                     return d;
                 var m = new $root.proto.Message.PaymentLinkMetadata();
                 if (d.button != null) {
                     if (typeof d.button !== "object")
                         throw TypeError(".proto.Message.PaymentLinkMetadata.button: object expected");
-                    m.button = $root.proto.Message.PaymentLinkMetadata.PaymentLinkButton.fromObject(d.button);
+                    m.button = $root.proto.Message.PaymentLinkMetadata.PaymentLinkButton.create(d.button);
                 }
                 if (d.header != null) {
                     if (typeof d.header !== "object")
                         throw TypeError(".proto.Message.PaymentLinkMetadata.header: object expected");
-                    m.header = $root.proto.Message.PaymentLinkMetadata.PaymentLinkHeader.fromObject(d.header);
+                    m.header = $root.proto.Message.PaymentLinkMetadata.PaymentLinkHeader.create(d.header);
                 }
                 return m;
             };
@@ -46517,7 +46517,7 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                PaymentLinkButton.fromObject = function fromObject(d) {
+                PaymentLinkButton.create = function fromObject(d) {
                     if (d instanceof $root.proto.Message.PaymentLinkMetadata.PaymentLinkButton)
                         return d;
                     var m = new $root.proto.Message.PaymentLinkMetadata.PaymentLinkButton();
@@ -46605,7 +46605,7 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                PaymentLinkHeader.fromObject = function fromObject(d) {
+                PaymentLinkHeader.create = function fromObject(d) {
                     if (d instanceof $root.proto.Message.PaymentLinkMetadata.PaymentLinkHeader)
                         return d;
                     var m = new $root.proto.Message.PaymentLinkMetadata.PaymentLinkHeader();
@@ -46791,7 +46791,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            PeerDataOperationRequestMessage.fromObject = function fromObject(d) {
+            PeerDataOperationRequestMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.PeerDataOperationRequestMessage)
                     return d;
                 var m = new $root.proto.Message.PeerDataOperationRequestMessage();
@@ -46846,7 +46846,7 @@ export const proto = $root.proto = (() => {
                     for (var i = 0; i < d.requestStickerReupload.length; ++i) {
                         if (typeof d.requestStickerReupload[i] !== "object")
                             throw TypeError(".proto.Message.PeerDataOperationRequestMessage.requestStickerReupload: object expected");
-                        m.requestStickerReupload[i] = $root.proto.Message.PeerDataOperationRequestMessage.RequestStickerReupload.fromObject(d.requestStickerReupload[i]);
+                        m.requestStickerReupload[i] = $root.proto.Message.PeerDataOperationRequestMessage.RequestStickerReupload.create(d.requestStickerReupload[i]);
                     }
                 }
                 if (d.requestUrlPreview) {
@@ -46856,13 +46856,13 @@ export const proto = $root.proto = (() => {
                     for (var i = 0; i < d.requestUrlPreview.length; ++i) {
                         if (typeof d.requestUrlPreview[i] !== "object")
                             throw TypeError(".proto.Message.PeerDataOperationRequestMessage.requestUrlPreview: object expected");
-                        m.requestUrlPreview[i] = $root.proto.Message.PeerDataOperationRequestMessage.RequestUrlPreview.fromObject(d.requestUrlPreview[i]);
+                        m.requestUrlPreview[i] = $root.proto.Message.PeerDataOperationRequestMessage.RequestUrlPreview.create(d.requestUrlPreview[i]);
                     }
                 }
                 if (d.historySyncOnDemandRequest != null) {
                     if (typeof d.historySyncOnDemandRequest !== "object")
                         throw TypeError(".proto.Message.PeerDataOperationRequestMessage.historySyncOnDemandRequest: object expected");
-                    m.historySyncOnDemandRequest = $root.proto.Message.PeerDataOperationRequestMessage.HistorySyncOnDemandRequest.fromObject(d.historySyncOnDemandRequest);
+                    m.historySyncOnDemandRequest = $root.proto.Message.PeerDataOperationRequestMessage.HistorySyncOnDemandRequest.create(d.historySyncOnDemandRequest);
                 }
                 if (d.placeholderMessageResendRequest) {
                     if (!Array.isArray(d.placeholderMessageResendRequest))
@@ -46871,18 +46871,18 @@ export const proto = $root.proto = (() => {
                     for (var i = 0; i < d.placeholderMessageResendRequest.length; ++i) {
                         if (typeof d.placeholderMessageResendRequest[i] !== "object")
                             throw TypeError(".proto.Message.PeerDataOperationRequestMessage.placeholderMessageResendRequest: object expected");
-                        m.placeholderMessageResendRequest[i] = $root.proto.Message.PeerDataOperationRequestMessage.PlaceholderMessageResendRequest.fromObject(d.placeholderMessageResendRequest[i]);
+                        m.placeholderMessageResendRequest[i] = $root.proto.Message.PeerDataOperationRequestMessage.PlaceholderMessageResendRequest.create(d.placeholderMessageResendRequest[i]);
                     }
                 }
                 if (d.fullHistorySyncOnDemandRequest != null) {
                     if (typeof d.fullHistorySyncOnDemandRequest !== "object")
                         throw TypeError(".proto.Message.PeerDataOperationRequestMessage.fullHistorySyncOnDemandRequest: object expected");
-                    m.fullHistorySyncOnDemandRequest = $root.proto.Message.PeerDataOperationRequestMessage.FullHistorySyncOnDemandRequest.fromObject(d.fullHistorySyncOnDemandRequest);
+                    m.fullHistorySyncOnDemandRequest = $root.proto.Message.PeerDataOperationRequestMessage.FullHistorySyncOnDemandRequest.create(d.fullHistorySyncOnDemandRequest);
                 }
                 if (d.syncdCollectionFatalRecoveryRequest != null) {
                     if (typeof d.syncdCollectionFatalRecoveryRequest !== "object")
                         throw TypeError(".proto.Message.PeerDataOperationRequestMessage.syncdCollectionFatalRecoveryRequest: object expected");
-                    m.syncdCollectionFatalRecoveryRequest = $root.proto.Message.PeerDataOperationRequestMessage.SyncDCollectionFatalRecoveryRequest.fromObject(d.syncdCollectionFatalRecoveryRequest);
+                    m.syncdCollectionFatalRecoveryRequest = $root.proto.Message.PeerDataOperationRequestMessage.SyncDCollectionFatalRecoveryRequest.create(d.syncdCollectionFatalRecoveryRequest);
                 }
                 return m;
             };
@@ -47013,19 +47013,19 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                FullHistorySyncOnDemandRequest.fromObject = function fromObject(d) {
+                FullHistorySyncOnDemandRequest.create = function fromObject(d) {
                     if (d instanceof $root.proto.Message.PeerDataOperationRequestMessage.FullHistorySyncOnDemandRequest)
                         return d;
                     var m = new $root.proto.Message.PeerDataOperationRequestMessage.FullHistorySyncOnDemandRequest();
                     if (d.requestMetadata != null) {
                         if (typeof d.requestMetadata !== "object")
                             throw TypeError(".proto.Message.PeerDataOperationRequestMessage.FullHistorySyncOnDemandRequest.requestMetadata: object expected");
-                        m.requestMetadata = $root.proto.Message.FullHistorySyncOnDemandRequestMetadata.fromObject(d.requestMetadata);
+                        m.requestMetadata = $root.proto.Message.FullHistorySyncOnDemandRequestMetadata.create(d.requestMetadata);
                     }
                     if (d.historySyncConfig != null) {
                         if (typeof d.historySyncConfig !== "object")
                             throw TypeError(".proto.Message.PeerDataOperationRequestMessage.FullHistorySyncOnDemandRequest.historySyncConfig: object expected");
-                        m.historySyncConfig = $root.proto.DeviceProps.HistorySyncConfig.fromObject(d.historySyncConfig);
+                        m.historySyncConfig = $root.proto.DeviceProps.HistorySyncConfig.create(d.historySyncConfig);
                     }
                     return m;
                 };
@@ -47178,7 +47178,7 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                HistorySyncOnDemandRequest.fromObject = function fromObject(d) {
+                HistorySyncOnDemandRequest.create = function fromObject(d) {
                     if (d instanceof $root.proto.Message.PeerDataOperationRequestMessage.HistorySyncOnDemandRequest)
                         return d;
                     var m = new $root.proto.Message.PeerDataOperationRequestMessage.HistorySyncOnDemandRequest();
@@ -47316,14 +47316,14 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                PlaceholderMessageResendRequest.fromObject = function fromObject(d) {
+                PlaceholderMessageResendRequest.create = function fromObject(d) {
                     if (d instanceof $root.proto.Message.PeerDataOperationRequestMessage.PlaceholderMessageResendRequest)
                         return d;
                     var m = new $root.proto.Message.PeerDataOperationRequestMessage.PlaceholderMessageResendRequest();
                     if (d.messageKey != null) {
                         if (typeof d.messageKey !== "object")
                             throw TypeError(".proto.Message.PeerDataOperationRequestMessage.PlaceholderMessageResendRequest.messageKey: object expected");
-                        m.messageKey = $root.proto.MessageKey.fromObject(d.messageKey);
+                        m.messageKey = $root.proto.MessageKey.create(d.messageKey);
                     }
                     return m;
                 };
@@ -47406,7 +47406,7 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                RequestStickerReupload.fromObject = function fromObject(d) {
+                RequestStickerReupload.create = function fromObject(d) {
                     if (d instanceof $root.proto.Message.PeerDataOperationRequestMessage.RequestStickerReupload)
                         return d;
                     var m = new $root.proto.Message.PeerDataOperationRequestMessage.RequestStickerReupload();
@@ -47507,7 +47507,7 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                RequestUrlPreview.fromObject = function fromObject(d) {
+                RequestUrlPreview.create = function fromObject(d) {
                     if (d instanceof $root.proto.Message.PeerDataOperationRequestMessage.RequestUrlPreview)
                         return d;
                     var m = new $root.proto.Message.PeerDataOperationRequestMessage.RequestUrlPreview();
@@ -47616,7 +47616,7 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                SyncDCollectionFatalRecoveryRequest.fromObject = function fromObject(d) {
+                SyncDCollectionFatalRecoveryRequest.create = function fromObject(d) {
                     if (d instanceof $root.proto.Message.PeerDataOperationRequestMessage.SyncDCollectionFatalRecoveryRequest)
                         return d;
                     var m = new $root.proto.Message.PeerDataOperationRequestMessage.SyncDCollectionFatalRecoveryRequest();
@@ -47750,7 +47750,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            PeerDataOperationRequestResponseMessage.fromObject = function fromObject(d) {
+            PeerDataOperationRequestResponseMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.PeerDataOperationRequestResponseMessage)
                     return d;
                 var m = new $root.proto.Message.PeerDataOperationRequestResponseMessage();
@@ -47808,7 +47808,7 @@ export const proto = $root.proto = (() => {
                     for (var i = 0; i < d.peerDataOperationResult.length; ++i) {
                         if (typeof d.peerDataOperationResult[i] !== "object")
                             throw TypeError(".proto.Message.PeerDataOperationRequestResponseMessage.peerDataOperationResult: object expected");
-                        m.peerDataOperationResult[i] = $root.proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.fromObject(d.peerDataOperationResult[i]);
+                        m.peerDataOperationResult[i] = $root.proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.create(d.peerDataOperationResult[i]);
                     }
                 }
                 return m;
@@ -47994,7 +47994,7 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                PeerDataOperationResult.fromObject = function fromObject(d) {
+                PeerDataOperationResult.create = function fromObject(d) {
                     if (d instanceof $root.proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult)
                         return d;
                     var m = new $root.proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult();
@@ -48025,37 +48025,37 @@ export const proto = $root.proto = (() => {
                     if (d.stickerMessage != null) {
                         if (typeof d.stickerMessage !== "object")
                             throw TypeError(".proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.stickerMessage: object expected");
-                        m.stickerMessage = $root.proto.Message.StickerMessage.fromObject(d.stickerMessage);
+                        m.stickerMessage = $root.proto.Message.StickerMessage.create(d.stickerMessage);
                     }
                     if (d.linkPreviewResponse != null) {
                         if (typeof d.linkPreviewResponse !== "object")
                             throw TypeError(".proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.linkPreviewResponse: object expected");
-                        m.linkPreviewResponse = $root.proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.fromObject(d.linkPreviewResponse);
+                        m.linkPreviewResponse = $root.proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.create(d.linkPreviewResponse);
                     }
                     if (d.placeholderMessageResendResponse != null) {
                         if (typeof d.placeholderMessageResendResponse !== "object")
                             throw TypeError(".proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.placeholderMessageResendResponse: object expected");
-                        m.placeholderMessageResendResponse = $root.proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.PlaceholderMessageResendResponse.fromObject(d.placeholderMessageResendResponse);
+                        m.placeholderMessageResendResponse = $root.proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.PlaceholderMessageResendResponse.create(d.placeholderMessageResendResponse);
                     }
                     if (d.waffleNonceFetchRequestResponse != null) {
                         if (typeof d.waffleNonceFetchRequestResponse !== "object")
                             throw TypeError(".proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.waffleNonceFetchRequestResponse: object expected");
-                        m.waffleNonceFetchRequestResponse = $root.proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.WaffleNonceFetchResponse.fromObject(d.waffleNonceFetchRequestResponse);
+                        m.waffleNonceFetchRequestResponse = $root.proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.WaffleNonceFetchResponse.create(d.waffleNonceFetchRequestResponse);
                     }
                     if (d.fullHistorySyncOnDemandRequestResponse != null) {
                         if (typeof d.fullHistorySyncOnDemandRequestResponse !== "object")
                             throw TypeError(".proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.fullHistorySyncOnDemandRequestResponse: object expected");
-                        m.fullHistorySyncOnDemandRequestResponse = $root.proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.FullHistorySyncOnDemandRequestResponse.fromObject(d.fullHistorySyncOnDemandRequestResponse);
+                        m.fullHistorySyncOnDemandRequestResponse = $root.proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.FullHistorySyncOnDemandRequestResponse.create(d.fullHistorySyncOnDemandRequestResponse);
                     }
                     if (d.companionMetaNonceFetchRequestResponse != null) {
                         if (typeof d.companionMetaNonceFetchRequestResponse !== "object")
                             throw TypeError(".proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.companionMetaNonceFetchRequestResponse: object expected");
-                        m.companionMetaNonceFetchRequestResponse = $root.proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.CompanionMetaNonceFetchResponse.fromObject(d.companionMetaNonceFetchRequestResponse);
+                        m.companionMetaNonceFetchRequestResponse = $root.proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.CompanionMetaNonceFetchResponse.create(d.companionMetaNonceFetchRequestResponse);
                     }
                     if (d.syncdSnapshotFatalRecoveryResponse != null) {
                         if (typeof d.syncdSnapshotFatalRecoveryResponse !== "object")
                             throw TypeError(".proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.syncdSnapshotFatalRecoveryResponse: object expected");
-                        m.syncdSnapshotFatalRecoveryResponse = $root.proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.SyncDSnapshotFatalRecoveryResponse.fromObject(d.syncdSnapshotFatalRecoveryResponse);
+                        m.syncdSnapshotFatalRecoveryResponse = $root.proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.SyncDSnapshotFatalRecoveryResponse.create(d.syncdSnapshotFatalRecoveryResponse);
                     }
                     return m;
                 };
@@ -48170,7 +48170,7 @@ export const proto = $root.proto = (() => {
                         return m;
                     };
 
-                    CompanionMetaNonceFetchResponse.fromObject = function fromObject(d) {
+                    CompanionMetaNonceFetchResponse.create = function fromObject(d) {
                         if (d instanceof $root.proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.CompanionMetaNonceFetchResponse)
                             return d;
                         var m = new $root.proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.CompanionMetaNonceFetchResponse();
@@ -48271,14 +48271,14 @@ export const proto = $root.proto = (() => {
                         return m;
                     };
 
-                    FullHistorySyncOnDemandRequestResponse.fromObject = function fromObject(d) {
+                    FullHistorySyncOnDemandRequestResponse.create = function fromObject(d) {
                         if (d instanceof $root.proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.FullHistorySyncOnDemandRequestResponse)
                             return d;
                         var m = new $root.proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.FullHistorySyncOnDemandRequestResponse();
                         if (d.requestMetadata != null) {
                             if (typeof d.requestMetadata !== "object")
                                 throw TypeError(".proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.FullHistorySyncOnDemandRequestResponse.requestMetadata: object expected");
-                            m.requestMetadata = $root.proto.Message.FullHistorySyncOnDemandRequestMetadata.fromObject(d.requestMetadata);
+                            m.requestMetadata = $root.proto.Message.FullHistorySyncOnDemandRequestMetadata.create(d.requestMetadata);
                         }
                         switch (d.responseCode) {
                         default:
@@ -48492,7 +48492,7 @@ export const proto = $root.proto = (() => {
                         return m;
                     };
 
-                    LinkPreviewResponse.fromObject = function fromObject(d) {
+                    LinkPreviewResponse.create = function fromObject(d) {
                         if (d instanceof $root.proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse)
                             return d;
                         var m = new $root.proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse();
@@ -48520,7 +48520,7 @@ export const proto = $root.proto = (() => {
                         if (d.hqThumbnail != null) {
                             if (typeof d.hqThumbnail !== "object")
                                 throw TypeError(".proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.hqThumbnail: object expected");
-                            m.hqThumbnail = $root.proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.LinkPreviewHighQualityThumbnail.fromObject(d.hqThumbnail);
+                            m.hqThumbnail = $root.proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.LinkPreviewHighQualityThumbnail.create(d.hqThumbnail);
                         }
                         return m;
                     };
@@ -48708,7 +48708,7 @@ export const proto = $root.proto = (() => {
                             return m;
                         };
 
-                        LinkPreviewHighQualityThumbnail.fromObject = function fromObject(d) {
+                        LinkPreviewHighQualityThumbnail.create = function fromObject(d) {
                             if (d instanceof $root.proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.LinkPreviewHighQualityThumbnail)
                                 return d;
                             var m = new $root.proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.LinkPreviewHighQualityThumbnail();
@@ -48860,7 +48860,7 @@ export const proto = $root.proto = (() => {
                         return m;
                     };
 
-                    PlaceholderMessageResendResponse.fromObject = function fromObject(d) {
+                    PlaceholderMessageResendResponse.create = function fromObject(d) {
                         if (d instanceof $root.proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.PlaceholderMessageResendResponse)
                             return d;
                         var m = new $root.proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.PlaceholderMessageResendResponse();
@@ -48964,7 +48964,7 @@ export const proto = $root.proto = (() => {
                         return m;
                     };
 
-                    SyncDSnapshotFatalRecoveryResponse.fromObject = function fromObject(d) {
+                    SyncDSnapshotFatalRecoveryResponse.create = function fromObject(d) {
                         if (d instanceof $root.proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.SyncDSnapshotFatalRecoveryResponse)
                             return d;
                         var m = new $root.proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.SyncDSnapshotFatalRecoveryResponse();
@@ -49076,7 +49076,7 @@ export const proto = $root.proto = (() => {
                         return m;
                     };
 
-                    WaffleNonceFetchResponse.fromObject = function fromObject(d) {
+                    WaffleNonceFetchResponse.create = function fromObject(d) {
                         if (d instanceof $root.proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.WaffleNonceFetchResponse)
                             return d;
                         var m = new $root.proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.WaffleNonceFetchResponse();
@@ -49218,14 +49218,14 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            PinInChatMessage.fromObject = function fromObject(d) {
+            PinInChatMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.PinInChatMessage)
                     return d;
                 var m = new $root.proto.Message.PinInChatMessage();
                 if (d.key != null) {
                     if (typeof d.key !== "object")
                         throw TypeError(".proto.Message.PinInChatMessage.key: object expected");
-                    m.key = $root.proto.MessageKey.fromObject(d.key);
+                    m.key = $root.proto.MessageKey.create(d.key);
                 }
                 switch (d.type) {
                 default:
@@ -49359,7 +49359,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            PlaceholderMessage.fromObject = function fromObject(d) {
+            PlaceholderMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.PlaceholderMessage)
                     return d;
                 var m = new $root.proto.Message.PlaceholderMessage();
@@ -49560,7 +49560,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            PollCreationMessage.fromObject = function fromObject(d) {
+            PollCreationMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.PollCreationMessage)
                     return d;
                 var m = new $root.proto.Message.PollCreationMessage();
@@ -49580,7 +49580,7 @@ export const proto = $root.proto = (() => {
                     for (var i = 0; i < d.options.length; ++i) {
                         if (typeof d.options[i] !== "object")
                             throw TypeError(".proto.Message.PollCreationMessage.options: object expected");
-                        m.options[i] = $root.proto.Message.PollCreationMessage.Option.fromObject(d.options[i]);
+                        m.options[i] = $root.proto.Message.PollCreationMessage.Option.create(d.options[i]);
                     }
                 }
                 if (d.selectableOptionsCount != null) {
@@ -49589,7 +49589,7 @@ export const proto = $root.proto = (() => {
                 if (d.contextInfo != null) {
                     if (typeof d.contextInfo !== "object")
                         throw TypeError(".proto.Message.PollCreationMessage.contextInfo: object expected");
-                    m.contextInfo = $root.proto.ContextInfo.fromObject(d.contextInfo);
+                    m.contextInfo = $root.proto.ContextInfo.create(d.contextInfo);
                 }
                 switch (d.pollContentType) {
                 default:
@@ -49630,7 +49630,7 @@ export const proto = $root.proto = (() => {
                 if (d.correctAnswer != null) {
                     if (typeof d.correctAnswer !== "object")
                         throw TypeError(".proto.Message.PollCreationMessage.correctAnswer: object expected");
-                    m.correctAnswer = $root.proto.Message.PollCreationMessage.Option.fromObject(d.correctAnswer);
+                    m.correctAnswer = $root.proto.Message.PollCreationMessage.Option.create(d.correctAnswer);
                 }
                 return m;
             };
@@ -49762,7 +49762,7 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                Option.fromObject = function fromObject(d) {
+                Option.create = function fromObject(d) {
                     if (d instanceof $root.proto.Message.PollCreationMessage.Option)
                         return d;
                     var m = new $root.proto.Message.PollCreationMessage.Option();
@@ -49881,7 +49881,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            PollEncValue.fromObject = function fromObject(d) {
+            PollEncValue.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.PollEncValue)
                     return d;
                 var m = new $root.proto.Message.PollEncValue();
@@ -50008,7 +50008,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            PollResultSnapshotMessage.fromObject = function fromObject(d) {
+            PollResultSnapshotMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.PollResultSnapshotMessage)
                     return d;
                 var m = new $root.proto.Message.PollResultSnapshotMessage();
@@ -50022,13 +50022,13 @@ export const proto = $root.proto = (() => {
                     for (var i = 0; i < d.pollVotes.length; ++i) {
                         if (typeof d.pollVotes[i] !== "object")
                             throw TypeError(".proto.Message.PollResultSnapshotMessage.pollVotes: object expected");
-                        m.pollVotes[i] = $root.proto.Message.PollResultSnapshotMessage.PollVote.fromObject(d.pollVotes[i]);
+                        m.pollVotes[i] = $root.proto.Message.PollResultSnapshotMessage.PollVote.create(d.pollVotes[i]);
                     }
                 }
                 if (d.contextInfo != null) {
                     if (typeof d.contextInfo !== "object")
                         throw TypeError(".proto.Message.PollResultSnapshotMessage.contextInfo: object expected");
-                    m.contextInfo = $root.proto.ContextInfo.fromObject(d.contextInfo);
+                    m.contextInfo = $root.proto.ContextInfo.create(d.contextInfo);
                 }
                 return m;
             };
@@ -50135,7 +50135,7 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                PollVote.fromObject = function fromObject(d) {
+                PollVote.create = function fromObject(d) {
                     if (d instanceof $root.proto.Message.PollResultSnapshotMessage.PollVote)
                         return d;
                     var m = new $root.proto.Message.PollResultSnapshotMessage.PollVote();
@@ -50283,24 +50283,24 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            PollUpdateMessage.fromObject = function fromObject(d) {
+            PollUpdateMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.PollUpdateMessage)
                     return d;
                 var m = new $root.proto.Message.PollUpdateMessage();
                 if (d.pollCreationMessageKey != null) {
                     if (typeof d.pollCreationMessageKey !== "object")
                         throw TypeError(".proto.Message.PollUpdateMessage.pollCreationMessageKey: object expected");
-                    m.pollCreationMessageKey = $root.proto.MessageKey.fromObject(d.pollCreationMessageKey);
+                    m.pollCreationMessageKey = $root.proto.MessageKey.create(d.pollCreationMessageKey);
                 }
                 if (d.vote != null) {
                     if (typeof d.vote !== "object")
                         throw TypeError(".proto.Message.PollUpdateMessage.vote: object expected");
-                    m.vote = $root.proto.Message.PollEncValue.fromObject(d.vote);
+                    m.vote = $root.proto.Message.PollEncValue.create(d.vote);
                 }
                 if (d.metadata != null) {
                     if (typeof d.metadata !== "object")
                         throw TypeError(".proto.Message.PollUpdateMessage.metadata: object expected");
-                    m.metadata = $root.proto.Message.PollUpdateMessageMetadata.fromObject(d.metadata);
+                    m.metadata = $root.proto.Message.PollUpdateMessageMetadata.create(d.metadata);
                 }
                 if (d.senderTimestampMs != null) {
                     if ($util.Long)
@@ -50395,7 +50395,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            PollUpdateMessageMetadata.fromObject = function fromObject(d) {
+            PollUpdateMessageMetadata.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.PollUpdateMessageMetadata)
                     return d;
                 return new $root.proto.Message.PollUpdateMessageMetadata();
@@ -50468,7 +50468,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            PollVoteMessage.fromObject = function fromObject(d) {
+            PollVoteMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.PollVoteMessage)
                     return d;
                 var m = new $root.proto.Message.PollVoteMessage();
@@ -50633,14 +50633,14 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            ProductMessage.fromObject = function fromObject(d) {
+            ProductMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.ProductMessage)
                     return d;
                 var m = new $root.proto.Message.ProductMessage();
                 if (d.product != null) {
                     if (typeof d.product !== "object")
                         throw TypeError(".proto.Message.ProductMessage.product: object expected");
-                    m.product = $root.proto.Message.ProductMessage.ProductSnapshot.fromObject(d.product);
+                    m.product = $root.proto.Message.ProductMessage.ProductSnapshot.create(d.product);
                 }
                 if (d.businessOwnerJid != null) {
                     m.businessOwnerJid = String(d.businessOwnerJid);
@@ -50648,7 +50648,7 @@ export const proto = $root.proto = (() => {
                 if (d.catalog != null) {
                     if (typeof d.catalog !== "object")
                         throw TypeError(".proto.Message.ProductMessage.catalog: object expected");
-                    m.catalog = $root.proto.Message.ProductMessage.CatalogSnapshot.fromObject(d.catalog);
+                    m.catalog = $root.proto.Message.ProductMessage.CatalogSnapshot.create(d.catalog);
                 }
                 if (d.body != null) {
                     m.body = String(d.body);
@@ -50659,7 +50659,7 @@ export const proto = $root.proto = (() => {
                 if (d.contextInfo != null) {
                     if (typeof d.contextInfo !== "object")
                         throw TypeError(".proto.Message.ProductMessage.contextInfo: object expected");
-                    m.contextInfo = $root.proto.ContextInfo.fromObject(d.contextInfo);
+                    m.contextInfo = $root.proto.ContextInfo.create(d.contextInfo);
                 }
                 return m;
             };
@@ -50790,14 +50790,14 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                CatalogSnapshot.fromObject = function fromObject(d) {
+                CatalogSnapshot.create = function fromObject(d) {
                     if (d instanceof $root.proto.Message.ProductMessage.CatalogSnapshot)
                         return d;
                     var m = new $root.proto.Message.ProductMessage.CatalogSnapshot();
                     if (d.catalogImage != null) {
                         if (typeof d.catalogImage !== "object")
                             throw TypeError(".proto.Message.ProductMessage.CatalogSnapshot.catalogImage: object expected");
-                        m.catalogImage = $root.proto.Message.ImageMessage.fromObject(d.catalogImage);
+                        m.catalogImage = $root.proto.Message.ImageMessage.create(d.catalogImage);
                     }
                     if (d.title != null) {
                         m.title = String(d.title);
@@ -51039,14 +51039,14 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                ProductSnapshot.fromObject = function fromObject(d) {
+                ProductSnapshot.create = function fromObject(d) {
                     if (d instanceof $root.proto.Message.ProductMessage.ProductSnapshot)
                         return d;
                     var m = new $root.proto.Message.ProductMessage.ProductSnapshot();
                     if (d.productImage != null) {
                         if (typeof d.productImage !== "object")
                             throw TypeError(".proto.Message.ProductMessage.ProductSnapshot.productImage: object expected");
-                        m.productImage = $root.proto.Message.ImageMessage.fromObject(d.productImage);
+                        m.productImage = $root.proto.Message.ImageMessage.create(d.productImage);
                     }
                     if (d.productId != null) {
                         m.productId = String(d.productId);
@@ -51539,14 +51539,14 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            ProtocolMessage.fromObject = function fromObject(d) {
+            ProtocolMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.ProtocolMessage)
                     return d;
                 var m = new $root.proto.Message.ProtocolMessage();
                 if (d.key != null) {
                     if (typeof d.key !== "object")
                         throw TypeError(".proto.Message.ProtocolMessage.key: object expected");
-                    m.key = $root.proto.MessageKey.fromObject(d.key);
+                    m.key = $root.proto.MessageKey.create(d.key);
                 }
                 switch (d.type) {
                 default:
@@ -51676,37 +51676,37 @@ export const proto = $root.proto = (() => {
                 if (d.historySyncNotification != null) {
                     if (typeof d.historySyncNotification !== "object")
                         throw TypeError(".proto.Message.ProtocolMessage.historySyncNotification: object expected");
-                    m.historySyncNotification = $root.proto.Message.HistorySyncNotification.fromObject(d.historySyncNotification);
+                    m.historySyncNotification = $root.proto.Message.HistorySyncNotification.create(d.historySyncNotification);
                 }
                 if (d.appStateSyncKeyShare != null) {
                     if (typeof d.appStateSyncKeyShare !== "object")
                         throw TypeError(".proto.Message.ProtocolMessage.appStateSyncKeyShare: object expected");
-                    m.appStateSyncKeyShare = $root.proto.Message.AppStateSyncKeyShare.fromObject(d.appStateSyncKeyShare);
+                    m.appStateSyncKeyShare = $root.proto.Message.AppStateSyncKeyShare.create(d.appStateSyncKeyShare);
                 }
                 if (d.appStateSyncKeyRequest != null) {
                     if (typeof d.appStateSyncKeyRequest !== "object")
                         throw TypeError(".proto.Message.ProtocolMessage.appStateSyncKeyRequest: object expected");
-                    m.appStateSyncKeyRequest = $root.proto.Message.AppStateSyncKeyRequest.fromObject(d.appStateSyncKeyRequest);
+                    m.appStateSyncKeyRequest = $root.proto.Message.AppStateSyncKeyRequest.create(d.appStateSyncKeyRequest);
                 }
                 if (d.initialSecurityNotificationSettingSync != null) {
                     if (typeof d.initialSecurityNotificationSettingSync !== "object")
                         throw TypeError(".proto.Message.ProtocolMessage.initialSecurityNotificationSettingSync: object expected");
-                    m.initialSecurityNotificationSettingSync = $root.proto.Message.InitialSecurityNotificationSettingSync.fromObject(d.initialSecurityNotificationSettingSync);
+                    m.initialSecurityNotificationSettingSync = $root.proto.Message.InitialSecurityNotificationSettingSync.create(d.initialSecurityNotificationSettingSync);
                 }
                 if (d.appStateFatalExceptionNotification != null) {
                     if (typeof d.appStateFatalExceptionNotification !== "object")
                         throw TypeError(".proto.Message.ProtocolMessage.appStateFatalExceptionNotification: object expected");
-                    m.appStateFatalExceptionNotification = $root.proto.Message.AppStateFatalExceptionNotification.fromObject(d.appStateFatalExceptionNotification);
+                    m.appStateFatalExceptionNotification = $root.proto.Message.AppStateFatalExceptionNotification.create(d.appStateFatalExceptionNotification);
                 }
                 if (d.disappearingMode != null) {
                     if (typeof d.disappearingMode !== "object")
                         throw TypeError(".proto.Message.ProtocolMessage.disappearingMode: object expected");
-                    m.disappearingMode = $root.proto.DisappearingMode.fromObject(d.disappearingMode);
+                    m.disappearingMode = $root.proto.DisappearingMode.create(d.disappearingMode);
                 }
                 if (d.editedMessage != null) {
                     if (typeof d.editedMessage !== "object")
                         throw TypeError(".proto.Message.ProtocolMessage.editedMessage: object expected");
-                    m.editedMessage = $root.proto.Message.fromObject(d.editedMessage);
+                    m.editedMessage = $root.proto.Message.create(d.editedMessage);
                 }
                 if (d.timestampMs != null) {
                     if ($util.Long)
@@ -51721,17 +51721,17 @@ export const proto = $root.proto = (() => {
                 if (d.peerDataOperationRequestMessage != null) {
                     if (typeof d.peerDataOperationRequestMessage !== "object")
                         throw TypeError(".proto.Message.ProtocolMessage.peerDataOperationRequestMessage: object expected");
-                    m.peerDataOperationRequestMessage = $root.proto.Message.PeerDataOperationRequestMessage.fromObject(d.peerDataOperationRequestMessage);
+                    m.peerDataOperationRequestMessage = $root.proto.Message.PeerDataOperationRequestMessage.create(d.peerDataOperationRequestMessage);
                 }
                 if (d.peerDataOperationRequestResponseMessage != null) {
                     if (typeof d.peerDataOperationRequestResponseMessage !== "object")
                         throw TypeError(".proto.Message.ProtocolMessage.peerDataOperationRequestResponseMessage: object expected");
-                    m.peerDataOperationRequestResponseMessage = $root.proto.Message.PeerDataOperationRequestResponseMessage.fromObject(d.peerDataOperationRequestResponseMessage);
+                    m.peerDataOperationRequestResponseMessage = $root.proto.Message.PeerDataOperationRequestResponseMessage.create(d.peerDataOperationRequestResponseMessage);
                 }
                 if (d.botFeedbackMessage != null) {
                     if (typeof d.botFeedbackMessage !== "object")
                         throw TypeError(".proto.Message.ProtocolMessage.botFeedbackMessage: object expected");
-                    m.botFeedbackMessage = $root.proto.Message.BotFeedbackMessage.fromObject(d.botFeedbackMessage);
+                    m.botFeedbackMessage = $root.proto.Message.BotFeedbackMessage.create(d.botFeedbackMessage);
                 }
                 if (d.invokerJid != null) {
                     m.invokerJid = String(d.invokerJid);
@@ -51739,27 +51739,27 @@ export const proto = $root.proto = (() => {
                 if (d.requestWelcomeMessageMetadata != null) {
                     if (typeof d.requestWelcomeMessageMetadata !== "object")
                         throw TypeError(".proto.Message.ProtocolMessage.requestWelcomeMessageMetadata: object expected");
-                    m.requestWelcomeMessageMetadata = $root.proto.Message.RequestWelcomeMessageMetadata.fromObject(d.requestWelcomeMessageMetadata);
+                    m.requestWelcomeMessageMetadata = $root.proto.Message.RequestWelcomeMessageMetadata.create(d.requestWelcomeMessageMetadata);
                 }
                 if (d.mediaNotifyMessage != null) {
                     if (typeof d.mediaNotifyMessage !== "object")
                         throw TypeError(".proto.Message.ProtocolMessage.mediaNotifyMessage: object expected");
-                    m.mediaNotifyMessage = $root.proto.MediaNotifyMessage.fromObject(d.mediaNotifyMessage);
+                    m.mediaNotifyMessage = $root.proto.MediaNotifyMessage.create(d.mediaNotifyMessage);
                 }
                 if (d.cloudApiThreadControlNotification != null) {
                     if (typeof d.cloudApiThreadControlNotification !== "object")
                         throw TypeError(".proto.Message.ProtocolMessage.cloudApiThreadControlNotification: object expected");
-                    m.cloudApiThreadControlNotification = $root.proto.Message.CloudAPIThreadControlNotification.fromObject(d.cloudApiThreadControlNotification);
+                    m.cloudApiThreadControlNotification = $root.proto.Message.CloudAPIThreadControlNotification.create(d.cloudApiThreadControlNotification);
                 }
                 if (d.lidMigrationMappingSyncMessage != null) {
                     if (typeof d.lidMigrationMappingSyncMessage !== "object")
                         throw TypeError(".proto.Message.ProtocolMessage.lidMigrationMappingSyncMessage: object expected");
-                    m.lidMigrationMappingSyncMessage = $root.proto.LIDMigrationMappingSyncMessage.fromObject(d.lidMigrationMappingSyncMessage);
+                    m.lidMigrationMappingSyncMessage = $root.proto.LIDMigrationMappingSyncMessage.create(d.lidMigrationMappingSyncMessage);
                 }
                 if (d.limitSharing != null) {
                     if (typeof d.limitSharing !== "object")
                         throw TypeError(".proto.Message.ProtocolMessage.limitSharing: object expected");
-                    m.limitSharing = $root.proto.LimitSharing.fromObject(d.limitSharing);
+                    m.limitSharing = $root.proto.LimitSharing.create(d.limitSharing);
                 }
                 if (d.aiPsiMetadata != null) {
                     if (typeof d.aiPsiMetadata === "string")
@@ -51770,12 +51770,12 @@ export const proto = $root.proto = (() => {
                 if (d.aiQueryFanout != null) {
                     if (typeof d.aiQueryFanout !== "object")
                         throw TypeError(".proto.Message.ProtocolMessage.aiQueryFanout: object expected");
-                    m.aiQueryFanout = $root.proto.AIQueryFanout.fromObject(d.aiQueryFanout);
+                    m.aiQueryFanout = $root.proto.AIQueryFanout.create(d.aiQueryFanout);
                 }
                 if (d.memberLabel != null) {
                     if (typeof d.memberLabel !== "object")
                         throw TypeError(".proto.Message.ProtocolMessage.memberLabel: object expected");
-                    m.memberLabel = $root.proto.MemberLabel.fromObject(d.memberLabel);
+                    m.memberLabel = $root.proto.MemberLabel.create(d.memberLabel);
                 }
                 return m;
             };
@@ -52049,14 +52049,14 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            ReactionMessage.fromObject = function fromObject(d) {
+            ReactionMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.ReactionMessage)
                     return d;
                 var m = new $root.proto.Message.ReactionMessage();
                 if (d.key != null) {
                     if (typeof d.key !== "object")
                         throw TypeError(".proto.Message.ReactionMessage.key: object expected");
-                    m.key = $root.proto.MessageKey.fromObject(d.key);
+                    m.key = $root.proto.MessageKey.create(d.key);
                 }
                 if (d.text != null) {
                     m.text = String(d.text);
@@ -52251,14 +52251,14 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            RequestPaymentMessage.fromObject = function fromObject(d) {
+            RequestPaymentMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.RequestPaymentMessage)
                     return d;
                 var m = new $root.proto.Message.RequestPaymentMessage();
                 if (d.noteMessage != null) {
                     if (typeof d.noteMessage !== "object")
                         throw TypeError(".proto.Message.RequestPaymentMessage.noteMessage: object expected");
-                    m.noteMessage = $root.proto.Message.fromObject(d.noteMessage);
+                    m.noteMessage = $root.proto.Message.create(d.noteMessage);
                 }
                 if (d.currencyCodeIso4217 != null) {
                     m.currencyCodeIso4217 = String(d.currencyCodeIso4217);
@@ -52289,12 +52289,12 @@ export const proto = $root.proto = (() => {
                 if (d.amount != null) {
                     if (typeof d.amount !== "object")
                         throw TypeError(".proto.Message.RequestPaymentMessage.amount: object expected");
-                    m.amount = $root.proto.Money.fromObject(d.amount);
+                    m.amount = $root.proto.Money.create(d.amount);
                 }
                 if (d.background != null) {
                     if (typeof d.background !== "object")
                         throw TypeError(".proto.Message.RequestPaymentMessage.background: object expected");
-                    m.background = $root.proto.PaymentBackground.fromObject(d.background);
+                    m.background = $root.proto.PaymentBackground.create(d.background);
                 }
                 return m;
             };
@@ -52413,14 +52413,14 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            RequestPhoneNumberMessage.fromObject = function fromObject(d) {
+            RequestPhoneNumberMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.RequestPhoneNumberMessage)
                     return d;
                 var m = new $root.proto.Message.RequestPhoneNumberMessage();
                 if (d.contextInfo != null) {
                     if (typeof d.contextInfo !== "object")
                         throw TypeError(".proto.Message.RequestPhoneNumberMessage.contextInfo: object expected");
-                    m.contextInfo = $root.proto.ContextInfo.fromObject(d.contextInfo);
+                    m.contextInfo = $root.proto.ContextInfo.create(d.contextInfo);
                 }
                 return m;
             };
@@ -52503,7 +52503,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            RequestWelcomeMessageMetadata.fromObject = function fromObject(d) {
+            RequestWelcomeMessageMetadata.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.RequestWelcomeMessageMetadata)
                     return d;
                 var m = new $root.proto.Message.RequestWelcomeMessageMetadata();
@@ -52637,7 +52637,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            ScheduledCallCreationMessage.fromObject = function fromObject(d) {
+            ScheduledCallCreationMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.ScheduledCallCreationMessage)
                     return d;
                 var m = new $root.proto.Message.ScheduledCallCreationMessage();
@@ -52789,14 +52789,14 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            ScheduledCallEditMessage.fromObject = function fromObject(d) {
+            ScheduledCallEditMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.ScheduledCallEditMessage)
                     return d;
                 var m = new $root.proto.Message.ScheduledCallEditMessage();
                 if (d.key != null) {
                     if (typeof d.key !== "object")
                         throw TypeError(".proto.Message.ScheduledCallEditMessage.key: object expected");
-                    m.key = $root.proto.MessageKey.fromObject(d.key);
+                    m.key = $root.proto.MessageKey.create(d.key);
                 }
                 switch (d.editType) {
                 default:
@@ -52946,14 +52946,14 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            SecretEncryptedMessage.fromObject = function fromObject(d) {
+            SecretEncryptedMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.SecretEncryptedMessage)
                     return d;
                 var m = new $root.proto.Message.SecretEncryptedMessage();
                 if (d.targetMessageKey != null) {
                     if (typeof d.targetMessageKey !== "object")
                         throw TypeError(".proto.Message.SecretEncryptedMessage.targetMessageKey: object expected");
-                    m.targetMessageKey = $root.proto.MessageKey.fromObject(d.targetMessageKey);
+                    m.targetMessageKey = $root.proto.MessageKey.create(d.targetMessageKey);
                 }
                 if (d.encPayload != null) {
                     if (typeof d.encPayload === "string")
@@ -53117,24 +53117,24 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            SendPaymentMessage.fromObject = function fromObject(d) {
+            SendPaymentMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.SendPaymentMessage)
                     return d;
                 var m = new $root.proto.Message.SendPaymentMessage();
                 if (d.noteMessage != null) {
                     if (typeof d.noteMessage !== "object")
                         throw TypeError(".proto.Message.SendPaymentMessage.noteMessage: object expected");
-                    m.noteMessage = $root.proto.Message.fromObject(d.noteMessage);
+                    m.noteMessage = $root.proto.Message.create(d.noteMessage);
                 }
                 if (d.requestMessageKey != null) {
                     if (typeof d.requestMessageKey !== "object")
                         throw TypeError(".proto.Message.SendPaymentMessage.requestMessageKey: object expected");
-                    m.requestMessageKey = $root.proto.MessageKey.fromObject(d.requestMessageKey);
+                    m.requestMessageKey = $root.proto.MessageKey.create(d.requestMessageKey);
                 }
                 if (d.background != null) {
                     if (typeof d.background !== "object")
                         throw TypeError(".proto.Message.SendPaymentMessage.background: object expected");
-                    m.background = $root.proto.PaymentBackground.fromObject(d.background);
+                    m.background = $root.proto.PaymentBackground.create(d.background);
                 }
                 return m;
             };
@@ -53240,7 +53240,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            SenderKeyDistributionMessage.fromObject = function fromObject(d) {
+            SenderKeyDistributionMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.SenderKeyDistributionMessage)
                     return d;
                 var m = new $root.proto.Message.SenderKeyDistributionMessage();
@@ -53365,19 +53365,19 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            StatusNotificationMessage.fromObject = function fromObject(d) {
+            StatusNotificationMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.StatusNotificationMessage)
                     return d;
                 var m = new $root.proto.Message.StatusNotificationMessage();
                 if (d.responseMessageKey != null) {
                     if (typeof d.responseMessageKey !== "object")
                         throw TypeError(".proto.Message.StatusNotificationMessage.responseMessageKey: object expected");
-                    m.responseMessageKey = $root.proto.MessageKey.fromObject(d.responseMessageKey);
+                    m.responseMessageKey = $root.proto.MessageKey.create(d.responseMessageKey);
                 }
                 if (d.originalMessageKey != null) {
                     if (typeof d.originalMessageKey !== "object")
                         throw TypeError(".proto.Message.StatusNotificationMessage.originalMessageKey: object expected");
-                    m.originalMessageKey = $root.proto.MessageKey.fromObject(d.originalMessageKey);
+                    m.originalMessageKey = $root.proto.MessageKey.create(d.originalMessageKey);
                 }
                 switch (d.type) {
                 default:
@@ -53745,7 +53745,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            StickerMessage.fromObject = function fromObject(d) {
+            StickerMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.StickerMessage)
                     return d;
                 var m = new $root.proto.Message.StickerMessage();
@@ -53823,7 +53823,7 @@ export const proto = $root.proto = (() => {
                 if (d.contextInfo != null) {
                     if (typeof d.contextInfo !== "object")
                         throw TypeError(".proto.Message.StickerMessage.contextInfo: object expected");
-                    m.contextInfo = $root.proto.ContextInfo.fromObject(d.contextInfo);
+                    m.contextInfo = $root.proto.ContextInfo.create(d.contextInfo);
                 }
                 if (d.stickerSentTs != null) {
                     if ($util.Long)
@@ -54304,7 +54304,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            StickerPackMessage.fromObject = function fromObject(d) {
+            StickerPackMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.StickerPackMessage)
                     return d;
                 var m = new $root.proto.Message.StickerPackMessage();
@@ -54324,7 +54324,7 @@ export const proto = $root.proto = (() => {
                     for (var i = 0; i < d.stickers.length; ++i) {
                         if (typeof d.stickers[i] !== "object")
                             throw TypeError(".proto.Message.StickerPackMessage.stickers: object expected");
-                        m.stickers[i] = $root.proto.Message.StickerPackMessage.Sticker.fromObject(d.stickers[i]);
+                        m.stickers[i] = $root.proto.Message.StickerPackMessage.Sticker.create(d.stickers[i]);
                     }
                 }
                 if (d.fileLength != null) {
@@ -54364,7 +54364,7 @@ export const proto = $root.proto = (() => {
                 if (d.contextInfo != null) {
                     if (typeof d.contextInfo !== "object")
                         throw TypeError(".proto.Message.StickerPackMessage.contextInfo: object expected");
-                    m.contextInfo = $root.proto.ContextInfo.fromObject(d.contextInfo);
+                    m.contextInfo = $root.proto.ContextInfo.create(d.contextInfo);
                 }
                 if (d.packDescription != null) {
                     m.packDescription = String(d.packDescription);
@@ -54696,7 +54696,7 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                Sticker.fromObject = function fromObject(d) {
+                Sticker.create = function fromObject(d) {
                     if (d instanceof $root.proto.Message.StickerPackMessage.Sticker)
                         return d;
                     var m = new $root.proto.Message.StickerPackMessage.Sticker();
@@ -54869,7 +54869,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            StickerSyncRMRMessage.fromObject = function fromObject(d) {
+            StickerSyncRMRMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.StickerSyncRMRMessage)
                     return d;
                 var m = new $root.proto.Message.StickerSyncRMRMessage();
@@ -55044,7 +55044,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            TemplateButtonReplyMessage.fromObject = function fromObject(d) {
+            TemplateButtonReplyMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.TemplateButtonReplyMessage)
                     return d;
                 var m = new $root.proto.Message.TemplateButtonReplyMessage();
@@ -55057,7 +55057,7 @@ export const proto = $root.proto = (() => {
                 if (d.contextInfo != null) {
                     if (typeof d.contextInfo !== "object")
                         throw TypeError(".proto.Message.TemplateButtonReplyMessage.contextInfo: object expected");
-                    m.contextInfo = $root.proto.ContextInfo.fromObject(d.contextInfo);
+                    m.contextInfo = $root.proto.ContextInfo.create(d.contextInfo);
                 }
                 if (d.selectedIndex != null) {
                     m.selectedIndex = d.selectedIndex >>> 0;
@@ -55218,19 +55218,19 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            TemplateMessage.fromObject = function fromObject(d) {
+            TemplateMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.TemplateMessage)
                     return d;
                 var m = new $root.proto.Message.TemplateMessage();
                 if (d.contextInfo != null) {
                     if (typeof d.contextInfo !== "object")
                         throw TypeError(".proto.Message.TemplateMessage.contextInfo: object expected");
-                    m.contextInfo = $root.proto.ContextInfo.fromObject(d.contextInfo);
+                    m.contextInfo = $root.proto.ContextInfo.create(d.contextInfo);
                 }
                 if (d.hydratedTemplate != null) {
                     if (typeof d.hydratedTemplate !== "object")
                         throw TypeError(".proto.Message.TemplateMessage.hydratedTemplate: object expected");
-                    m.hydratedTemplate = $root.proto.Message.TemplateMessage.HydratedFourRowTemplate.fromObject(d.hydratedTemplate);
+                    m.hydratedTemplate = $root.proto.Message.TemplateMessage.HydratedFourRowTemplate.create(d.hydratedTemplate);
                 }
                 if (d.templateId != null) {
                     m.templateId = String(d.templateId);
@@ -55238,17 +55238,17 @@ export const proto = $root.proto = (() => {
                 if (d.fourRowTemplate != null) {
                     if (typeof d.fourRowTemplate !== "object")
                         throw TypeError(".proto.Message.TemplateMessage.fourRowTemplate: object expected");
-                    m.fourRowTemplate = $root.proto.Message.TemplateMessage.FourRowTemplate.fromObject(d.fourRowTemplate);
+                    m.fourRowTemplate = $root.proto.Message.TemplateMessage.FourRowTemplate.create(d.fourRowTemplate);
                 }
                 if (d.hydratedFourRowTemplate != null) {
                     if (typeof d.hydratedFourRowTemplate !== "object")
                         throw TypeError(".proto.Message.TemplateMessage.hydratedFourRowTemplate: object expected");
-                    m.hydratedFourRowTemplate = $root.proto.Message.TemplateMessage.HydratedFourRowTemplate.fromObject(d.hydratedFourRowTemplate);
+                    m.hydratedFourRowTemplate = $root.proto.Message.TemplateMessage.HydratedFourRowTemplate.create(d.hydratedFourRowTemplate);
                 }
                 if (d.interactiveMessageTemplate != null) {
                     if (typeof d.interactiveMessageTemplate !== "object")
                         throw TypeError(".proto.Message.TemplateMessage.interactiveMessageTemplate: object expected");
-                    m.interactiveMessageTemplate = $root.proto.Message.InteractiveMessage.fromObject(d.interactiveMessageTemplate);
+                    m.interactiveMessageTemplate = $root.proto.Message.InteractiveMessage.create(d.interactiveMessageTemplate);
                 }
                 return m;
             };
@@ -55418,19 +55418,19 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                FourRowTemplate.fromObject = function fromObject(d) {
+                FourRowTemplate.create = function fromObject(d) {
                     if (d instanceof $root.proto.Message.TemplateMessage.FourRowTemplate)
                         return d;
                     var m = new $root.proto.Message.TemplateMessage.FourRowTemplate();
                     if (d.content != null) {
                         if (typeof d.content !== "object")
                             throw TypeError(".proto.Message.TemplateMessage.FourRowTemplate.content: object expected");
-                        m.content = $root.proto.Message.HighlyStructuredMessage.fromObject(d.content);
+                        m.content = $root.proto.Message.HighlyStructuredMessage.create(d.content);
                     }
                     if (d.footer != null) {
                         if (typeof d.footer !== "object")
                             throw TypeError(".proto.Message.TemplateMessage.FourRowTemplate.footer: object expected");
-                        m.footer = $root.proto.Message.HighlyStructuredMessage.fromObject(d.footer);
+                        m.footer = $root.proto.Message.HighlyStructuredMessage.create(d.footer);
                     }
                     if (d.buttons) {
                         if (!Array.isArray(d.buttons))
@@ -55439,33 +55439,33 @@ export const proto = $root.proto = (() => {
                         for (var i = 0; i < d.buttons.length; ++i) {
                             if (typeof d.buttons[i] !== "object")
                                 throw TypeError(".proto.Message.TemplateMessage.FourRowTemplate.buttons: object expected");
-                            m.buttons[i] = $root.proto.TemplateButton.fromObject(d.buttons[i]);
+                            m.buttons[i] = $root.proto.TemplateButton.create(d.buttons[i]);
                         }
                     }
                     if (d.documentMessage != null) {
                         if (typeof d.documentMessage !== "object")
                             throw TypeError(".proto.Message.TemplateMessage.FourRowTemplate.documentMessage: object expected");
-                        m.documentMessage = $root.proto.Message.DocumentMessage.fromObject(d.documentMessage);
+                        m.documentMessage = $root.proto.Message.DocumentMessage.create(d.documentMessage);
                     }
                     if (d.highlyStructuredMessage != null) {
                         if (typeof d.highlyStructuredMessage !== "object")
                             throw TypeError(".proto.Message.TemplateMessage.FourRowTemplate.highlyStructuredMessage: object expected");
-                        m.highlyStructuredMessage = $root.proto.Message.HighlyStructuredMessage.fromObject(d.highlyStructuredMessage);
+                        m.highlyStructuredMessage = $root.proto.Message.HighlyStructuredMessage.create(d.highlyStructuredMessage);
                     }
                     if (d.imageMessage != null) {
                         if (typeof d.imageMessage !== "object")
                             throw TypeError(".proto.Message.TemplateMessage.FourRowTemplate.imageMessage: object expected");
-                        m.imageMessage = $root.proto.Message.ImageMessage.fromObject(d.imageMessage);
+                        m.imageMessage = $root.proto.Message.ImageMessage.create(d.imageMessage);
                     }
                     if (d.videoMessage != null) {
                         if (typeof d.videoMessage !== "object")
                             throw TypeError(".proto.Message.TemplateMessage.FourRowTemplate.videoMessage: object expected");
-                        m.videoMessage = $root.proto.Message.VideoMessage.fromObject(d.videoMessage);
+                        m.videoMessage = $root.proto.Message.VideoMessage.create(d.videoMessage);
                     }
                     if (d.locationMessage != null) {
                         if (typeof d.locationMessage !== "object")
                             throw TypeError(".proto.Message.TemplateMessage.FourRowTemplate.locationMessage: object expected");
-                        m.locationMessage = $root.proto.Message.LocationMessage.fromObject(d.locationMessage);
+                        m.locationMessage = $root.proto.Message.LocationMessage.create(d.locationMessage);
                     }
                     return m;
                 };
@@ -55678,7 +55678,7 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                HydratedFourRowTemplate.fromObject = function fromObject(d) {
+                HydratedFourRowTemplate.create = function fromObject(d) {
                     if (d instanceof $root.proto.Message.TemplateMessage.HydratedFourRowTemplate)
                         return d;
                     var m = new $root.proto.Message.TemplateMessage.HydratedFourRowTemplate();
@@ -55695,7 +55695,7 @@ export const proto = $root.proto = (() => {
                         for (var i = 0; i < d.hydratedButtons.length; ++i) {
                             if (typeof d.hydratedButtons[i] !== "object")
                                 throw TypeError(".proto.Message.TemplateMessage.HydratedFourRowTemplate.hydratedButtons: object expected");
-                            m.hydratedButtons[i] = $root.proto.HydratedTemplateButton.fromObject(d.hydratedButtons[i]);
+                            m.hydratedButtons[i] = $root.proto.HydratedTemplateButton.create(d.hydratedButtons[i]);
                         }
                     }
                     if (d.templateId != null) {
@@ -55707,7 +55707,7 @@ export const proto = $root.proto = (() => {
                     if (d.documentMessage != null) {
                         if (typeof d.documentMessage !== "object")
                             throw TypeError(".proto.Message.TemplateMessage.HydratedFourRowTemplate.documentMessage: object expected");
-                        m.documentMessage = $root.proto.Message.DocumentMessage.fromObject(d.documentMessage);
+                        m.documentMessage = $root.proto.Message.DocumentMessage.create(d.documentMessage);
                     }
                     if (d.hydratedTitleText != null) {
                         m.hydratedTitleText = String(d.hydratedTitleText);
@@ -55715,17 +55715,17 @@ export const proto = $root.proto = (() => {
                     if (d.imageMessage != null) {
                         if (typeof d.imageMessage !== "object")
                             throw TypeError(".proto.Message.TemplateMessage.HydratedFourRowTemplate.imageMessage: object expected");
-                        m.imageMessage = $root.proto.Message.ImageMessage.fromObject(d.imageMessage);
+                        m.imageMessage = $root.proto.Message.ImageMessage.create(d.imageMessage);
                     }
                     if (d.videoMessage != null) {
                         if (typeof d.videoMessage !== "object")
                             throw TypeError(".proto.Message.TemplateMessage.HydratedFourRowTemplate.videoMessage: object expected");
-                        m.videoMessage = $root.proto.Message.VideoMessage.fromObject(d.videoMessage);
+                        m.videoMessage = $root.proto.Message.VideoMessage.create(d.videoMessage);
                     }
                     if (d.locationMessage != null) {
                         if (typeof d.locationMessage !== "object")
                             throw TypeError(".proto.Message.TemplateMessage.HydratedFourRowTemplate.locationMessage: object expected");
-                        m.locationMessage = $root.proto.Message.LocationMessage.fromObject(d.locationMessage);
+                        m.locationMessage = $root.proto.Message.LocationMessage.create(d.locationMessage);
                     }
                     return m;
                 };
@@ -55860,7 +55860,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            URLMetadata.fromObject = function fromObject(d) {
+            URLMetadata.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.URLMetadata)
                     return d;
                 var m = new $root.proto.Message.URLMetadata();
@@ -56283,7 +56283,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            VideoMessage.fromObject = function fromObject(d) {
+            VideoMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.Message.VideoMessage)
                     return d;
                 var m = new $root.proto.Message.VideoMessage();
@@ -56343,7 +56343,7 @@ export const proto = $root.proto = (() => {
                     for (var i = 0; i < d.interactiveAnnotations.length; ++i) {
                         if (typeof d.interactiveAnnotations[i] !== "object")
                             throw TypeError(".proto.Message.VideoMessage.interactiveAnnotations: object expected");
-                        m.interactiveAnnotations[i] = $root.proto.InteractiveAnnotation.fromObject(d.interactiveAnnotations[i]);
+                        m.interactiveAnnotations[i] = $root.proto.InteractiveAnnotation.create(d.interactiveAnnotations[i]);
                     }
                 }
                 if (d.directPath != null) {
@@ -56368,7 +56368,7 @@ export const proto = $root.proto = (() => {
                 if (d.contextInfo != null) {
                     if (typeof d.contextInfo !== "object")
                         throw TypeError(".proto.Message.VideoMessage.contextInfo: object expected");
-                    m.contextInfo = $root.proto.ContextInfo.fromObject(d.contextInfo);
+                    m.contextInfo = $root.proto.ContextInfo.create(d.contextInfo);
                 }
                 if (d.streamingSidecar != null) {
                     if (typeof d.streamingSidecar === "string")
@@ -56424,7 +56424,7 @@ export const proto = $root.proto = (() => {
                     for (var i = 0; i < d.annotations.length; ++i) {
                         if (typeof d.annotations[i] !== "object")
                             throw TypeError(".proto.Message.VideoMessage.annotations: object expected");
-                        m.annotations[i] = $root.proto.InteractiveAnnotation.fromObject(d.annotations[i]);
+                        m.annotations[i] = $root.proto.InteractiveAnnotation.create(d.annotations[i]);
                     }
                 }
                 if (d.accessibilityLabel != null) {
@@ -56437,7 +56437,7 @@ export const proto = $root.proto = (() => {
                     for (var i = 0; i < d.processedVideos.length; ++i) {
                         if (typeof d.processedVideos[i] !== "object")
                             throw TypeError(".proto.Message.VideoMessage.processedVideos: object expected");
-                        m.processedVideos[i] = $root.proto.ProcessedVideo.fromObject(d.processedVideos[i]);
+                        m.processedVideos[i] = $root.proto.ProcessedVideo.create(d.processedVideos[i]);
                     }
                 }
                 if (d.externalShareFullVideoDurationInSeconds != null) {
@@ -56770,7 +56770,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        MessageAddOn.fromObject = function fromObject(d) {
+        MessageAddOn.create = function fromObject(d) {
             if (d instanceof $root.proto.MessageAddOn)
                 return d;
             var m = new $root.proto.MessageAddOn();
@@ -56805,7 +56805,7 @@ export const proto = $root.proto = (() => {
             if (d.messageAddOn != null) {
                 if (typeof d.messageAddOn !== "object")
                     throw TypeError(".proto.MessageAddOn.messageAddOn: object expected");
-                m.messageAddOn = $root.proto.Message.fromObject(d.messageAddOn);
+                m.messageAddOn = $root.proto.Message.create(d.messageAddOn);
             }
             if (d.senderTimestampMs != null) {
                 if ($util.Long)
@@ -56862,17 +56862,17 @@ export const proto = $root.proto = (() => {
             if (d.addOnContextInfo != null) {
                 if (typeof d.addOnContextInfo !== "object")
                     throw TypeError(".proto.MessageAddOn.addOnContextInfo: object expected");
-                m.addOnContextInfo = $root.proto.MessageAddOnContextInfo.fromObject(d.addOnContextInfo);
+                m.addOnContextInfo = $root.proto.MessageAddOnContextInfo.create(d.addOnContextInfo);
             }
             if (d.messageAddOnKey != null) {
                 if (typeof d.messageAddOnKey !== "object")
                     throw TypeError(".proto.MessageAddOn.messageAddOnKey: object expected");
-                m.messageAddOnKey = $root.proto.MessageKey.fromObject(d.messageAddOnKey);
+                m.messageAddOnKey = $root.proto.MessageKey.create(d.messageAddOnKey);
             }
             if (d.legacyMessage != null) {
                 if (typeof d.legacyMessage !== "object")
                     throw TypeError(".proto.MessageAddOn.legacyMessage: object expected");
-                m.legacyMessage = $root.proto.LegacyMessage.fromObject(d.legacyMessage);
+                m.legacyMessage = $root.proto.LegacyMessage.create(d.legacyMessage);
             }
             return m;
         };
@@ -57019,7 +57019,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        MessageAddOnContextInfo.fromObject = function fromObject(d) {
+        MessageAddOnContextInfo.create = function fromObject(d) {
             if (d instanceof $root.proto.MessageAddOnContextInfo)
                 return d;
             var m = new $root.proto.MessageAddOnContextInfo();
@@ -57154,7 +57154,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        MessageAssociation.fromObject = function fromObject(d) {
+        MessageAssociation.create = function fromObject(d) {
             if (d instanceof $root.proto.MessageAssociation)
                 return d;
             var m = new $root.proto.MessageAssociation();
@@ -57229,7 +57229,7 @@ export const proto = $root.proto = (() => {
             if (d.parentMessageKey != null) {
                 if (typeof d.parentMessageKey !== "object")
                     throw TypeError(".proto.MessageAssociation.parentMessageKey: object expected");
-                m.parentMessageKey = $root.proto.MessageKey.fromObject(d.parentMessageKey);
+                m.parentMessageKey = $root.proto.MessageKey.create(d.parentMessageKey);
             }
             if (d.messageIndex != null) {
                 m.messageIndex = d.messageIndex | 0;
@@ -57514,14 +57514,14 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        MessageContextInfo.fromObject = function fromObject(d) {
+        MessageContextInfo.create = function fromObject(d) {
             if (d instanceof $root.proto.MessageContextInfo)
                 return d;
             var m = new $root.proto.MessageContextInfo();
             if (d.deviceListMetadata != null) {
                 if (typeof d.deviceListMetadata !== "object")
                     throw TypeError(".proto.MessageContextInfo.deviceListMetadata: object expected");
-                m.deviceListMetadata = $root.proto.DeviceListMetadata.fromObject(d.deviceListMetadata);
+                m.deviceListMetadata = $root.proto.DeviceListMetadata.create(d.deviceListMetadata);
             }
             if (d.deviceListMetadataVersion != null) {
                 m.deviceListMetadataVersion = d.deviceListMetadataVersion | 0;
@@ -57550,7 +57550,7 @@ export const proto = $root.proto = (() => {
             if (d.botMetadata != null) {
                 if (typeof d.botMetadata !== "object")
                     throw TypeError(".proto.MessageContextInfo.botMetadata: object expected");
-                m.botMetadata = $root.proto.BotMetadata.fromObject(d.botMetadata);
+                m.botMetadata = $root.proto.BotMetadata.create(d.botMetadata);
             }
             if (d.reportingTokenVersion != null) {
                 m.reportingTokenVersion = d.reportingTokenVersion | 0;
@@ -57574,7 +57574,7 @@ export const proto = $root.proto = (() => {
             if (d.messageAssociation != null) {
                 if (typeof d.messageAssociation !== "object")
                     throw TypeError(".proto.MessageContextInfo.messageAssociation: object expected");
-                m.messageAssociation = $root.proto.MessageAssociation.fromObject(d.messageAssociation);
+                m.messageAssociation = $root.proto.MessageAssociation.create(d.messageAssociation);
             }
             if (d.capiCreatedGroup != null) {
                 m.capiCreatedGroup = Boolean(d.capiCreatedGroup);
@@ -57585,12 +57585,12 @@ export const proto = $root.proto = (() => {
             if (d.limitSharing != null) {
                 if (typeof d.limitSharing !== "object")
                     throw TypeError(".proto.MessageContextInfo.limitSharing: object expected");
-                m.limitSharing = $root.proto.LimitSharing.fromObject(d.limitSharing);
+                m.limitSharing = $root.proto.LimitSharing.create(d.limitSharing);
             }
             if (d.limitSharingV2 != null) {
                 if (typeof d.limitSharingV2 !== "object")
                     throw TypeError(".proto.MessageContextInfo.limitSharingV2: object expected");
-                m.limitSharingV2 = $root.proto.LimitSharing.fromObject(d.limitSharingV2);
+                m.limitSharingV2 = $root.proto.LimitSharing.create(d.limitSharingV2);
             }
             return m;
         };
@@ -57784,7 +57784,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        MessageKey.fromObject = function fromObject(d) {
+        MessageKey.create = function fromObject(d) {
             if (d instanceof $root.proto.MessageKey)
                 return d;
             var m = new $root.proto.MessageKey();
@@ -57922,7 +57922,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        MessageSecretMessage.fromObject = function fromObject(d) {
+        MessageSecretMessage.create = function fromObject(d) {
             if (d instanceof $root.proto.MessageSecretMessage)
                 return d;
             var m = new $root.proto.MessageSecretMessage();
@@ -58058,7 +58058,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        Money.fromObject = function fromObject(d) {
+        Money.create = function fromObject(d) {
             if (d instanceof $root.proto.Money)
                 return d;
             var m = new $root.proto.Money();
@@ -58665,7 +58665,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        MsgOpaqueData.fromObject = function fromObject(d) {
+        MsgOpaqueData.create = function fromObject(d) {
             if (d instanceof $root.proto.MsgOpaqueData)
                 return d;
             var m = new $root.proto.MsgOpaqueData();
@@ -58721,7 +58721,7 @@ export const proto = $root.proto = (() => {
                 for (var i = 0; i < d.pollOptions.length; ++i) {
                     if (typeof d.pollOptions[i] !== "object")
                         throw TypeError(".proto.MsgOpaqueData.pollOptions: object expected");
-                    m.pollOptions[i] = $root.proto.MsgOpaqueData.PollOption.fromObject(d.pollOptions[i]);
+                    m.pollOptions[i] = $root.proto.MsgOpaqueData.PollOption.create(d.pollOptions[i]);
                 }
             }
             if (d.pollSelectableOptionsCount != null) {
@@ -58752,7 +58752,7 @@ export const proto = $root.proto = (() => {
             if (d.encPollVote != null) {
                 if (typeof d.encPollVote !== "object")
                     throw TypeError(".proto.MsgOpaqueData.encPollVote: object expected");
-                m.encPollVote = $root.proto.PollEncValue.fromObject(d.encPollVote);
+                m.encPollVote = $root.proto.PollEncValue.create(d.encPollVote);
             }
             if (d.isSentCagPollCreation != null) {
                 m.isSentCagPollCreation = Boolean(d.isSentCagPollCreation);
@@ -58780,7 +58780,7 @@ export const proto = $root.proto = (() => {
             if (d.pollVotesSnapshot != null) {
                 if (typeof d.pollVotesSnapshot !== "object")
                     throw TypeError(".proto.MsgOpaqueData.pollVotesSnapshot: object expected");
-                m.pollVotesSnapshot = $root.proto.MsgOpaqueData.PollVotesSnapshot.fromObject(d.pollVotesSnapshot);
+                m.pollVotesSnapshot = $root.proto.MsgOpaqueData.PollVotesSnapshot.create(d.pollVotesSnapshot);
             }
             if (d.encReactionTargetMessageKey != null) {
                 m.encReactionTargetMessageKey = String(d.encReactionTargetMessageKey);
@@ -58843,7 +58843,7 @@ export const proto = $root.proto = (() => {
             if (d.eventLocation != null) {
                 if (typeof d.eventLocation !== "object")
                     throw TypeError(".proto.MsgOpaqueData.eventLocation: object expected");
-                m.eventLocation = $root.proto.MsgOpaqueData.EventLocation.fromObject(d.eventLocation);
+                m.eventLocation = $root.proto.MsgOpaqueData.EventLocation.create(d.eventLocation);
             }
             if (d.eventEndTime != null) {
                 if ($util.Long)
@@ -59207,7 +59207,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            EventLocation.fromObject = function fromObject(d) {
+            EventLocation.create = function fromObject(d) {
                 if (d instanceof $root.proto.MsgOpaqueData.EventLocation)
                     return d;
                 var m = new $root.proto.MsgOpaqueData.EventLocation();
@@ -59359,7 +59359,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            PollOption.fromObject = function fromObject(d) {
+            PollOption.create = function fromObject(d) {
                 if (d instanceof $root.proto.MsgOpaqueData.PollOption)
                     return d;
                 var m = new $root.proto.MsgOpaqueData.PollOption();
@@ -59468,14 +59468,14 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            PollVoteSnapshot.fromObject = function fromObject(d) {
+            PollVoteSnapshot.create = function fromObject(d) {
                 if (d instanceof $root.proto.MsgOpaqueData.PollVoteSnapshot)
                     return d;
                 var m = new $root.proto.MsgOpaqueData.PollVoteSnapshot();
                 if (d.option != null) {
                     if (typeof d.option !== "object")
                         throw TypeError(".proto.MsgOpaqueData.PollVoteSnapshot.option: object expected");
-                    m.option = $root.proto.MsgOpaqueData.PollOption.fromObject(d.option);
+                    m.option = $root.proto.MsgOpaqueData.PollOption.create(d.option);
                 }
                 if (d.optionVoteCount != null) {
                     m.optionVoteCount = d.optionVoteCount | 0;
@@ -59563,7 +59563,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            PollVotesSnapshot.fromObject = function fromObject(d) {
+            PollVotesSnapshot.create = function fromObject(d) {
                 if (d instanceof $root.proto.MsgOpaqueData.PollVotesSnapshot)
                     return d;
                 var m = new $root.proto.MsgOpaqueData.PollVotesSnapshot();
@@ -59574,7 +59574,7 @@ export const proto = $root.proto = (() => {
                     for (var i = 0; i < d.pollVotes.length; ++i) {
                         if (typeof d.pollVotes[i] !== "object")
                             throw TypeError(".proto.MsgOpaqueData.PollVotesSnapshot.pollVotes: object expected");
-                        m.pollVotes[i] = $root.proto.MsgOpaqueData.PollVoteSnapshot.fromObject(d.pollVotes[i]);
+                        m.pollVotes[i] = $root.proto.MsgOpaqueData.PollVoteSnapshot.create(d.pollVotes[i]);
                     }
                 }
                 return m;
@@ -59678,19 +59678,19 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        MsgRowOpaqueData.fromObject = function fromObject(d) {
+        MsgRowOpaqueData.create = function fromObject(d) {
             if (d instanceof $root.proto.MsgRowOpaqueData)
                 return d;
             var m = new $root.proto.MsgRowOpaqueData();
             if (d.currentMsg != null) {
                 if (typeof d.currentMsg !== "object")
                     throw TypeError(".proto.MsgRowOpaqueData.currentMsg: object expected");
-                m.currentMsg = $root.proto.MsgOpaqueData.fromObject(d.currentMsg);
+                m.currentMsg = $root.proto.MsgOpaqueData.create(d.currentMsg);
             }
             if (d.quotedMsg != null) {
                 if (typeof d.quotedMsg !== "object")
                     throw TypeError(".proto.MsgRowOpaqueData.quotedMsg: object expected");
-                m.quotedMsg = $root.proto.MsgOpaqueData.fromObject(d.quotedMsg);
+                m.quotedMsg = $root.proto.MsgOpaqueData.create(d.quotedMsg);
             }
             return m;
         };
@@ -59791,7 +59791,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        NoiseCertificate.fromObject = function fromObject(d) {
+        NoiseCertificate.create = function fromObject(d) {
             if (d instanceof $root.proto.NoiseCertificate)
                 return d;
             var m = new $root.proto.NoiseCertificate();
@@ -59942,7 +59942,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            Details.fromObject = function fromObject(d) {
+            Details.create = function fromObject(d) {
                 if (d instanceof $root.proto.NoiseCertificate.Details)
                     return d;
                 var m = new $root.proto.NoiseCertificate.Details();
@@ -60117,19 +60117,19 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        NotificationMessageInfo.fromObject = function fromObject(d) {
+        NotificationMessageInfo.create = function fromObject(d) {
             if (d instanceof $root.proto.NotificationMessageInfo)
                 return d;
             var m = new $root.proto.NotificationMessageInfo();
             if (d.key != null) {
                 if (typeof d.key !== "object")
                     throw TypeError(".proto.NotificationMessageInfo.key: object expected");
-                m.key = $root.proto.MessageKey.fromObject(d.key);
+                m.key = $root.proto.MessageKey.create(d.key);
             }
             if (d.message != null) {
                 if (typeof d.message !== "object")
                     throw TypeError(".proto.NotificationMessageInfo.message: object expected");
-                m.message = $root.proto.Message.fromObject(d.message);
+                m.message = $root.proto.Message.create(d.message);
             }
             if (d.messageTimestamp != null) {
                 if ($util.Long)
@@ -60308,7 +60308,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        NotificationSettings.fromObject = function fromObject(d) {
+        NotificationSettings.create = function fromObject(d) {
             if (d instanceof $root.proto.NotificationSettings)
                 return d;
             var m = new $root.proto.NotificationSettings();
@@ -60462,7 +60462,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        PairingRequest.fromObject = function fromObject(d) {
+        PairingRequest.create = function fromObject(d) {
             if (d instanceof $root.proto.PairingRequest)
                 return d;
             var m = new $root.proto.PairingRequest();
@@ -60601,7 +60601,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        PastParticipant.fromObject = function fromObject(d) {
+        PastParticipant.create = function fromObject(d) {
             if (d instanceof $root.proto.PastParticipant)
                 return d;
             var m = new $root.proto.PastParticipant();
@@ -60747,7 +60747,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        PastParticipants.fromObject = function fromObject(d) {
+        PastParticipants.create = function fromObject(d) {
             if (d instanceof $root.proto.PastParticipants)
                 return d;
             var m = new $root.proto.PastParticipants();
@@ -60761,7 +60761,7 @@ export const proto = $root.proto = (() => {
                 for (var i = 0; i < d.pastParticipants.length; ++i) {
                     if (typeof d.pastParticipants[i] !== "object")
                         throw TypeError(".proto.PastParticipants.pastParticipants: object expected");
-                    m.pastParticipants[i] = $root.proto.PastParticipant.fromObject(d.pastParticipants[i]);
+                    m.pastParticipants[i] = $root.proto.PastParticipant.create(d.pastParticipants[i]);
                 }
             }
             return m;
@@ -60984,7 +60984,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        PatchDebugData.fromObject = function fromObject(d) {
+        PatchDebugData.create = function fromObject(d) {
             if (d instanceof $root.proto.PatchDebugData)
                 return d;
             var m = new $root.proto.PatchDebugData();
@@ -61342,7 +61342,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        PaymentBackground.fromObject = function fromObject(d) {
+        PaymentBackground.create = function fromObject(d) {
             if (d instanceof $root.proto.PaymentBackground)
                 return d;
             var m = new $root.proto.PaymentBackground();
@@ -61380,7 +61380,7 @@ export const proto = $root.proto = (() => {
             if (d.mediaData != null) {
                 if (typeof d.mediaData !== "object")
                     throw TypeError(".proto.PaymentBackground.mediaData: object expected");
-                m.mediaData = $root.proto.PaymentBackground.MediaData.fromObject(d.mediaData);
+                m.mediaData = $root.proto.PaymentBackground.MediaData.create(d.mediaData);
             }
             switch (d.type) {
             default:
@@ -61576,7 +61576,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            MediaData.fromObject = function fromObject(d) {
+            MediaData.create = function fromObject(d) {
                 if (d instanceof $root.proto.PaymentBackground.MediaData)
                     return d;
                 var m = new $root.proto.PaymentBackground.MediaData();
@@ -61881,7 +61881,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        PaymentInfo.fromObject = function fromObject(d) {
+        PaymentInfo.create = function fromObject(d) {
             if (d instanceof $root.proto.PaymentInfo)
                 return d;
             var m = new $root.proto.PaymentInfo();
@@ -61983,7 +61983,7 @@ export const proto = $root.proto = (() => {
             if (d.requestMessageKey != null) {
                 if (typeof d.requestMessageKey !== "object")
                     throw TypeError(".proto.PaymentInfo.requestMessageKey: object expected");
-                m.requestMessageKey = $root.proto.MessageKey.fromObject(d.requestMessageKey);
+                m.requestMessageKey = $root.proto.MessageKey.create(d.requestMessageKey);
             }
             if (d.expiryTimestamp != null) {
                 if ($util.Long)
@@ -62143,12 +62143,12 @@ export const proto = $root.proto = (() => {
             if (d.primaryAmount != null) {
                 if (typeof d.primaryAmount !== "object")
                     throw TypeError(".proto.PaymentInfo.primaryAmount: object expected");
-                m.primaryAmount = $root.proto.Money.fromObject(d.primaryAmount);
+                m.primaryAmount = $root.proto.Money.create(d.primaryAmount);
             }
             if (d.exchangeAmount != null) {
                 if (typeof d.exchangeAmount !== "object")
                     throw TypeError(".proto.PaymentInfo.exchangeAmount: object expected");
-                m.exchangeAmount = $root.proto.Money.fromObject(d.exchangeAmount);
+                m.exchangeAmount = $root.proto.Money.create(d.exchangeAmount);
             }
             return m;
         };
@@ -62374,7 +62374,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        PhoneNumberToLIDMapping.fromObject = function fromObject(d) {
+        PhoneNumberToLIDMapping.create = function fromObject(d) {
             if (d instanceof $root.proto.PhoneNumberToLIDMapping)
                 return d;
             var m = new $root.proto.PhoneNumberToLIDMapping();
@@ -62496,7 +62496,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        PhotoChange.fromObject = function fromObject(d) {
+        PhotoChange.create = function fromObject(d) {
             if (d instanceof $root.proto.PhotoChange)
                 return d;
             var m = new $root.proto.PhotoChange();
@@ -62658,7 +62658,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        PinInChat.fromObject = function fromObject(d) {
+        PinInChat.create = function fromObject(d) {
             if (d instanceof $root.proto.PinInChat)
                 return d;
             var m = new $root.proto.PinInChat();
@@ -62685,7 +62685,7 @@ export const proto = $root.proto = (() => {
             if (d.key != null) {
                 if (typeof d.key !== "object")
                     throw TypeError(".proto.PinInChat.key: object expected");
-                m.key = $root.proto.MessageKey.fromObject(d.key);
+                m.key = $root.proto.MessageKey.create(d.key);
             }
             if (d.senderTimestampMs != null) {
                 if ($util.Long)
@@ -62710,7 +62710,7 @@ export const proto = $root.proto = (() => {
             if (d.messageAddOnContextInfo != null) {
                 if (typeof d.messageAddOnContextInfo !== "object")
                     throw TypeError(".proto.PinInChat.messageAddOnContextInfo: object expected");
-                m.messageAddOnContextInfo = $root.proto.MessageAddOnContextInfo.fromObject(d.messageAddOnContextInfo);
+                m.messageAddOnContextInfo = $root.proto.MessageAddOnContextInfo.create(d.messageAddOnContextInfo);
             }
             return m;
         };
@@ -62866,7 +62866,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        Point.fromObject = function fromObject(d) {
+        Point.create = function fromObject(d) {
             if (d instanceof $root.proto.Point)
                 return d;
             var m = new $root.proto.Point();
@@ -62978,7 +62978,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        PollAdditionalMetadata.fromObject = function fromObject(d) {
+        PollAdditionalMetadata.create = function fromObject(d) {
             if (d instanceof $root.proto.PollAdditionalMetadata)
                 return d;
             var m = new $root.proto.PollAdditionalMetadata();
@@ -63079,7 +63079,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        PollEncValue.fromObject = function fromObject(d) {
+        PollEncValue.create = function fromObject(d) {
             if (d instanceof $root.proto.PollEncValue)
                 return d;
             var m = new $root.proto.PollEncValue();
@@ -63233,19 +63233,19 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        PollUpdate.fromObject = function fromObject(d) {
+        PollUpdate.create = function fromObject(d) {
             if (d instanceof $root.proto.PollUpdate)
                 return d;
             var m = new $root.proto.PollUpdate();
             if (d.pollUpdateMessageKey != null) {
                 if (typeof d.pollUpdateMessageKey !== "object")
                     throw TypeError(".proto.PollUpdate.pollUpdateMessageKey: object expected");
-                m.pollUpdateMessageKey = $root.proto.MessageKey.fromObject(d.pollUpdateMessageKey);
+                m.pollUpdateMessageKey = $root.proto.MessageKey.create(d.pollUpdateMessageKey);
             }
             if (d.vote != null) {
                 if (typeof d.vote !== "object")
                     throw TypeError(".proto.PollUpdate.vote: object expected");
-                m.vote = $root.proto.Message.PollVoteMessage.fromObject(d.vote);
+                m.vote = $root.proto.Message.PollVoteMessage.create(d.vote);
             }
             if (d.senderTimestampMs != null) {
                 if ($util.Long)
@@ -63403,7 +63403,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        PreKeyRecordStructure.fromObject = function fromObject(d) {
+        PreKeyRecordStructure.create = function fromObject(d) {
             if (d instanceof $root.proto.PreKeyRecordStructure)
                 return d;
             var m = new $root.proto.PreKeyRecordStructure();
@@ -63578,7 +63578,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        PreKeySignalMessage.fromObject = function fromObject(d) {
+        PreKeySignalMessage.create = function fromObject(d) {
             if (d instanceof $root.proto.PreKeySignalMessage)
                 return d;
             var m = new $root.proto.PreKeySignalMessage();
@@ -63715,7 +63715,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        PremiumMessageInfo.fromObject = function fromObject(d) {
+        PremiumMessageInfo.create = function fromObject(d) {
             if (d instanceof $root.proto.PremiumMessageInfo)
                 return d;
             var m = new $root.proto.PremiumMessageInfo();
@@ -63816,7 +63816,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        PrimaryEphemeralIdentity.fromObject = function fromObject(d) {
+        PrimaryEphemeralIdentity.create = function fromObject(d) {
             if (d instanceof $root.proto.PrimaryEphemeralIdentity)
                 return d;
             var m = new $root.proto.PrimaryEphemeralIdentity();
@@ -64016,7 +64016,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        ProcessedVideo.fromObject = function fromObject(d) {
+        ProcessedVideo.create = function fromObject(d) {
             if (d instanceof $root.proto.ProcessedVideo)
                 return d;
             var m = new $root.proto.ProcessedVideo();
@@ -64225,7 +64225,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        ProloguePayload.fromObject = function fromObject(d) {
+        ProloguePayload.create = function fromObject(d) {
             if (d instanceof $root.proto.ProloguePayload)
                 return d;
             var m = new $root.proto.ProloguePayload();
@@ -64238,7 +64238,7 @@ export const proto = $root.proto = (() => {
             if (d.commitment != null) {
                 if (typeof d.commitment !== "object")
                     throw TypeError(".proto.ProloguePayload.commitment: object expected");
-                m.commitment = $root.proto.CompanionCommitment.fromObject(d.commitment);
+                m.commitment = $root.proto.CompanionCommitment.create(d.commitment);
             }
             return m;
         };
@@ -64339,7 +64339,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        Pushname.fromObject = function fromObject(d) {
+        Pushname.create = function fromObject(d) {
             if (d instanceof $root.proto.Pushname)
                 return d;
             var m = new $root.proto.Pushname();
@@ -64487,14 +64487,14 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        Reaction.fromObject = function fromObject(d) {
+        Reaction.create = function fromObject(d) {
             if (d instanceof $root.proto.Reaction)
                 return d;
             var m = new $root.proto.Reaction();
             if (d.key != null) {
                 if (typeof d.key !== "object")
                     throw TypeError(".proto.Reaction.key: object expected");
-                m.key = $root.proto.MessageKey.fromObject(d.key);
+                m.key = $root.proto.MessageKey.create(d.key);
             }
             if (d.text != null) {
                 m.text = String(d.text);
@@ -64632,7 +64632,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        RecentEmojiWeight.fromObject = function fromObject(d) {
+        RecentEmojiWeight.create = function fromObject(d) {
             if (d instanceof $root.proto.RecentEmojiWeight)
                 return d;
             var m = new $root.proto.RecentEmojiWeight();
@@ -64740,14 +64740,14 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        RecordStructure.fromObject = function fromObject(d) {
+        RecordStructure.create = function fromObject(d) {
             if (d instanceof $root.proto.RecordStructure)
                 return d;
             var m = new $root.proto.RecordStructure();
             if (d.currentSession != null) {
                 if (typeof d.currentSession !== "object")
                     throw TypeError(".proto.RecordStructure.currentSession: object expected");
-                m.currentSession = $root.proto.SessionStructure.fromObject(d.currentSession);
+                m.currentSession = $root.proto.SessionStructure.create(d.currentSession);
             }
             if (d.previousSessions) {
                 if (!Array.isArray(d.previousSessions))
@@ -64756,7 +64756,7 @@ export const proto = $root.proto = (() => {
                 for (var i = 0; i < d.previousSessions.length; ++i) {
                     if (typeof d.previousSessions[i] !== "object")
                         throw TypeError(".proto.RecordStructure.previousSessions: object expected");
-                    m.previousSessions[i] = $root.proto.SessionStructure.fromObject(d.previousSessions[i]);
+                    m.previousSessions[i] = $root.proto.SessionStructure.create(d.previousSessions[i]);
                 }
             }
             return m;
@@ -64888,7 +64888,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        Reportable.fromObject = function fromObject(d) {
+        Reportable.create = function fromObject(d) {
             if (d instanceof $root.proto.Reportable)
                 return d;
             var m = new $root.proto.Reportable();
@@ -65000,7 +65000,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        ReportingTokenInfo.fromObject = function fromObject(d) {
+        ReportingTokenInfo.create = function fromObject(d) {
             if (d instanceof $root.proto.ReportingTokenInfo)
                 return d;
             var m = new $root.proto.ReportingTokenInfo();
@@ -65130,7 +65130,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        SenderKeyDistributionMessage.fromObject = function fromObject(d) {
+        SenderKeyDistributionMessage.create = function fromObject(d) {
             if (d instanceof $root.proto.SenderKeyDistributionMessage)
                 return d;
             var m = new $root.proto.SenderKeyDistributionMessage();
@@ -65274,7 +65274,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        SenderKeyMessage.fromObject = function fromObject(d) {
+        SenderKeyMessage.create = function fromObject(d) {
             if (d instanceof $root.proto.SenderKeyMessage)
                 return d;
             var m = new $root.proto.SenderKeyMessage();
@@ -65378,7 +65378,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        SenderKeyRecordStructure.fromObject = function fromObject(d) {
+        SenderKeyRecordStructure.create = function fromObject(d) {
             if (d instanceof $root.proto.SenderKeyRecordStructure)
                 return d;
             var m = new $root.proto.SenderKeyRecordStructure();
@@ -65389,7 +65389,7 @@ export const proto = $root.proto = (() => {
                 for (var i = 0; i < d.senderKeyStates.length; ++i) {
                     if (typeof d.senderKeyStates[i] !== "object")
                         throw TypeError(".proto.SenderKeyRecordStructure.senderKeyStates: object expected");
-                    m.senderKeyStates[i] = $root.proto.SenderKeyStateStructure.fromObject(d.senderKeyStates[i]);
+                    m.senderKeyStates[i] = $root.proto.SenderKeyStateStructure.create(d.senderKeyStates[i]);
                 }
             }
             return m;
@@ -65515,7 +65515,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        SenderKeyStateStructure.fromObject = function fromObject(d) {
+        SenderKeyStateStructure.create = function fromObject(d) {
             if (d instanceof $root.proto.SenderKeyStateStructure)
                 return d;
             var m = new $root.proto.SenderKeyStateStructure();
@@ -65525,12 +65525,12 @@ export const proto = $root.proto = (() => {
             if (d.senderChainKey != null) {
                 if (typeof d.senderChainKey !== "object")
                     throw TypeError(".proto.SenderKeyStateStructure.senderChainKey: object expected");
-                m.senderChainKey = $root.proto.SenderKeyStateStructure.SenderChainKey.fromObject(d.senderChainKey);
+                m.senderChainKey = $root.proto.SenderKeyStateStructure.SenderChainKey.create(d.senderChainKey);
             }
             if (d.senderSigningKey != null) {
                 if (typeof d.senderSigningKey !== "object")
                     throw TypeError(".proto.SenderKeyStateStructure.senderSigningKey: object expected");
-                m.senderSigningKey = $root.proto.SenderKeyStateStructure.SenderSigningKey.fromObject(d.senderSigningKey);
+                m.senderSigningKey = $root.proto.SenderKeyStateStructure.SenderSigningKey.create(d.senderSigningKey);
             }
             if (d.senderMessageKeys) {
                 if (!Array.isArray(d.senderMessageKeys))
@@ -65539,7 +65539,7 @@ export const proto = $root.proto = (() => {
                 for (var i = 0; i < d.senderMessageKeys.length; ++i) {
                     if (typeof d.senderMessageKeys[i] !== "object")
                         throw TypeError(".proto.SenderKeyStateStructure.senderMessageKeys: object expected");
-                    m.senderMessageKeys[i] = $root.proto.SenderKeyStateStructure.SenderMessageKey.fromObject(d.senderMessageKeys[i]);
+                    m.senderMessageKeys[i] = $root.proto.SenderKeyStateStructure.SenderMessageKey.create(d.senderMessageKeys[i]);
                 }
             }
             return m;
@@ -65652,7 +65652,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            SenderChainKey.fromObject = function fromObject(d) {
+            SenderChainKey.create = function fromObject(d) {
                 if (d instanceof $root.proto.SenderKeyStateStructure.SenderChainKey)
                     return d;
                 var m = new $root.proto.SenderKeyStateStructure.SenderChainKey();
@@ -65764,7 +65764,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            SenderMessageKey.fromObject = function fromObject(d) {
+            SenderMessageKey.create = function fromObject(d) {
                 if (d instanceof $root.proto.SenderKeyStateStructure.SenderMessageKey)
                     return d;
                 var m = new $root.proto.SenderKeyStateStructure.SenderMessageKey();
@@ -65876,7 +65876,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            SenderSigningKey.fromObject = function fromObject(d) {
+            SenderSigningKey.create = function fromObject(d) {
                 if (d instanceof $root.proto.SenderKeyStateStructure.SenderSigningKey)
                     return d;
                 var m = new $root.proto.SenderKeyStateStructure.SenderSigningKey();
@@ -65981,7 +65981,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        ServerErrorReceipt.fromObject = function fromObject(d) {
+        ServerErrorReceipt.create = function fromObject(d) {
             if (d instanceof $root.proto.ServerErrorReceipt)
                 return d;
             var m = new $root.proto.ServerErrorReceipt();
@@ -66224,7 +66224,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        SessionStructure.fromObject = function fromObject(d) {
+        SessionStructure.create = function fromObject(d) {
             if (d instanceof $root.proto.SessionStructure)
                 return d;
             var m = new $root.proto.SessionStructure();
@@ -66255,7 +66255,7 @@ export const proto = $root.proto = (() => {
             if (d.senderChain != null) {
                 if (typeof d.senderChain !== "object")
                     throw TypeError(".proto.SessionStructure.senderChain: object expected");
-                m.senderChain = $root.proto.SessionStructure.Chain.fromObject(d.senderChain);
+                m.senderChain = $root.proto.SessionStructure.Chain.create(d.senderChain);
             }
             if (d.receiverChains) {
                 if (!Array.isArray(d.receiverChains))
@@ -66264,18 +66264,18 @@ export const proto = $root.proto = (() => {
                 for (var i = 0; i < d.receiverChains.length; ++i) {
                     if (typeof d.receiverChains[i] !== "object")
                         throw TypeError(".proto.SessionStructure.receiverChains: object expected");
-                    m.receiverChains[i] = $root.proto.SessionStructure.Chain.fromObject(d.receiverChains[i]);
+                    m.receiverChains[i] = $root.proto.SessionStructure.Chain.create(d.receiverChains[i]);
                 }
             }
             if (d.pendingKeyExchange != null) {
                 if (typeof d.pendingKeyExchange !== "object")
                     throw TypeError(".proto.SessionStructure.pendingKeyExchange: object expected");
-                m.pendingKeyExchange = $root.proto.SessionStructure.PendingKeyExchange.fromObject(d.pendingKeyExchange);
+                m.pendingKeyExchange = $root.proto.SessionStructure.PendingKeyExchange.create(d.pendingKeyExchange);
             }
             if (d.pendingPreKey != null) {
                 if (typeof d.pendingPreKey !== "object")
                     throw TypeError(".proto.SessionStructure.pendingPreKey: object expected");
-                m.pendingPreKey = $root.proto.SessionStructure.PendingPreKey.fromObject(d.pendingPreKey);
+                m.pendingPreKey = $root.proto.SessionStructure.PendingPreKey.create(d.pendingPreKey);
             }
             if (d.remoteRegistrationId != null) {
                 m.remoteRegistrationId = d.remoteRegistrationId >>> 0;
@@ -66472,7 +66472,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            Chain.fromObject = function fromObject(d) {
+            Chain.create = function fromObject(d) {
                 if (d instanceof $root.proto.SessionStructure.Chain)
                     return d;
                 var m = new $root.proto.SessionStructure.Chain();
@@ -66491,7 +66491,7 @@ export const proto = $root.proto = (() => {
                 if (d.chainKey != null) {
                     if (typeof d.chainKey !== "object")
                         throw TypeError(".proto.SessionStructure.Chain.chainKey: object expected");
-                    m.chainKey = $root.proto.SessionStructure.Chain.ChainKey.fromObject(d.chainKey);
+                    m.chainKey = $root.proto.SessionStructure.Chain.ChainKey.create(d.chainKey);
                 }
                 if (d.messageKeys) {
                     if (!Array.isArray(d.messageKeys))
@@ -66500,7 +66500,7 @@ export const proto = $root.proto = (() => {
                     for (var i = 0; i < d.messageKeys.length; ++i) {
                         if (typeof d.messageKeys[i] !== "object")
                             throw TypeError(".proto.SessionStructure.Chain.messageKeys: object expected");
-                        m.messageKeys[i] = $root.proto.SessionStructure.Chain.MessageKey.fromObject(d.messageKeys[i]);
+                        m.messageKeys[i] = $root.proto.SessionStructure.Chain.MessageKey.create(d.messageKeys[i]);
                     }
                 }
                 return m;
@@ -66613,7 +66613,7 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                ChainKey.fromObject = function fromObject(d) {
+                ChainKey.create = function fromObject(d) {
                     if (d instanceof $root.proto.SessionStructure.Chain.ChainKey)
                         return d;
                     var m = new $root.proto.SessionStructure.Chain.ChainKey();
@@ -66751,7 +66751,7 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                MessageKey.fromObject = function fromObject(d) {
+                MessageKey.create = function fromObject(d) {
                     if (d instanceof $root.proto.SessionStructure.Chain.MessageKey)
                         return d;
                     var m = new $root.proto.SessionStructure.Chain.MessageKey();
@@ -66953,7 +66953,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            PendingKeyExchange.fromObject = function fromObject(d) {
+            PendingKeyExchange.create = function fromObject(d) {
                 if (d instanceof $root.proto.SessionStructure.PendingKeyExchange)
                     return d;
                 var m = new $root.proto.SessionStructure.PendingKeyExchange();
@@ -67133,7 +67133,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            PendingPreKey.fromObject = function fromObject(d) {
+            PendingPreKey.create = function fromObject(d) {
                 if (d instanceof $root.proto.SessionStructure.PendingPreKey)
                     return d;
                 var m = new $root.proto.SessionStructure.PendingPreKey();
@@ -67282,7 +67282,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        SignalMessage.fromObject = function fromObject(d) {
+        SignalMessage.create = function fromObject(d) {
             if (d instanceof $root.proto.SignalMessage)
                 return d;
             var m = new $root.proto.SignalMessage();
@@ -67452,7 +67452,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        SignedPreKeyRecordStructure.fromObject = function fromObject(d) {
+        SignedPreKeyRecordStructure.create = function fromObject(d) {
             if (d instanceof $root.proto.SignedPreKeyRecordStructure)
                 return d;
             var m = new $root.proto.SignedPreKeyRecordStructure();
@@ -67591,14 +67591,14 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        StatusMentionMessage.fromObject = function fromObject(d) {
+        StatusMentionMessage.create = function fromObject(d) {
             if (d instanceof $root.proto.StatusMentionMessage)
                 return d;
             var m = new $root.proto.StatusMentionMessage();
             if (d.quotedStatus != null) {
                 if (typeof d.quotedStatus !== "object")
                     throw TypeError(".proto.StatusMentionMessage.quotedStatus: object expected");
-                m.quotedStatus = $root.proto.Message.fromObject(d.quotedStatus);
+                m.quotedStatus = $root.proto.Message.create(d.quotedStatus);
             }
             return m;
         };
@@ -67688,7 +67688,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        StatusPSA.fromObject = function fromObject(d) {
+        StatusPSA.create = function fromObject(d) {
             if (d instanceof $root.proto.StatusPSA)
                 return d;
             var m = new $root.proto.StatusPSA();
@@ -67952,7 +67952,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        StickerMetadata.fromObject = function fromObject(d) {
+        StickerMetadata.create = function fromObject(d) {
             if (d instanceof $root.proto.StickerMetadata)
                 return d;
             var m = new $root.proto.StickerMetadata();
@@ -68196,7 +68196,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        SyncActionData.fromObject = function fromObject(d) {
+        SyncActionData.create = function fromObject(d) {
             if (d instanceof $root.proto.SyncActionData)
                 return d;
             var m = new $root.proto.SyncActionData();
@@ -68209,7 +68209,7 @@ export const proto = $root.proto = (() => {
             if (d.value != null) {
                 if (typeof d.value !== "object")
                     throw TypeError(".proto.SyncActionData.value: object expected");
-                m.value = $root.proto.SyncActionValue.fromObject(d.value);
+                m.value = $root.proto.SyncActionValue.create(d.value);
             }
             if (d.padding != null) {
                 if (typeof d.padding === "string")
@@ -69044,7 +69044,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        SyncActionValue.fromObject = function fromObject(d) {
+        SyncActionValue.create = function fromObject(d) {
             if (d instanceof $root.proto.SyncActionValue)
                 return d;
             var m = new $root.proto.SyncActionValue();
@@ -69061,282 +69061,282 @@ export const proto = $root.proto = (() => {
             if (d.starAction != null) {
                 if (typeof d.starAction !== "object")
                     throw TypeError(".proto.SyncActionValue.starAction: object expected");
-                m.starAction = $root.proto.SyncActionValue.StarAction.fromObject(d.starAction);
+                m.starAction = $root.proto.SyncActionValue.StarAction.create(d.starAction);
             }
             if (d.contactAction != null) {
                 if (typeof d.contactAction !== "object")
                     throw TypeError(".proto.SyncActionValue.contactAction: object expected");
-                m.contactAction = $root.proto.SyncActionValue.ContactAction.fromObject(d.contactAction);
+                m.contactAction = $root.proto.SyncActionValue.ContactAction.create(d.contactAction);
             }
             if (d.muteAction != null) {
                 if (typeof d.muteAction !== "object")
                     throw TypeError(".proto.SyncActionValue.muteAction: object expected");
-                m.muteAction = $root.proto.SyncActionValue.MuteAction.fromObject(d.muteAction);
+                m.muteAction = $root.proto.SyncActionValue.MuteAction.create(d.muteAction);
             }
             if (d.pinAction != null) {
                 if (typeof d.pinAction !== "object")
                     throw TypeError(".proto.SyncActionValue.pinAction: object expected");
-                m.pinAction = $root.proto.SyncActionValue.PinAction.fromObject(d.pinAction);
+                m.pinAction = $root.proto.SyncActionValue.PinAction.create(d.pinAction);
             }
             if (d.securityNotificationSetting != null) {
                 if (typeof d.securityNotificationSetting !== "object")
                     throw TypeError(".proto.SyncActionValue.securityNotificationSetting: object expected");
-                m.securityNotificationSetting = $root.proto.SyncActionValue.SecurityNotificationSetting.fromObject(d.securityNotificationSetting);
+                m.securityNotificationSetting = $root.proto.SyncActionValue.SecurityNotificationSetting.create(d.securityNotificationSetting);
             }
             if (d.pushNameSetting != null) {
                 if (typeof d.pushNameSetting !== "object")
                     throw TypeError(".proto.SyncActionValue.pushNameSetting: object expected");
-                m.pushNameSetting = $root.proto.SyncActionValue.PushNameSetting.fromObject(d.pushNameSetting);
+                m.pushNameSetting = $root.proto.SyncActionValue.PushNameSetting.create(d.pushNameSetting);
             }
             if (d.quickReplyAction != null) {
                 if (typeof d.quickReplyAction !== "object")
                     throw TypeError(".proto.SyncActionValue.quickReplyAction: object expected");
-                m.quickReplyAction = $root.proto.SyncActionValue.QuickReplyAction.fromObject(d.quickReplyAction);
+                m.quickReplyAction = $root.proto.SyncActionValue.QuickReplyAction.create(d.quickReplyAction);
             }
             if (d.recentEmojiWeightsAction != null) {
                 if (typeof d.recentEmojiWeightsAction !== "object")
                     throw TypeError(".proto.SyncActionValue.recentEmojiWeightsAction: object expected");
-                m.recentEmojiWeightsAction = $root.proto.SyncActionValue.RecentEmojiWeightsAction.fromObject(d.recentEmojiWeightsAction);
+                m.recentEmojiWeightsAction = $root.proto.SyncActionValue.RecentEmojiWeightsAction.create(d.recentEmojiWeightsAction);
             }
             if (d.labelEditAction != null) {
                 if (typeof d.labelEditAction !== "object")
                     throw TypeError(".proto.SyncActionValue.labelEditAction: object expected");
-                m.labelEditAction = $root.proto.SyncActionValue.LabelEditAction.fromObject(d.labelEditAction);
+                m.labelEditAction = $root.proto.SyncActionValue.LabelEditAction.create(d.labelEditAction);
             }
             if (d.labelAssociationAction != null) {
                 if (typeof d.labelAssociationAction !== "object")
                     throw TypeError(".proto.SyncActionValue.labelAssociationAction: object expected");
-                m.labelAssociationAction = $root.proto.SyncActionValue.LabelAssociationAction.fromObject(d.labelAssociationAction);
+                m.labelAssociationAction = $root.proto.SyncActionValue.LabelAssociationAction.create(d.labelAssociationAction);
             }
             if (d.localeSetting != null) {
                 if (typeof d.localeSetting !== "object")
                     throw TypeError(".proto.SyncActionValue.localeSetting: object expected");
-                m.localeSetting = $root.proto.SyncActionValue.LocaleSetting.fromObject(d.localeSetting);
+                m.localeSetting = $root.proto.SyncActionValue.LocaleSetting.create(d.localeSetting);
             }
             if (d.archiveChatAction != null) {
                 if (typeof d.archiveChatAction !== "object")
                     throw TypeError(".proto.SyncActionValue.archiveChatAction: object expected");
-                m.archiveChatAction = $root.proto.SyncActionValue.ArchiveChatAction.fromObject(d.archiveChatAction);
+                m.archiveChatAction = $root.proto.SyncActionValue.ArchiveChatAction.create(d.archiveChatAction);
             }
             if (d.deleteMessageForMeAction != null) {
                 if (typeof d.deleteMessageForMeAction !== "object")
                     throw TypeError(".proto.SyncActionValue.deleteMessageForMeAction: object expected");
-                m.deleteMessageForMeAction = $root.proto.SyncActionValue.DeleteMessageForMeAction.fromObject(d.deleteMessageForMeAction);
+                m.deleteMessageForMeAction = $root.proto.SyncActionValue.DeleteMessageForMeAction.create(d.deleteMessageForMeAction);
             }
             if (d.keyExpiration != null) {
                 if (typeof d.keyExpiration !== "object")
                     throw TypeError(".proto.SyncActionValue.keyExpiration: object expected");
-                m.keyExpiration = $root.proto.SyncActionValue.KeyExpiration.fromObject(d.keyExpiration);
+                m.keyExpiration = $root.proto.SyncActionValue.KeyExpiration.create(d.keyExpiration);
             }
             if (d.markChatAsReadAction != null) {
                 if (typeof d.markChatAsReadAction !== "object")
                     throw TypeError(".proto.SyncActionValue.markChatAsReadAction: object expected");
-                m.markChatAsReadAction = $root.proto.SyncActionValue.MarkChatAsReadAction.fromObject(d.markChatAsReadAction);
+                m.markChatAsReadAction = $root.proto.SyncActionValue.MarkChatAsReadAction.create(d.markChatAsReadAction);
             }
             if (d.clearChatAction != null) {
                 if (typeof d.clearChatAction !== "object")
                     throw TypeError(".proto.SyncActionValue.clearChatAction: object expected");
-                m.clearChatAction = $root.proto.SyncActionValue.ClearChatAction.fromObject(d.clearChatAction);
+                m.clearChatAction = $root.proto.SyncActionValue.ClearChatAction.create(d.clearChatAction);
             }
             if (d.deleteChatAction != null) {
                 if (typeof d.deleteChatAction !== "object")
                     throw TypeError(".proto.SyncActionValue.deleteChatAction: object expected");
-                m.deleteChatAction = $root.proto.SyncActionValue.DeleteChatAction.fromObject(d.deleteChatAction);
+                m.deleteChatAction = $root.proto.SyncActionValue.DeleteChatAction.create(d.deleteChatAction);
             }
             if (d.unarchiveChatsSetting != null) {
                 if (typeof d.unarchiveChatsSetting !== "object")
                     throw TypeError(".proto.SyncActionValue.unarchiveChatsSetting: object expected");
-                m.unarchiveChatsSetting = $root.proto.SyncActionValue.UnarchiveChatsSetting.fromObject(d.unarchiveChatsSetting);
+                m.unarchiveChatsSetting = $root.proto.SyncActionValue.UnarchiveChatsSetting.create(d.unarchiveChatsSetting);
             }
             if (d.primaryFeature != null) {
                 if (typeof d.primaryFeature !== "object")
                     throw TypeError(".proto.SyncActionValue.primaryFeature: object expected");
-                m.primaryFeature = $root.proto.SyncActionValue.PrimaryFeature.fromObject(d.primaryFeature);
+                m.primaryFeature = $root.proto.SyncActionValue.PrimaryFeature.create(d.primaryFeature);
             }
             if (d.androidUnsupportedActions != null) {
                 if (typeof d.androidUnsupportedActions !== "object")
                     throw TypeError(".proto.SyncActionValue.androidUnsupportedActions: object expected");
-                m.androidUnsupportedActions = $root.proto.SyncActionValue.AndroidUnsupportedActions.fromObject(d.androidUnsupportedActions);
+                m.androidUnsupportedActions = $root.proto.SyncActionValue.AndroidUnsupportedActions.create(d.androidUnsupportedActions);
             }
             if (d.agentAction != null) {
                 if (typeof d.agentAction !== "object")
                     throw TypeError(".proto.SyncActionValue.agentAction: object expected");
-                m.agentAction = $root.proto.SyncActionValue.AgentAction.fromObject(d.agentAction);
+                m.agentAction = $root.proto.SyncActionValue.AgentAction.create(d.agentAction);
             }
             if (d.subscriptionAction != null) {
                 if (typeof d.subscriptionAction !== "object")
                     throw TypeError(".proto.SyncActionValue.subscriptionAction: object expected");
-                m.subscriptionAction = $root.proto.SyncActionValue.SubscriptionAction.fromObject(d.subscriptionAction);
+                m.subscriptionAction = $root.proto.SyncActionValue.SubscriptionAction.create(d.subscriptionAction);
             }
             if (d.userStatusMuteAction != null) {
                 if (typeof d.userStatusMuteAction !== "object")
                     throw TypeError(".proto.SyncActionValue.userStatusMuteAction: object expected");
-                m.userStatusMuteAction = $root.proto.SyncActionValue.UserStatusMuteAction.fromObject(d.userStatusMuteAction);
+                m.userStatusMuteAction = $root.proto.SyncActionValue.UserStatusMuteAction.create(d.userStatusMuteAction);
             }
             if (d.timeFormatAction != null) {
                 if (typeof d.timeFormatAction !== "object")
                     throw TypeError(".proto.SyncActionValue.timeFormatAction: object expected");
-                m.timeFormatAction = $root.proto.SyncActionValue.TimeFormatAction.fromObject(d.timeFormatAction);
+                m.timeFormatAction = $root.proto.SyncActionValue.TimeFormatAction.create(d.timeFormatAction);
             }
             if (d.nuxAction != null) {
                 if (typeof d.nuxAction !== "object")
                     throw TypeError(".proto.SyncActionValue.nuxAction: object expected");
-                m.nuxAction = $root.proto.SyncActionValue.NuxAction.fromObject(d.nuxAction);
+                m.nuxAction = $root.proto.SyncActionValue.NuxAction.create(d.nuxAction);
             }
             if (d.primaryVersionAction != null) {
                 if (typeof d.primaryVersionAction !== "object")
                     throw TypeError(".proto.SyncActionValue.primaryVersionAction: object expected");
-                m.primaryVersionAction = $root.proto.SyncActionValue.PrimaryVersionAction.fromObject(d.primaryVersionAction);
+                m.primaryVersionAction = $root.proto.SyncActionValue.PrimaryVersionAction.create(d.primaryVersionAction);
             }
             if (d.stickerAction != null) {
                 if (typeof d.stickerAction !== "object")
                     throw TypeError(".proto.SyncActionValue.stickerAction: object expected");
-                m.stickerAction = $root.proto.SyncActionValue.StickerAction.fromObject(d.stickerAction);
+                m.stickerAction = $root.proto.SyncActionValue.StickerAction.create(d.stickerAction);
             }
             if (d.removeRecentStickerAction != null) {
                 if (typeof d.removeRecentStickerAction !== "object")
                     throw TypeError(".proto.SyncActionValue.removeRecentStickerAction: object expected");
-                m.removeRecentStickerAction = $root.proto.SyncActionValue.RemoveRecentStickerAction.fromObject(d.removeRecentStickerAction);
+                m.removeRecentStickerAction = $root.proto.SyncActionValue.RemoveRecentStickerAction.create(d.removeRecentStickerAction);
             }
             if (d.chatAssignment != null) {
                 if (typeof d.chatAssignment !== "object")
                     throw TypeError(".proto.SyncActionValue.chatAssignment: object expected");
-                m.chatAssignment = $root.proto.SyncActionValue.ChatAssignmentAction.fromObject(d.chatAssignment);
+                m.chatAssignment = $root.proto.SyncActionValue.ChatAssignmentAction.create(d.chatAssignment);
             }
             if (d.chatAssignmentOpenedStatus != null) {
                 if (typeof d.chatAssignmentOpenedStatus !== "object")
                     throw TypeError(".proto.SyncActionValue.chatAssignmentOpenedStatus: object expected");
-                m.chatAssignmentOpenedStatus = $root.proto.SyncActionValue.ChatAssignmentOpenedStatusAction.fromObject(d.chatAssignmentOpenedStatus);
+                m.chatAssignmentOpenedStatus = $root.proto.SyncActionValue.ChatAssignmentOpenedStatusAction.create(d.chatAssignmentOpenedStatus);
             }
             if (d.pnForLidChatAction != null) {
                 if (typeof d.pnForLidChatAction !== "object")
                     throw TypeError(".proto.SyncActionValue.pnForLidChatAction: object expected");
-                m.pnForLidChatAction = $root.proto.SyncActionValue.PnForLidChatAction.fromObject(d.pnForLidChatAction);
+                m.pnForLidChatAction = $root.proto.SyncActionValue.PnForLidChatAction.create(d.pnForLidChatAction);
             }
             if (d.marketingMessageAction != null) {
                 if (typeof d.marketingMessageAction !== "object")
                     throw TypeError(".proto.SyncActionValue.marketingMessageAction: object expected");
-                m.marketingMessageAction = $root.proto.SyncActionValue.MarketingMessageAction.fromObject(d.marketingMessageAction);
+                m.marketingMessageAction = $root.proto.SyncActionValue.MarketingMessageAction.create(d.marketingMessageAction);
             }
             if (d.marketingMessageBroadcastAction != null) {
                 if (typeof d.marketingMessageBroadcastAction !== "object")
                     throw TypeError(".proto.SyncActionValue.marketingMessageBroadcastAction: object expected");
-                m.marketingMessageBroadcastAction = $root.proto.SyncActionValue.MarketingMessageBroadcastAction.fromObject(d.marketingMessageBroadcastAction);
+                m.marketingMessageBroadcastAction = $root.proto.SyncActionValue.MarketingMessageBroadcastAction.create(d.marketingMessageBroadcastAction);
             }
             if (d.externalWebBetaAction != null) {
                 if (typeof d.externalWebBetaAction !== "object")
                     throw TypeError(".proto.SyncActionValue.externalWebBetaAction: object expected");
-                m.externalWebBetaAction = $root.proto.SyncActionValue.ExternalWebBetaAction.fromObject(d.externalWebBetaAction);
+                m.externalWebBetaAction = $root.proto.SyncActionValue.ExternalWebBetaAction.create(d.externalWebBetaAction);
             }
             if (d.privacySettingRelayAllCalls != null) {
                 if (typeof d.privacySettingRelayAllCalls !== "object")
                     throw TypeError(".proto.SyncActionValue.privacySettingRelayAllCalls: object expected");
-                m.privacySettingRelayAllCalls = $root.proto.SyncActionValue.PrivacySettingRelayAllCalls.fromObject(d.privacySettingRelayAllCalls);
+                m.privacySettingRelayAllCalls = $root.proto.SyncActionValue.PrivacySettingRelayAllCalls.create(d.privacySettingRelayAllCalls);
             }
             if (d.callLogAction != null) {
                 if (typeof d.callLogAction !== "object")
                     throw TypeError(".proto.SyncActionValue.callLogAction: object expected");
-                m.callLogAction = $root.proto.SyncActionValue.CallLogAction.fromObject(d.callLogAction);
+                m.callLogAction = $root.proto.SyncActionValue.CallLogAction.create(d.callLogAction);
             }
             if (d.statusPrivacy != null) {
                 if (typeof d.statusPrivacy !== "object")
                     throw TypeError(".proto.SyncActionValue.statusPrivacy: object expected");
-                m.statusPrivacy = $root.proto.SyncActionValue.StatusPrivacyAction.fromObject(d.statusPrivacy);
+                m.statusPrivacy = $root.proto.SyncActionValue.StatusPrivacyAction.create(d.statusPrivacy);
             }
             if (d.botWelcomeRequestAction != null) {
                 if (typeof d.botWelcomeRequestAction !== "object")
                     throw TypeError(".proto.SyncActionValue.botWelcomeRequestAction: object expected");
-                m.botWelcomeRequestAction = $root.proto.SyncActionValue.BotWelcomeRequestAction.fromObject(d.botWelcomeRequestAction);
+                m.botWelcomeRequestAction = $root.proto.SyncActionValue.BotWelcomeRequestAction.create(d.botWelcomeRequestAction);
             }
             if (d.deleteIndividualCallLog != null) {
                 if (typeof d.deleteIndividualCallLog !== "object")
                     throw TypeError(".proto.SyncActionValue.deleteIndividualCallLog: object expected");
-                m.deleteIndividualCallLog = $root.proto.SyncActionValue.DeleteIndividualCallLogAction.fromObject(d.deleteIndividualCallLog);
+                m.deleteIndividualCallLog = $root.proto.SyncActionValue.DeleteIndividualCallLogAction.create(d.deleteIndividualCallLog);
             }
             if (d.labelReorderingAction != null) {
                 if (typeof d.labelReorderingAction !== "object")
                     throw TypeError(".proto.SyncActionValue.labelReorderingAction: object expected");
-                m.labelReorderingAction = $root.proto.SyncActionValue.LabelReorderingAction.fromObject(d.labelReorderingAction);
+                m.labelReorderingAction = $root.proto.SyncActionValue.LabelReorderingAction.create(d.labelReorderingAction);
             }
             if (d.paymentInfoAction != null) {
                 if (typeof d.paymentInfoAction !== "object")
                     throw TypeError(".proto.SyncActionValue.paymentInfoAction: object expected");
-                m.paymentInfoAction = $root.proto.SyncActionValue.PaymentInfoAction.fromObject(d.paymentInfoAction);
+                m.paymentInfoAction = $root.proto.SyncActionValue.PaymentInfoAction.create(d.paymentInfoAction);
             }
             if (d.customPaymentMethodsAction != null) {
                 if (typeof d.customPaymentMethodsAction !== "object")
                     throw TypeError(".proto.SyncActionValue.customPaymentMethodsAction: object expected");
-                m.customPaymentMethodsAction = $root.proto.SyncActionValue.CustomPaymentMethodsAction.fromObject(d.customPaymentMethodsAction);
+                m.customPaymentMethodsAction = $root.proto.SyncActionValue.CustomPaymentMethodsAction.create(d.customPaymentMethodsAction);
             }
             if (d.lockChatAction != null) {
                 if (typeof d.lockChatAction !== "object")
                     throw TypeError(".proto.SyncActionValue.lockChatAction: object expected");
-                m.lockChatAction = $root.proto.SyncActionValue.LockChatAction.fromObject(d.lockChatAction);
+                m.lockChatAction = $root.proto.SyncActionValue.LockChatAction.create(d.lockChatAction);
             }
             if (d.chatLockSettings != null) {
                 if (typeof d.chatLockSettings !== "object")
                     throw TypeError(".proto.SyncActionValue.chatLockSettings: object expected");
-                m.chatLockSettings = $root.proto.ChatLockSettings.fromObject(d.chatLockSettings);
+                m.chatLockSettings = $root.proto.ChatLockSettings.create(d.chatLockSettings);
             }
             if (d.wamoUserIdentifierAction != null) {
                 if (typeof d.wamoUserIdentifierAction !== "object")
                     throw TypeError(".proto.SyncActionValue.wamoUserIdentifierAction: object expected");
-                m.wamoUserIdentifierAction = $root.proto.SyncActionValue.WamoUserIdentifierAction.fromObject(d.wamoUserIdentifierAction);
+                m.wamoUserIdentifierAction = $root.proto.SyncActionValue.WamoUserIdentifierAction.create(d.wamoUserIdentifierAction);
             }
             if (d.privacySettingDisableLinkPreviewsAction != null) {
                 if (typeof d.privacySettingDisableLinkPreviewsAction !== "object")
                     throw TypeError(".proto.SyncActionValue.privacySettingDisableLinkPreviewsAction: object expected");
-                m.privacySettingDisableLinkPreviewsAction = $root.proto.SyncActionValue.PrivacySettingDisableLinkPreviewsAction.fromObject(d.privacySettingDisableLinkPreviewsAction);
+                m.privacySettingDisableLinkPreviewsAction = $root.proto.SyncActionValue.PrivacySettingDisableLinkPreviewsAction.create(d.privacySettingDisableLinkPreviewsAction);
             }
             if (d.deviceCapabilities != null) {
                 if (typeof d.deviceCapabilities !== "object")
                     throw TypeError(".proto.SyncActionValue.deviceCapabilities: object expected");
-                m.deviceCapabilities = $root.proto.DeviceCapabilities.fromObject(d.deviceCapabilities);
+                m.deviceCapabilities = $root.proto.DeviceCapabilities.create(d.deviceCapabilities);
             }
             if (d.noteEditAction != null) {
                 if (typeof d.noteEditAction !== "object")
                     throw TypeError(".proto.SyncActionValue.noteEditAction: object expected");
-                m.noteEditAction = $root.proto.SyncActionValue.NoteEditAction.fromObject(d.noteEditAction);
+                m.noteEditAction = $root.proto.SyncActionValue.NoteEditAction.create(d.noteEditAction);
             }
             if (d.favoritesAction != null) {
                 if (typeof d.favoritesAction !== "object")
                     throw TypeError(".proto.SyncActionValue.favoritesAction: object expected");
-                m.favoritesAction = $root.proto.SyncActionValue.FavoritesAction.fromObject(d.favoritesAction);
+                m.favoritesAction = $root.proto.SyncActionValue.FavoritesAction.create(d.favoritesAction);
             }
             if (d.merchantPaymentPartnerAction != null) {
                 if (typeof d.merchantPaymentPartnerAction !== "object")
                     throw TypeError(".proto.SyncActionValue.merchantPaymentPartnerAction: object expected");
-                m.merchantPaymentPartnerAction = $root.proto.SyncActionValue.MerchantPaymentPartnerAction.fromObject(d.merchantPaymentPartnerAction);
+                m.merchantPaymentPartnerAction = $root.proto.SyncActionValue.MerchantPaymentPartnerAction.create(d.merchantPaymentPartnerAction);
             }
             if (d.waffleAccountLinkStateAction != null) {
                 if (typeof d.waffleAccountLinkStateAction !== "object")
                     throw TypeError(".proto.SyncActionValue.waffleAccountLinkStateAction: object expected");
-                m.waffleAccountLinkStateAction = $root.proto.SyncActionValue.WaffleAccountLinkStateAction.fromObject(d.waffleAccountLinkStateAction);
+                m.waffleAccountLinkStateAction = $root.proto.SyncActionValue.WaffleAccountLinkStateAction.create(d.waffleAccountLinkStateAction);
             }
             if (d.usernameChatStartMode != null) {
                 if (typeof d.usernameChatStartMode !== "object")
                     throw TypeError(".proto.SyncActionValue.usernameChatStartMode: object expected");
-                m.usernameChatStartMode = $root.proto.SyncActionValue.UsernameChatStartModeAction.fromObject(d.usernameChatStartMode);
+                m.usernameChatStartMode = $root.proto.SyncActionValue.UsernameChatStartModeAction.create(d.usernameChatStartMode);
             }
             if (d.notificationActivitySettingAction != null) {
                 if (typeof d.notificationActivitySettingAction !== "object")
                     throw TypeError(".proto.SyncActionValue.notificationActivitySettingAction: object expected");
-                m.notificationActivitySettingAction = $root.proto.SyncActionValue.NotificationActivitySettingAction.fromObject(d.notificationActivitySettingAction);
+                m.notificationActivitySettingAction = $root.proto.SyncActionValue.NotificationActivitySettingAction.create(d.notificationActivitySettingAction);
             }
             if (d.lidContactAction != null) {
                 if (typeof d.lidContactAction !== "object")
                     throw TypeError(".proto.SyncActionValue.lidContactAction: object expected");
-                m.lidContactAction = $root.proto.SyncActionValue.LidContactAction.fromObject(d.lidContactAction);
+                m.lidContactAction = $root.proto.SyncActionValue.LidContactAction.create(d.lidContactAction);
             }
             if (d.ctwaPerCustomerDataSharingAction != null) {
                 if (typeof d.ctwaPerCustomerDataSharingAction !== "object")
                     throw TypeError(".proto.SyncActionValue.ctwaPerCustomerDataSharingAction: object expected");
-                m.ctwaPerCustomerDataSharingAction = $root.proto.SyncActionValue.CtwaPerCustomerDataSharingAction.fromObject(d.ctwaPerCustomerDataSharingAction);
+                m.ctwaPerCustomerDataSharingAction = $root.proto.SyncActionValue.CtwaPerCustomerDataSharingAction.create(d.ctwaPerCustomerDataSharingAction);
             }
             if (d.paymentTosAction != null) {
                 if (typeof d.paymentTosAction !== "object")
                     throw TypeError(".proto.SyncActionValue.paymentTosAction: object expected");
-                m.paymentTosAction = $root.proto.SyncActionValue.PaymentTosAction.fromObject(d.paymentTosAction);
+                m.paymentTosAction = $root.proto.SyncActionValue.PaymentTosAction.create(d.paymentTosAction);
             }
             return m;
         };
@@ -69725,7 +69725,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            AgentAction.fromObject = function fromObject(d) {
+            AgentAction.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.AgentAction)
                     return d;
                 var m = new $root.proto.SyncActionValue.AgentAction();
@@ -69829,7 +69829,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            AndroidUnsupportedActions.fromObject = function fromObject(d) {
+            AndroidUnsupportedActions.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.AndroidUnsupportedActions)
                     return d;
                 var m = new $root.proto.SyncActionValue.AndroidUnsupportedActions();
@@ -69930,7 +69930,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            ArchiveChatAction.fromObject = function fromObject(d) {
+            ArchiveChatAction.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.ArchiveChatAction)
                     return d;
                 var m = new $root.proto.SyncActionValue.ArchiveChatAction();
@@ -69940,7 +69940,7 @@ export const proto = $root.proto = (() => {
                 if (d.messageRange != null) {
                     if (typeof d.messageRange !== "object")
                         throw TypeError(".proto.SyncActionValue.ArchiveChatAction.messageRange: object expected");
-                    m.messageRange = $root.proto.SyncActionValue.SyncActionMessageRange.fromObject(d.messageRange);
+                    m.messageRange = $root.proto.SyncActionValue.SyncActionMessageRange.create(d.messageRange);
                 }
                 return m;
             };
@@ -70028,7 +70028,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            BotWelcomeRequestAction.fromObject = function fromObject(d) {
+            BotWelcomeRequestAction.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.BotWelcomeRequestAction)
                     return d;
                 var m = new $root.proto.SyncActionValue.BotWelcomeRequestAction();
@@ -70116,14 +70116,14 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            CallLogAction.fromObject = function fromObject(d) {
+            CallLogAction.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.CallLogAction)
                     return d;
                 var m = new $root.proto.SyncActionValue.CallLogAction();
                 if (d.callLogRecord != null) {
                     if (typeof d.callLogRecord !== "object")
                         throw TypeError(".proto.SyncActionValue.CallLogAction.callLogRecord: object expected");
-                    m.callLogRecord = $root.proto.CallLogRecord.fromObject(d.callLogRecord);
+                    m.callLogRecord = $root.proto.CallLogRecord.create(d.callLogRecord);
                 }
                 return m;
             };
@@ -70206,7 +70206,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            ChatAssignmentAction.fromObject = function fromObject(d) {
+            ChatAssignmentAction.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.ChatAssignmentAction)
                     return d;
                 var m = new $root.proto.SyncActionValue.ChatAssignmentAction();
@@ -70294,7 +70294,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            ChatAssignmentOpenedStatusAction.fromObject = function fromObject(d) {
+            ChatAssignmentOpenedStatusAction.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.ChatAssignmentOpenedStatusAction)
                     return d;
                 var m = new $root.proto.SyncActionValue.ChatAssignmentOpenedStatusAction();
@@ -70382,14 +70382,14 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            ClearChatAction.fromObject = function fromObject(d) {
+            ClearChatAction.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.ClearChatAction)
                     return d;
                 var m = new $root.proto.SyncActionValue.ClearChatAction();
                 if (d.messageRange != null) {
                     if (typeof d.messageRange !== "object")
                         throw TypeError(".proto.SyncActionValue.ClearChatAction.messageRange: object expected");
-                    m.messageRange = $root.proto.SyncActionValue.SyncActionMessageRange.fromObject(d.messageRange);
+                    m.messageRange = $root.proto.SyncActionValue.SyncActionMessageRange.create(d.messageRange);
                 }
                 return m;
             };
@@ -70537,7 +70537,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            ContactAction.fromObject = function fromObject(d) {
+            ContactAction.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.ContactAction)
                     return d;
                 var m = new $root.proto.SyncActionValue.ContactAction();
@@ -70665,7 +70665,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            CtwaPerCustomerDataSharingAction.fromObject = function fromObject(d) {
+            CtwaPerCustomerDataSharingAction.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.CtwaPerCustomerDataSharingAction)
                     return d;
                 var m = new $root.proto.SyncActionValue.CtwaPerCustomerDataSharingAction();
@@ -70771,7 +70771,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            CustomPaymentMethod.fromObject = function fromObject(d) {
+            CustomPaymentMethod.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.CustomPaymentMethod)
                     return d;
                 var m = new $root.proto.SyncActionValue.CustomPaymentMethod();
@@ -70791,7 +70791,7 @@ export const proto = $root.proto = (() => {
                     for (var i = 0; i < d.metadata.length; ++i) {
                         if (typeof d.metadata[i] !== "object")
                             throw TypeError(".proto.SyncActionValue.CustomPaymentMethod.metadata: object expected");
-                        m.metadata[i] = $root.proto.SyncActionValue.CustomPaymentMethodMetadata.fromObject(d.metadata[i]);
+                        m.metadata[i] = $root.proto.SyncActionValue.CustomPaymentMethodMetadata.create(d.metadata[i]);
                     }
                 }
                 return m;
@@ -70892,7 +70892,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            CustomPaymentMethodMetadata.fromObject = function fromObject(d) {
+            CustomPaymentMethodMetadata.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.CustomPaymentMethodMetadata)
                     return d;
                 var m = new $root.proto.SyncActionValue.CustomPaymentMethodMetadata();
@@ -70985,7 +70985,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            CustomPaymentMethodsAction.fromObject = function fromObject(d) {
+            CustomPaymentMethodsAction.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.CustomPaymentMethodsAction)
                     return d;
                 var m = new $root.proto.SyncActionValue.CustomPaymentMethodsAction();
@@ -70996,7 +70996,7 @@ export const proto = $root.proto = (() => {
                     for (var i = 0; i < d.customPaymentMethods.length; ++i) {
                         if (typeof d.customPaymentMethods[i] !== "object")
                             throw TypeError(".proto.SyncActionValue.CustomPaymentMethodsAction.customPaymentMethods: object expected");
-                        m.customPaymentMethods[i] = $root.proto.SyncActionValue.CustomPaymentMethod.fromObject(d.customPaymentMethods[i]);
+                        m.customPaymentMethods[i] = $root.proto.SyncActionValue.CustomPaymentMethod.create(d.customPaymentMethods[i]);
                     }
                 }
                 return m;
@@ -71084,14 +71084,14 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            DeleteChatAction.fromObject = function fromObject(d) {
+            DeleteChatAction.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.DeleteChatAction)
                     return d;
                 var m = new $root.proto.SyncActionValue.DeleteChatAction();
                 if (d.messageRange != null) {
                     if (typeof d.messageRange !== "object")
                         throw TypeError(".proto.SyncActionValue.DeleteChatAction.messageRange: object expected");
-                    m.messageRange = $root.proto.SyncActionValue.SyncActionMessageRange.fromObject(d.messageRange);
+                    m.messageRange = $root.proto.SyncActionValue.SyncActionMessageRange.create(d.messageRange);
                 }
                 return m;
             };
@@ -71187,7 +71187,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            DeleteIndividualCallLogAction.fromObject = function fromObject(d) {
+            DeleteIndividualCallLogAction.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.DeleteIndividualCallLogAction)
                     return d;
                 var m = new $root.proto.SyncActionValue.DeleteIndividualCallLogAction();
@@ -71296,7 +71296,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            DeleteMessageForMeAction.fromObject = function fromObject(d) {
+            DeleteMessageForMeAction.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.DeleteMessageForMeAction)
                     return d;
                 var m = new $root.proto.SyncActionValue.DeleteMessageForMeAction();
@@ -71402,7 +71402,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            ExternalWebBetaAction.fromObject = function fromObject(d) {
+            ExternalWebBetaAction.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.ExternalWebBetaAction)
                     return d;
                 var m = new $root.proto.SyncActionValue.ExternalWebBetaAction();
@@ -71487,7 +71487,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            FavoritesAction.fromObject = function fromObject(d) {
+            FavoritesAction.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.FavoritesAction)
                     return d;
                 var m = new $root.proto.SyncActionValue.FavoritesAction();
@@ -71498,7 +71498,7 @@ export const proto = $root.proto = (() => {
                     for (var i = 0; i < d.favorites.length; ++i) {
                         if (typeof d.favorites[i] !== "object")
                             throw TypeError(".proto.SyncActionValue.FavoritesAction.favorites: object expected");
-                        m.favorites[i] = $root.proto.SyncActionValue.FavoritesAction.Favorite.fromObject(d.favorites[i]);
+                        m.favorites[i] = $root.proto.SyncActionValue.FavoritesAction.Favorite.create(d.favorites[i]);
                     }
                 }
                 return m;
@@ -71583,7 +71583,7 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                Favorite.fromObject = function fromObject(d) {
+                Favorite.create = function fromObject(d) {
                     if (d instanceof $root.proto.SyncActionValue.FavoritesAction.Favorite)
                         return d;
                     var m = new $root.proto.SyncActionValue.FavoritesAction.Favorite();
@@ -71674,7 +71674,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            KeyExpiration.fromObject = function fromObject(d) {
+            KeyExpiration.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.KeyExpiration)
                     return d;
                 var m = new $root.proto.SyncActionValue.KeyExpiration();
@@ -71762,7 +71762,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            LabelAssociationAction.fromObject = function fromObject(d) {
+            LabelAssociationAction.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.LabelAssociationAction)
                     return d;
                 var m = new $root.proto.SyncActionValue.LabelAssociationAction();
@@ -71941,7 +71941,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            LabelEditAction.fromObject = function fromObject(d) {
+            LabelEditAction.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.LabelEditAction)
                     return d;
                 var m = new $root.proto.SyncActionValue.LabelEditAction();
@@ -72139,7 +72139,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            LabelReorderingAction.fromObject = function fromObject(d) {
+            LabelReorderingAction.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.LabelReorderingAction)
                     return d;
                 var m = new $root.proto.SyncActionValue.LabelReorderingAction();
@@ -72275,7 +72275,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            LidContactAction.fromObject = function fromObject(d) {
+            LidContactAction.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.LidContactAction)
                     return d;
                 var m = new $root.proto.SyncActionValue.LidContactAction();
@@ -72387,7 +72387,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            LocaleSetting.fromObject = function fromObject(d) {
+            LocaleSetting.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.LocaleSetting)
                     return d;
                 var m = new $root.proto.SyncActionValue.LocaleSetting();
@@ -72475,7 +72475,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            LockChatAction.fromObject = function fromObject(d) {
+            LockChatAction.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.LockChatAction)
                     return d;
                 var m = new $root.proto.SyncActionValue.LockChatAction();
@@ -72576,7 +72576,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            MarkChatAsReadAction.fromObject = function fromObject(d) {
+            MarkChatAsReadAction.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.MarkChatAsReadAction)
                     return d;
                 var m = new $root.proto.SyncActionValue.MarkChatAsReadAction();
@@ -72586,7 +72586,7 @@ export const proto = $root.proto = (() => {
                 if (d.messageRange != null) {
                     if (typeof d.messageRange !== "object")
                         throw TypeError(".proto.SyncActionValue.MarkChatAsReadAction.messageRange: object expected");
-                    m.messageRange = $root.proto.SyncActionValue.SyncActionMessageRange.fromObject(d.messageRange);
+                    m.messageRange = $root.proto.SyncActionValue.SyncActionMessageRange.create(d.messageRange);
                 }
                 return m;
             };
@@ -72752,7 +72752,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            MarketingMessageAction.fromObject = function fromObject(d) {
+            MarketingMessageAction.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.MarketingMessageAction)
                     return d;
                 var m = new $root.proto.SyncActionValue.MarketingMessageAction();
@@ -72923,7 +72923,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            MarketingMessageBroadcastAction.fromObject = function fromObject(d) {
+            MarketingMessageBroadcastAction.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.MarketingMessageBroadcastAction)
                     return d;
                 var m = new $root.proto.SyncActionValue.MarketingMessageBroadcastAction();
@@ -73038,7 +73038,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            MerchantPaymentPartnerAction.fromObject = function fromObject(d) {
+            MerchantPaymentPartnerAction.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.MerchantPaymentPartnerAction)
                     return d;
                 var m = new $root.proto.SyncActionValue.MerchantPaymentPartnerAction();
@@ -73196,7 +73196,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            MuteAction.fromObject = function fromObject(d) {
+            MuteAction.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.MuteAction)
                     return d;
                 var m = new $root.proto.SyncActionValue.MuteAction();
@@ -73362,7 +73362,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            NoteEditAction.fromObject = function fromObject(d) {
+            NoteEditAction.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.NoteEditAction)
                     return d;
                 var m = new $root.proto.SyncActionValue.NoteEditAction();
@@ -73512,7 +73512,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            NotificationActivitySettingAction.fromObject = function fromObject(d) {
+            NotificationActivitySettingAction.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.NotificationActivitySettingAction)
                     return d;
                 var m = new $root.proto.SyncActionValue.NotificationActivitySettingAction();
@@ -73630,7 +73630,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            NuxAction.fromObject = function fromObject(d) {
+            NuxAction.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.NuxAction)
                     return d;
                 var m = new $root.proto.SyncActionValue.NuxAction();
@@ -73718,7 +73718,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            PaymentInfoAction.fromObject = function fromObject(d) {
+            PaymentInfoAction.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.PaymentInfoAction)
                     return d;
                 var m = new $root.proto.SyncActionValue.PaymentInfoAction();
@@ -73805,7 +73805,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            PaymentTosAction.fromObject = function fromObject(d) {
+            PaymentTosAction.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.PaymentTosAction)
                     return d;
                 var m = new $root.proto.SyncActionValue.PaymentTosAction();
@@ -73916,7 +73916,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            PinAction.fromObject = function fromObject(d) {
+            PinAction.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.PinAction)
                     return d;
                 var m = new $root.proto.SyncActionValue.PinAction();
@@ -74004,7 +74004,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            PnForLidChatAction.fromObject = function fromObject(d) {
+            PnForLidChatAction.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.PnForLidChatAction)
                     return d;
                 var m = new $root.proto.SyncActionValue.PnForLidChatAction();
@@ -74089,7 +74089,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            PrimaryFeature.fromObject = function fromObject(d) {
+            PrimaryFeature.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.PrimaryFeature)
                     return d;
                 var m = new $root.proto.SyncActionValue.PrimaryFeature();
@@ -74186,7 +74186,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            PrimaryVersionAction.fromObject = function fromObject(d) {
+            PrimaryVersionAction.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.PrimaryVersionAction)
                     return d;
                 var m = new $root.proto.SyncActionValue.PrimaryVersionAction();
@@ -74274,7 +74274,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            PrivacySettingDisableLinkPreviewsAction.fromObject = function fromObject(d) {
+            PrivacySettingDisableLinkPreviewsAction.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.PrivacySettingDisableLinkPreviewsAction)
                     return d;
                 var m = new $root.proto.SyncActionValue.PrivacySettingDisableLinkPreviewsAction();
@@ -74362,7 +74362,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            PrivacySettingRelayAllCalls.fromObject = function fromObject(d) {
+            PrivacySettingRelayAllCalls.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.PrivacySettingRelayAllCalls)
                     return d;
                 var m = new $root.proto.SyncActionValue.PrivacySettingRelayAllCalls();
@@ -74450,7 +74450,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            PushNameSetting.fromObject = function fromObject(d) {
+            PushNameSetting.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.PushNameSetting)
                     return d;
                 var m = new $root.proto.SyncActionValue.PushNameSetting();
@@ -74589,7 +74589,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            QuickReplyAction.fromObject = function fromObject(d) {
+            QuickReplyAction.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.QuickReplyAction)
                     return d;
                 var m = new $root.proto.SyncActionValue.QuickReplyAction();
@@ -74715,7 +74715,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            RecentEmojiWeightsAction.fromObject = function fromObject(d) {
+            RecentEmojiWeightsAction.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.RecentEmojiWeightsAction)
                     return d;
                 var m = new $root.proto.SyncActionValue.RecentEmojiWeightsAction();
@@ -74726,7 +74726,7 @@ export const proto = $root.proto = (() => {
                     for (var i = 0; i < d.weights.length; ++i) {
                         if (typeof d.weights[i] !== "object")
                             throw TypeError(".proto.SyncActionValue.RecentEmojiWeightsAction.weights: object expected");
-                        m.weights[i] = $root.proto.RecentEmojiWeight.fromObject(d.weights[i]);
+                        m.weights[i] = $root.proto.RecentEmojiWeight.create(d.weights[i]);
                     }
                 }
                 return m;
@@ -74814,7 +74814,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            RemoveRecentStickerAction.fromObject = function fromObject(d) {
+            RemoveRecentStickerAction.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.RemoveRecentStickerAction)
                     return d;
                 var m = new $root.proto.SyncActionValue.RemoveRecentStickerAction();
@@ -74912,7 +74912,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            SecurityNotificationSetting.fromObject = function fromObject(d) {
+            SecurityNotificationSetting.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.SecurityNotificationSetting)
                     return d;
                 var m = new $root.proto.SyncActionValue.SecurityNotificationSetting();
@@ -75000,7 +75000,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            StarAction.fromObject = function fromObject(d) {
+            StarAction.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.StarAction)
                     return d;
                 var m = new $root.proto.SyncActionValue.StarAction();
@@ -75100,7 +75100,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            StatusPrivacyAction.fromObject = function fromObject(d) {
+            StatusPrivacyAction.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.StatusPrivacyAction)
                     return d;
                 var m = new $root.proto.SyncActionValue.StatusPrivacyAction();
@@ -75360,7 +75360,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            StickerAction.fromObject = function fromObject(d) {
+            StickerAction.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.StickerAction)
                     return d;
                 var m = new $root.proto.SyncActionValue.StickerAction();
@@ -75570,7 +75570,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            SubscriptionAction.fromObject = function fromObject(d) {
+            SubscriptionAction.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.SubscriptionAction)
                     return d;
                 var m = new $root.proto.SyncActionValue.SubscriptionAction();
@@ -75697,14 +75697,14 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            SyncActionMessage.fromObject = function fromObject(d) {
+            SyncActionMessage.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.SyncActionMessage)
                     return d;
                 var m = new $root.proto.SyncActionValue.SyncActionMessage();
                 if (d.key != null) {
                     if (typeof d.key !== "object")
                         throw TypeError(".proto.SyncActionValue.SyncActionMessage.key: object expected");
-                    m.key = $root.proto.MessageKey.fromObject(d.key);
+                    m.key = $root.proto.MessageKey.create(d.key);
                 }
                 if (d.timestamp != null) {
                     if ($util.Long)
@@ -75830,7 +75830,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            SyncActionMessageRange.fromObject = function fromObject(d) {
+            SyncActionMessageRange.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.SyncActionMessageRange)
                     return d;
                 var m = new $root.proto.SyncActionValue.SyncActionMessageRange();
@@ -75861,7 +75861,7 @@ export const proto = $root.proto = (() => {
                     for (var i = 0; i < d.messages.length; ++i) {
                         if (typeof d.messages[i] !== "object")
                             throw TypeError(".proto.SyncActionValue.SyncActionMessageRange.messages: object expected");
-                        m.messages[i] = $root.proto.SyncActionValue.SyncActionMessage.fromObject(d.messages[i]);
+                        m.messages[i] = $root.proto.SyncActionValue.SyncActionMessage.create(d.messages[i]);
                     }
                 }
                 return m;
@@ -75965,7 +75965,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            TimeFormatAction.fromObject = function fromObject(d) {
+            TimeFormatAction.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.TimeFormatAction)
                     return d;
                 var m = new $root.proto.SyncActionValue.TimeFormatAction();
@@ -76053,7 +76053,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            UnarchiveChatsSetting.fromObject = function fromObject(d) {
+            UnarchiveChatsSetting.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.UnarchiveChatsSetting)
                     return d;
                 var m = new $root.proto.SyncActionValue.UnarchiveChatsSetting();
@@ -76141,7 +76141,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            UserStatusMuteAction.fromObject = function fromObject(d) {
+            UserStatusMuteAction.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.UserStatusMuteAction)
                     return d;
                 var m = new $root.proto.SyncActionValue.UserStatusMuteAction();
@@ -76229,7 +76229,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            UsernameChatStartModeAction.fromObject = function fromObject(d) {
+            UsernameChatStartModeAction.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.UsernameChatStartModeAction)
                     return d;
                 var m = new $root.proto.SyncActionValue.UsernameChatStartModeAction();
@@ -76337,7 +76337,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            WaffleAccountLinkStateAction.fromObject = function fromObject(d) {
+            WaffleAccountLinkStateAction.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.WaffleAccountLinkStateAction)
                     return d;
                 var m = new $root.proto.SyncActionValue.WaffleAccountLinkStateAction();
@@ -76440,7 +76440,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            WamoUserIdentifierAction.fromObject = function fromObject(d) {
+            WamoUserIdentifierAction.create = function fromObject(d) {
                 if (d instanceof $root.proto.SyncActionValue.WamoUserIdentifierAction)
                     return d;
                 var m = new $root.proto.SyncActionValue.WamoUserIdentifierAction();
@@ -76531,7 +76531,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        SyncdIndex.fromObject = function fromObject(d) {
+        SyncdIndex.create = function fromObject(d) {
             if (d instanceof $root.proto.SyncdIndex)
                 return d;
             var m = new $root.proto.SyncdIndex();
@@ -76635,7 +76635,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        SyncdMutation.fromObject = function fromObject(d) {
+        SyncdMutation.create = function fromObject(d) {
             if (d instanceof $root.proto.SyncdMutation)
                 return d;
             var m = new $root.proto.SyncdMutation();
@@ -76658,7 +76658,7 @@ export const proto = $root.proto = (() => {
             if (d.record != null) {
                 if (typeof d.record !== "object")
                     throw TypeError(".proto.SyncdMutation.record: object expected");
-                m.record = $root.proto.SyncdRecord.fromObject(d.record);
+                m.record = $root.proto.SyncdRecord.create(d.record);
             }
             return m;
         };
@@ -76750,7 +76750,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        SyncdMutations.fromObject = function fromObject(d) {
+        SyncdMutations.create = function fromObject(d) {
             if (d instanceof $root.proto.SyncdMutations)
                 return d;
             var m = new $root.proto.SyncdMutations();
@@ -76761,7 +76761,7 @@ export const proto = $root.proto = (() => {
                 for (var i = 0; i < d.mutations.length; ++i) {
                     if (typeof d.mutations[i] !== "object")
                         throw TypeError(".proto.SyncdMutations.mutations: object expected");
-                    m.mutations[i] = $root.proto.SyncdMutation.fromObject(d.mutations[i]);
+                    m.mutations[i] = $root.proto.SyncdMutation.create(d.mutations[i]);
                 }
             }
             return m;
@@ -76952,14 +76952,14 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        SyncdPatch.fromObject = function fromObject(d) {
+        SyncdPatch.create = function fromObject(d) {
             if (d instanceof $root.proto.SyncdPatch)
                 return d;
             var m = new $root.proto.SyncdPatch();
             if (d.version != null) {
                 if (typeof d.version !== "object")
                     throw TypeError(".proto.SyncdPatch.version: object expected");
-                m.version = $root.proto.SyncdVersion.fromObject(d.version);
+                m.version = $root.proto.SyncdVersion.create(d.version);
             }
             if (d.mutations) {
                 if (!Array.isArray(d.mutations))
@@ -76968,13 +76968,13 @@ export const proto = $root.proto = (() => {
                 for (var i = 0; i < d.mutations.length; ++i) {
                     if (typeof d.mutations[i] !== "object")
                         throw TypeError(".proto.SyncdPatch.mutations: object expected");
-                    m.mutations[i] = $root.proto.SyncdMutation.fromObject(d.mutations[i]);
+                    m.mutations[i] = $root.proto.SyncdMutation.create(d.mutations[i]);
                 }
             }
             if (d.externalMutations != null) {
                 if (typeof d.externalMutations !== "object")
                     throw TypeError(".proto.SyncdPatch.externalMutations: object expected");
-                m.externalMutations = $root.proto.ExternalBlobReference.fromObject(d.externalMutations);
+                m.externalMutations = $root.proto.ExternalBlobReference.create(d.externalMutations);
             }
             if (d.snapshotMac != null) {
                 if (typeof d.snapshotMac === "string")
@@ -76991,12 +76991,12 @@ export const proto = $root.proto = (() => {
             if (d.keyId != null) {
                 if (typeof d.keyId !== "object")
                     throw TypeError(".proto.SyncdPatch.keyId: object expected");
-                m.keyId = $root.proto.KeyId.fromObject(d.keyId);
+                m.keyId = $root.proto.KeyId.create(d.keyId);
             }
             if (d.exitCode != null) {
                 if (typeof d.exitCode !== "object")
                     throw TypeError(".proto.SyncdPatch.exitCode: object expected");
-                m.exitCode = $root.proto.ExitCode.fromObject(d.exitCode);
+                m.exitCode = $root.proto.ExitCode.create(d.exitCode);
             }
             if (d.deviceIndex != null) {
                 m.deviceIndex = d.deviceIndex >>> 0;
@@ -77158,24 +77158,24 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        SyncdRecord.fromObject = function fromObject(d) {
+        SyncdRecord.create = function fromObject(d) {
             if (d instanceof $root.proto.SyncdRecord)
                 return d;
             var m = new $root.proto.SyncdRecord();
             if (d.index != null) {
                 if (typeof d.index !== "object")
                     throw TypeError(".proto.SyncdRecord.index: object expected");
-                m.index = $root.proto.SyncdIndex.fromObject(d.index);
+                m.index = $root.proto.SyncdIndex.create(d.index);
             }
             if (d.value != null) {
                 if (typeof d.value !== "object")
                     throw TypeError(".proto.SyncdRecord.value: object expected");
-                m.value = $root.proto.SyncdValue.fromObject(d.value);
+                m.value = $root.proto.SyncdValue.create(d.value);
             }
             if (d.keyId != null) {
                 if (typeof d.keyId !== "object")
                     throw TypeError(".proto.SyncdRecord.keyId: object expected");
-                m.keyId = $root.proto.KeyId.fromObject(d.keyId);
+                m.keyId = $root.proto.KeyId.create(d.keyId);
             }
             return m;
         };
@@ -77306,14 +77306,14 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        SyncdSnapshot.fromObject = function fromObject(d) {
+        SyncdSnapshot.create = function fromObject(d) {
             if (d instanceof $root.proto.SyncdSnapshot)
                 return d;
             var m = new $root.proto.SyncdSnapshot();
             if (d.version != null) {
                 if (typeof d.version !== "object")
                     throw TypeError(".proto.SyncdSnapshot.version: object expected");
-                m.version = $root.proto.SyncdVersion.fromObject(d.version);
+                m.version = $root.proto.SyncdVersion.create(d.version);
             }
             if (d.records) {
                 if (!Array.isArray(d.records))
@@ -77322,7 +77322,7 @@ export const proto = $root.proto = (() => {
                 for (var i = 0; i < d.records.length; ++i) {
                     if (typeof d.records[i] !== "object")
                         throw TypeError(".proto.SyncdSnapshot.records: object expected");
-                    m.records[i] = $root.proto.SyncdRecord.fromObject(d.records[i]);
+                    m.records[i] = $root.proto.SyncdRecord.create(d.records[i]);
                 }
             }
             if (d.mac != null) {
@@ -77334,7 +77334,7 @@ export const proto = $root.proto = (() => {
             if (d.keyId != null) {
                 if (typeof d.keyId !== "object")
                     throw TypeError(".proto.SyncdSnapshot.keyId: object expected");
-                m.keyId = $root.proto.KeyId.fromObject(d.keyId);
+                m.keyId = $root.proto.KeyId.create(d.keyId);
             }
             return m;
         };
@@ -77436,7 +77436,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        SyncdValue.fromObject = function fromObject(d) {
+        SyncdValue.create = function fromObject(d) {
             if (d instanceof $root.proto.SyncdValue)
                 return d;
             var m = new $root.proto.SyncdValue();
@@ -77527,7 +77527,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        SyncdVersion.fromObject = function fromObject(d) {
+        SyncdVersion.create = function fromObject(d) {
             if (d instanceof $root.proto.SyncdVersion)
                 return d;
             var m = new $root.proto.SyncdVersion();
@@ -77638,7 +77638,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        TapLinkAction.fromObject = function fromObject(d) {
+        TapLinkAction.create = function fromObject(d) {
             if (d instanceof $root.proto.TapLinkAction)
                 return d;
             var m = new $root.proto.TapLinkAction();
@@ -77760,7 +77760,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        TemplateButton.fromObject = function fromObject(d) {
+        TemplateButton.create = function fromObject(d) {
             if (d instanceof $root.proto.TemplateButton)
                 return d;
             var m = new $root.proto.TemplateButton();
@@ -77770,17 +77770,17 @@ export const proto = $root.proto = (() => {
             if (d.quickReplyButton != null) {
                 if (typeof d.quickReplyButton !== "object")
                     throw TypeError(".proto.TemplateButton.quickReplyButton: object expected");
-                m.quickReplyButton = $root.proto.TemplateButton.QuickReplyButton.fromObject(d.quickReplyButton);
+                m.quickReplyButton = $root.proto.TemplateButton.QuickReplyButton.create(d.quickReplyButton);
             }
             if (d.urlButton != null) {
                 if (typeof d.urlButton !== "object")
                     throw TypeError(".proto.TemplateButton.urlButton: object expected");
-                m.urlButton = $root.proto.TemplateButton.URLButton.fromObject(d.urlButton);
+                m.urlButton = $root.proto.TemplateButton.URLButton.create(d.urlButton);
             }
             if (d.callButton != null) {
                 if (typeof d.callButton !== "object")
                     throw TypeError(".proto.TemplateButton.callButton: object expected");
-                m.callButton = $root.proto.TemplateButton.CallButton.fromObject(d.callButton);
+                m.callButton = $root.proto.TemplateButton.CallButton.create(d.callButton);
             }
             return m;
         };
@@ -77888,19 +77888,19 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            CallButton.fromObject = function fromObject(d) {
+            CallButton.create = function fromObject(d) {
                 if (d instanceof $root.proto.TemplateButton.CallButton)
                     return d;
                 var m = new $root.proto.TemplateButton.CallButton();
                 if (d.displayText != null) {
                     if (typeof d.displayText !== "object")
                         throw TypeError(".proto.TemplateButton.CallButton.displayText: object expected");
-                    m.displayText = $root.proto.Message.HighlyStructuredMessage.fromObject(d.displayText);
+                    m.displayText = $root.proto.Message.HighlyStructuredMessage.create(d.displayText);
                 }
                 if (d.phoneNumber != null) {
                     if (typeof d.phoneNumber !== "object")
                         throw TypeError(".proto.TemplateButton.CallButton.phoneNumber: object expected");
-                    m.phoneNumber = $root.proto.Message.HighlyStructuredMessage.fromObject(d.phoneNumber);
+                    m.phoneNumber = $root.proto.Message.HighlyStructuredMessage.create(d.phoneNumber);
                 }
                 return m;
             };
@@ -78001,14 +78001,14 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            QuickReplyButton.fromObject = function fromObject(d) {
+            QuickReplyButton.create = function fromObject(d) {
                 if (d instanceof $root.proto.TemplateButton.QuickReplyButton)
                     return d;
                 var m = new $root.proto.TemplateButton.QuickReplyButton();
                 if (d.displayText != null) {
                     if (typeof d.displayText !== "object")
                         throw TypeError(".proto.TemplateButton.QuickReplyButton.displayText: object expected");
-                    m.displayText = $root.proto.Message.HighlyStructuredMessage.fromObject(d.displayText);
+                    m.displayText = $root.proto.Message.HighlyStructuredMessage.create(d.displayText);
                 }
                 if (d.id != null) {
                     m.id = String(d.id);
@@ -78112,19 +78112,19 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            URLButton.fromObject = function fromObject(d) {
+            URLButton.create = function fromObject(d) {
                 if (d instanceof $root.proto.TemplateButton.URLButton)
                     return d;
                 var m = new $root.proto.TemplateButton.URLButton();
                 if (d.displayText != null) {
                     if (typeof d.displayText !== "object")
                         throw TypeError(".proto.TemplateButton.URLButton.displayText: object expected");
-                    m.displayText = $root.proto.Message.HighlyStructuredMessage.fromObject(d.displayText);
+                    m.displayText = $root.proto.Message.HighlyStructuredMessage.create(d.displayText);
                 }
                 if (d.url != null) {
                     if (typeof d.url !== "object")
                         throw TypeError(".proto.TemplateButton.URLButton.url: object expected");
-                    m.url = $root.proto.Message.HighlyStructuredMessage.fromObject(d.url);
+                    m.url = $root.proto.Message.HighlyStructuredMessage.create(d.url);
                 }
                 return m;
             };
@@ -78212,7 +78212,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        UrlTrackingMap.fromObject = function fromObject(d) {
+        UrlTrackingMap.create = function fromObject(d) {
             if (d instanceof $root.proto.UrlTrackingMap)
                 return d;
             var m = new $root.proto.UrlTrackingMap();
@@ -78223,7 +78223,7 @@ export const proto = $root.proto = (() => {
                 for (var i = 0; i < d.urlTrackingMapElements.length; ++i) {
                     if (typeof d.urlTrackingMapElements[i] !== "object")
                         throw TypeError(".proto.UrlTrackingMap.urlTrackingMapElements: object expected");
-                    m.urlTrackingMapElements[i] = $root.proto.UrlTrackingMap.UrlTrackingMapElement.fromObject(d.urlTrackingMapElements[i]);
+                    m.urlTrackingMapElements[i] = $root.proto.UrlTrackingMap.UrlTrackingMapElement.create(d.urlTrackingMapElements[i]);
                 }
             }
             return m;
@@ -78347,7 +78347,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            UrlTrackingMapElement.fromObject = function fromObject(d) {
+            UrlTrackingMapElement.create = function fromObject(d) {
                 if (d instanceof $root.proto.UrlTrackingMap.UrlTrackingMapElement)
                     return d;
                 var m = new $root.proto.UrlTrackingMap.UrlTrackingMapElement();
@@ -78500,7 +78500,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        UserPassword.fromObject = function fromObject(d) {
+        UserPassword.create = function fromObject(d) {
             if (d instanceof $root.proto.UserPassword)
                 return d;
             var m = new $root.proto.UserPassword();
@@ -78547,7 +78547,7 @@ export const proto = $root.proto = (() => {
                 for (var i = 0; i < d.transformerArg.length; ++i) {
                     if (typeof d.transformerArg[i] !== "object")
                         throw TypeError(".proto.UserPassword.transformerArg: object expected");
-                    m.transformerArg[i] = $root.proto.UserPassword.TransformerArg.fromObject(d.transformerArg[i]);
+                    m.transformerArg[i] = $root.proto.UserPassword.TransformerArg.create(d.transformerArg[i]);
                 }
             }
             if (d.transformedData != null) {
@@ -78681,7 +78681,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            TransformerArg.fromObject = function fromObject(d) {
+            TransformerArg.create = function fromObject(d) {
                 if (d instanceof $root.proto.UserPassword.TransformerArg)
                     return d;
                 var m = new $root.proto.UserPassword.TransformerArg();
@@ -78691,7 +78691,7 @@ export const proto = $root.proto = (() => {
                 if (d.value != null) {
                     if (typeof d.value !== "object")
                         throw TypeError(".proto.UserPassword.TransformerArg.value: object expected");
-                    m.value = $root.proto.UserPassword.TransformerArg.Value.fromObject(d.value);
+                    m.value = $root.proto.UserPassword.TransformerArg.Value.create(d.value);
                 }
                 return m;
             };
@@ -78782,7 +78782,7 @@ export const proto = $root.proto = (() => {
                     return m;
                 };
 
-                Value.fromObject = function fromObject(d) {
+                Value.create = function fromObject(d) {
                     if (d instanceof $root.proto.UserPassword.TransformerArg.Value)
                         return d;
                     var m = new $root.proto.UserPassword.TransformerArg.Value();
@@ -78944,7 +78944,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        UserReceipt.fromObject = function fromObject(d) {
+        UserReceipt.create = function fromObject(d) {
             if (d instanceof $root.proto.UserReceipt)
                 return d;
             var m = new $root.proto.UserReceipt();
@@ -79145,7 +79145,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        VerifiedNameCertificate.fromObject = function fromObject(d) {
+        VerifiedNameCertificate.create = function fromObject(d) {
             if (d instanceof $root.proto.VerifiedNameCertificate)
                 return d;
             var m = new $root.proto.VerifiedNameCertificate();
@@ -79306,7 +79306,7 @@ export const proto = $root.proto = (() => {
                 return m;
             };
 
-            Details.fromObject = function fromObject(d) {
+            Details.create = function fromObject(d) {
                 if (d instanceof $root.proto.VerifiedNameCertificate.Details)
                     return d;
                 var m = new $root.proto.VerifiedNameCertificate.Details();
@@ -79333,7 +79333,7 @@ export const proto = $root.proto = (() => {
                     for (var i = 0; i < d.localizedNames.length; ++i) {
                         if (typeof d.localizedNames[i] !== "object")
                             throw TypeError(".proto.VerifiedNameCertificate.Details.localizedNames: object expected");
-                        m.localizedNames[i] = $root.proto.LocalizedName.fromObject(d.localizedNames[i]);
+                        m.localizedNames[i] = $root.proto.LocalizedName.create(d.localizedNames[i]);
                     }
                 }
                 if (d.issueTime != null) {
@@ -79473,7 +79473,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        WallpaperSettings.fromObject = function fromObject(d) {
+        WallpaperSettings.create = function fromObject(d) {
             if (d instanceof $root.proto.WallpaperSettings)
                 return d;
             var m = new $root.proto.WallpaperSettings();
@@ -80141,7 +80141,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        WebFeatures.fromObject = function fromObject(d) {
+        WebFeatures.create = function fromObject(d) {
             if (d instanceof $root.proto.WebFeatures)
                 return d;
             var m = new $root.proto.WebFeatures();
@@ -82312,19 +82312,19 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        WebMessageInfo.fromObject = function fromObject(d) {
+        WebMessageInfo.create = function fromObject(d) {
             if (d instanceof $root.proto.WebMessageInfo)
                 return d;
             var m = new $root.proto.WebMessageInfo();
             if (d.key != null) {
                 if (typeof d.key !== "object")
                     throw TypeError(".proto.WebMessageInfo.key: object expected");
-                m.key = $root.proto.MessageKey.fromObject(d.key);
+                m.key = $root.proto.MessageKey.create(d.key);
             }
             if (d.message != null) {
                 if (typeof d.message !== "object")
                     throw TypeError(".proto.WebMessageInfo.message: object expected");
-                m.message = $root.proto.Message.fromObject(d.message);
+                m.message = $root.proto.Message.create(d.message);
             }
             if (d.messageTimestamp != null) {
                 if ($util.Long)
@@ -83317,17 +83317,17 @@ export const proto = $root.proto = (() => {
             if (d.paymentInfo != null) {
                 if (typeof d.paymentInfo !== "object")
                     throw TypeError(".proto.WebMessageInfo.paymentInfo: object expected");
-                m.paymentInfo = $root.proto.PaymentInfo.fromObject(d.paymentInfo);
+                m.paymentInfo = $root.proto.PaymentInfo.create(d.paymentInfo);
             }
             if (d.finalLiveLocation != null) {
                 if (typeof d.finalLiveLocation !== "object")
                     throw TypeError(".proto.WebMessageInfo.finalLiveLocation: object expected");
-                m.finalLiveLocation = $root.proto.Message.LiveLocationMessage.fromObject(d.finalLiveLocation);
+                m.finalLiveLocation = $root.proto.Message.LiveLocationMessage.create(d.finalLiveLocation);
             }
             if (d.quotedPaymentInfo != null) {
                 if (typeof d.quotedPaymentInfo !== "object")
                     throw TypeError(".proto.WebMessageInfo.quotedPaymentInfo: object expected");
-                m.quotedPaymentInfo = $root.proto.PaymentInfo.fromObject(d.quotedPaymentInfo);
+                m.quotedPaymentInfo = $root.proto.PaymentInfo.create(d.quotedPaymentInfo);
             }
             if (d.ephemeralStartTimestamp != null) {
                 if ($util.Long)
@@ -83378,12 +83378,12 @@ export const proto = $root.proto = (() => {
             if (d.mediaData != null) {
                 if (typeof d.mediaData !== "object")
                     throw TypeError(".proto.WebMessageInfo.mediaData: object expected");
-                m.mediaData = $root.proto.MediaData.fromObject(d.mediaData);
+                m.mediaData = $root.proto.MediaData.create(d.mediaData);
             }
             if (d.photoChange != null) {
                 if (typeof d.photoChange !== "object")
                     throw TypeError(".proto.WebMessageInfo.photoChange: object expected");
-                m.photoChange = $root.proto.PhotoChange.fromObject(d.photoChange);
+                m.photoChange = $root.proto.PhotoChange.create(d.photoChange);
             }
             if (d.userReceipt) {
                 if (!Array.isArray(d.userReceipt))
@@ -83392,7 +83392,7 @@ export const proto = $root.proto = (() => {
                 for (var i = 0; i < d.userReceipt.length; ++i) {
                     if (typeof d.userReceipt[i] !== "object")
                         throw TypeError(".proto.WebMessageInfo.userReceipt: object expected");
-                    m.userReceipt[i] = $root.proto.UserReceipt.fromObject(d.userReceipt[i]);
+                    m.userReceipt[i] = $root.proto.UserReceipt.create(d.userReceipt[i]);
                 }
             }
             if (d.reactions) {
@@ -83402,13 +83402,13 @@ export const proto = $root.proto = (() => {
                 for (var i = 0; i < d.reactions.length; ++i) {
                     if (typeof d.reactions[i] !== "object")
                         throw TypeError(".proto.WebMessageInfo.reactions: object expected");
-                    m.reactions[i] = $root.proto.Reaction.fromObject(d.reactions[i]);
+                    m.reactions[i] = $root.proto.Reaction.create(d.reactions[i]);
                 }
             }
             if (d.quotedStickerData != null) {
                 if (typeof d.quotedStickerData !== "object")
                     throw TypeError(".proto.WebMessageInfo.quotedStickerData: object expected");
-                m.quotedStickerData = $root.proto.MediaData.fromObject(d.quotedStickerData);
+                m.quotedStickerData = $root.proto.MediaData.create(d.quotedStickerData);
             }
             if (d.futureproofData != null) {
                 if (typeof d.futureproofData === "string")
@@ -83419,7 +83419,7 @@ export const proto = $root.proto = (() => {
             if (d.statusPsa != null) {
                 if (typeof d.statusPsa !== "object")
                     throw TypeError(".proto.WebMessageInfo.statusPsa: object expected");
-                m.statusPsa = $root.proto.StatusPSA.fromObject(d.statusPsa);
+                m.statusPsa = $root.proto.StatusPSA.create(d.statusPsa);
             }
             if (d.pollUpdates) {
                 if (!Array.isArray(d.pollUpdates))
@@ -83428,13 +83428,13 @@ export const proto = $root.proto = (() => {
                 for (var i = 0; i < d.pollUpdates.length; ++i) {
                     if (typeof d.pollUpdates[i] !== "object")
                         throw TypeError(".proto.WebMessageInfo.pollUpdates: object expected");
-                    m.pollUpdates[i] = $root.proto.PollUpdate.fromObject(d.pollUpdates[i]);
+                    m.pollUpdates[i] = $root.proto.PollUpdate.create(d.pollUpdates[i]);
                 }
             }
             if (d.pollAdditionalMetadata != null) {
                 if (typeof d.pollAdditionalMetadata !== "object")
                     throw TypeError(".proto.WebMessageInfo.pollAdditionalMetadata: object expected");
-                m.pollAdditionalMetadata = $root.proto.PollAdditionalMetadata.fromObject(d.pollAdditionalMetadata);
+                m.pollAdditionalMetadata = $root.proto.PollAdditionalMetadata.create(d.pollAdditionalMetadata);
             }
             if (d.agentId != null) {
                 m.agentId = String(d.agentId);
@@ -83451,7 +83451,7 @@ export const proto = $root.proto = (() => {
             if (d.keepInChat != null) {
                 if (typeof d.keepInChat !== "object")
                     throw TypeError(".proto.WebMessageInfo.keepInChat: object expected");
-                m.keepInChat = $root.proto.KeepInChat.fromObject(d.keepInChat);
+                m.keepInChat = $root.proto.KeepInChat.create(d.keepInChat);
             }
             if (d.originalSelfAuthorUserJidString != null) {
                 m.originalSelfAuthorUserJidString = String(d.originalSelfAuthorUserJidString);
@@ -83469,12 +83469,12 @@ export const proto = $root.proto = (() => {
             if (d.pinInChat != null) {
                 if (typeof d.pinInChat !== "object")
                     throw TypeError(".proto.WebMessageInfo.pinInChat: object expected");
-                m.pinInChat = $root.proto.PinInChat.fromObject(d.pinInChat);
+                m.pinInChat = $root.proto.PinInChat.create(d.pinInChat);
             }
             if (d.premiumMessageInfo != null) {
                 if (typeof d.premiumMessageInfo !== "object")
                     throw TypeError(".proto.WebMessageInfo.premiumMessageInfo: object expected");
-                m.premiumMessageInfo = $root.proto.PremiumMessageInfo.fromObject(d.premiumMessageInfo);
+                m.premiumMessageInfo = $root.proto.PremiumMessageInfo.create(d.premiumMessageInfo);
             }
             if (d.is1PBizBotMessage != null) {
                 m.is1PBizBotMessage = Boolean(d.is1PBizBotMessage);
@@ -83488,7 +83488,7 @@ export const proto = $root.proto = (() => {
             if (d.commentMetadata != null) {
                 if (typeof d.commentMetadata !== "object")
                     throw TypeError(".proto.WebMessageInfo.commentMetadata: object expected");
-                m.commentMetadata = $root.proto.CommentMetadata.fromObject(d.commentMetadata);
+                m.commentMetadata = $root.proto.CommentMetadata.create(d.commentMetadata);
             }
             if (d.eventResponses) {
                 if (!Array.isArray(d.eventResponses))
@@ -83497,13 +83497,13 @@ export const proto = $root.proto = (() => {
                 for (var i = 0; i < d.eventResponses.length; ++i) {
                     if (typeof d.eventResponses[i] !== "object")
                         throw TypeError(".proto.WebMessageInfo.eventResponses: object expected");
-                    m.eventResponses[i] = $root.proto.EventResponse.fromObject(d.eventResponses[i]);
+                    m.eventResponses[i] = $root.proto.EventResponse.create(d.eventResponses[i]);
                 }
             }
             if (d.reportingTokenInfo != null) {
                 if (typeof d.reportingTokenInfo !== "object")
                     throw TypeError(".proto.WebMessageInfo.reportingTokenInfo: object expected");
-                m.reportingTokenInfo = $root.proto.ReportingTokenInfo.fromObject(d.reportingTokenInfo);
+                m.reportingTokenInfo = $root.proto.ReportingTokenInfo.create(d.reportingTokenInfo);
             }
             if (d.newsletterServerId != null) {
                 if ($util.Long)
@@ -83518,7 +83518,7 @@ export const proto = $root.proto = (() => {
             if (d.eventAdditionalMetadata != null) {
                 if (typeof d.eventAdditionalMetadata !== "object")
                     throw TypeError(".proto.WebMessageInfo.eventAdditionalMetadata: object expected");
-                m.eventAdditionalMetadata = $root.proto.EventAdditionalMetadata.fromObject(d.eventAdditionalMetadata);
+                m.eventAdditionalMetadata = $root.proto.EventAdditionalMetadata.create(d.eventAdditionalMetadata);
             }
             if (d.isMentionedInStatus != null) {
                 m.isMentionedInStatus = Boolean(d.isMentionedInStatus);
@@ -83534,7 +83534,7 @@ export const proto = $root.proto = (() => {
             if (d.targetMessageId != null) {
                 if (typeof d.targetMessageId !== "object")
                     throw TypeError(".proto.WebMessageInfo.targetMessageId: object expected");
-                m.targetMessageId = $root.proto.MessageKey.fromObject(d.targetMessageId);
+                m.targetMessageId = $root.proto.MessageKey.create(d.targetMessageId);
             }
             if (d.messageAddOns) {
                 if (!Array.isArray(d.messageAddOns))
@@ -83543,13 +83543,13 @@ export const proto = $root.proto = (() => {
                 for (var i = 0; i < d.messageAddOns.length; ++i) {
                     if (typeof d.messageAddOns[i] !== "object")
                         throw TypeError(".proto.WebMessageInfo.messageAddOns: object expected");
-                    m.messageAddOns[i] = $root.proto.MessageAddOn.fromObject(d.messageAddOns[i]);
+                    m.messageAddOns[i] = $root.proto.MessageAddOn.create(d.messageAddOns[i]);
                 }
             }
             if (d.statusMentionMessageInfo != null) {
                 if (typeof d.statusMentionMessageInfo !== "object")
                     throw TypeError(".proto.WebMessageInfo.statusMentionMessageInfo: object expected");
-                m.statusMentionMessageInfo = $root.proto.StatusMentionMessage.fromObject(d.statusMentionMessageInfo);
+                m.statusMentionMessageInfo = $root.proto.StatusMentionMessage.create(d.statusMentionMessageInfo);
             }
             if (d.isSupportAiMessage != null) {
                 m.isSupportAiMessage = Boolean(d.isSupportAiMessage);
@@ -83569,7 +83569,7 @@ export const proto = $root.proto = (() => {
                 for (var i = 0; i < d.supportAiCitations.length; ++i) {
                     if (typeof d.supportAiCitations[i] !== "object")
                         throw TypeError(".proto.WebMessageInfo.supportAiCitations: object expected");
-                    m.supportAiCitations[i] = $root.proto.Citation.fromObject(d.supportAiCitations[i]);
+                    m.supportAiCitations[i] = $root.proto.Citation.create(d.supportAiCitations[i]);
                 }
             }
             if (d.botTargetId != null) {
@@ -84281,7 +84281,7 @@ export const proto = $root.proto = (() => {
             return m;
         };
 
-        WebNotificationsInfo.fromObject = function fromObject(d) {
+        WebNotificationsInfo.create = function fromObject(d) {
             if (d instanceof $root.proto.WebNotificationsInfo)
                 return d;
             var m = new $root.proto.WebNotificationsInfo();
@@ -84308,7 +84308,7 @@ export const proto = $root.proto = (() => {
                 for (var i = 0; i < d.notifyMessages.length; ++i) {
                     if (typeof d.notifyMessages[i] !== "object")
                         throw TypeError(".proto.WebNotificationsInfo.notifyMessages: object expected");
-                    m.notifyMessages[i] = $root.proto.WebMessageInfo.fromObject(d.notifyMessages[i]);
+                    m.notifyMessages[i] = $root.proto.WebMessageInfo.create(d.notifyMessages[i]);
                 }
             }
             return m;
